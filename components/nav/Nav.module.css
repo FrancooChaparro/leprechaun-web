@@ -1,0 +1,28 @@
+.container-all {
+    width: 100vw;
+    background-color: var(--bk-nav);
+    height: 64px;
+    font-size: 16px;
+    color: var(--nav-color);
+    display: flex;
+    justify-content: space-between;
+    padding: 0 64px;
+    align-items: center;
+    font-weight: 500;
+    position: fixed;
+    z-index: 2;
+}
+.container-data {
+    display: flex;
+    gap: 32px;
+    place-content: center;
+}
+
+.container-data span {
+    cursor: pointer;
+    border-bottom: 3px solid transparent; /* Añadir un borde transparente por defecto */
+}
+
+.container-data span:hover {
+    border-bottom-color: var(--nav-color); /* Cambiar el color del borde al hacer hover */
+}

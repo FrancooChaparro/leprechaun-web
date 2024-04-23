@@ -3,7 +3,7 @@ import styles from "./page.module.css";
 export default function Home() {
   return (
     <main className={styles.main}>
-      <h1>Leprechaun web</h1>
+      <h2>LEPRECHAUN</h2>
     </main>
   );
 }

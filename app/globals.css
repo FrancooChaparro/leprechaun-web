@@ -5,6 +5,8 @@
     "Fira Mono", "Droid Sans Mono", "Courier New", monospace;
   --primary-white: #ffffff;
   --primary-black: #000000;
+  --bk-nav: #fff;
+  --nav-color: #1f1f24;
 }
 
 * {

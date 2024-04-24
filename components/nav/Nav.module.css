@@ -18,7 +18,7 @@
     place-content: center;
 }
 
-.container-data span {
+.container-all span {
     cursor: pointer;
     border-bottom: 3px solid transparent; /* Añadir un borde transparente por defecto */
 }

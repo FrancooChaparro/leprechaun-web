@@ -1,0 +1,10 @@
+.container-footer {
+    padding: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--nav-color);
+    /* border-top: 1px solid var(--nav-color); */
+    /* position: absolute;
+    bottom: 0; */
+}

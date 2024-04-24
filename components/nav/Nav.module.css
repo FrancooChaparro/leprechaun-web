@@ -20,9 +20,31 @@
 
 .container-all span {
     cursor: pointer;
-    border-bottom: 3px solid transparent; /* Añadir un borde transparente por defecto */
+    border-bottom: 3px solid transparent; 
 }
 
 .container-data span:hover {
-    border-bottom-color: var(--nav-color); /* Cambiar el color del borde al hacer hover */
+    border-bottom-color: var(--nav-color);
+}
+
+
+.cor,
+.co {
+  position: fixed;
+  top: 64px;
+  left: 0;
+  /* min-width: 1px; */
+  padding: 1.2rem;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.cor {
+  background-color: var(--bk-nav);
+  height: 200px;
+  width: 100vw;
+}
+
+.co {
+  background-color: none;
 }

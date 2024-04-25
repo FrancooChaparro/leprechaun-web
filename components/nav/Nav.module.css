@@ -27,7 +27,28 @@
 .btn-nav:hover {
     border-bottom-color: var(--nav-color);
 }
+.btn-cart {
+  cursor: pointer;
+  border-bottom: 3px solid transparent; 
+  font-weight: 500;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
+.btn-cart:hover {
+  border-bottom-color: var(--nav-color);
+}
+.ancor {
+  display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0.5rem;
+    cursor: pointer;
+    height: 2.5rem;
+    width: 2.5rem;
+    border-radius: 50%;
+}
 
 .cor,
 .co {

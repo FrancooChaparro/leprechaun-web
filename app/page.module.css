@@ -29,7 +29,7 @@
   
 
 .CategoriesComponent_container-categories {
-  height: 35rem;
+  height: 26rem;
     width: 100%;
     display: grid;
     grid-template-columns: repeat(4,1fr);

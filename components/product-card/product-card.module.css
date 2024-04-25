@@ -60,7 +60,7 @@ align-items: center;
 
 .price {
     font-size: 22px;
-    
+    font-weight: 700;
     font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     color: #6260ec;
 }

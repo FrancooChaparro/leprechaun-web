@@ -36,3 +36,24 @@ export default function Home() {
 </div>
 </div>  */
 }
+
+
+// <div className={styles["container-all"]}>
+// <div className={styles["container-title"]}>
+//   <h4>Titulo</h4>
+// </div>
+// <div className={styles["container-layout-images"]}>
+//   <div className={styles["one"]}>
+//     <img src="/images/3.jpg" alt="adsa" />
+//   </div>
+//   <div className={styles["two"]}>
+//     <img src="/images/4.webp" alt="as" />
+//   </div>
+//   <div className={styles["three"]}>
+//     <img src="/images/esponjas.jpg" alt="sss" />
+//   </div>
+//   <div className={styles["four"]}>
+//     <img src="/images/3.jpg" alt="a" />
+//   </div>
+// </div>
+// </div>

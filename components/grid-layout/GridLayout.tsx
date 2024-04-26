@@ -1,24 +1,25 @@
 import React from "react";
 import styles from "./grid-layout.module.css";
+import Image from "next/image";
 
 export const GridLayout = () => {
   return (
-    <div className={styles.containerAll}>
-      <div className={styles.containerTitle}>
+    <div className={styles["container-all"]}>
+      <div className={styles["container-title"]}>
         <h4>Titulo</h4>
       </div>
-      <div className={styles["wl"]}>
+      <div className={styles["container-layout-images"]}>
         <div className={styles["one"]}>
-          <img src="/images/3.jpg" alt="adsa" />
+          <Image src="/images/3.jpg" alt="image" fill loading="lazy" />
         </div>
         <div className={styles["two"]}>
-          <img src="/images/4.webp" alt="as" />
+          <Image src="/images/4.webp" alt="image" fill loading="lazy" />
         </div>
-        <div className={styles["tres"]}>
-          <img src="/images/esponjas.jpg" alt="sss" />
+        <div className={styles["three"]}>
+          <Image src="/images/esponjas.jpg" alt="image" fill loading="lazy" />
         </div>
         <div className={styles["four"]}>
-          <img src="/images/3.jpg" alt="a" />
+          <Image src="/images/3.jpg" alt="image" fill loading="lazy" />
         </div>
       </div>
     </div>

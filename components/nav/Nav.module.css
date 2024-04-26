@@ -11,13 +11,17 @@
     box-shadow: 0 5px 10px rgba(0, 0, 0, .2);
     position: fixed;
     z-index: 2;
+    user-select: none;
 }
 .container-data {
     display: flex;
     gap: 32px;
     place-content: center;
 }
-
+.btn-nav-logo {
+  cursor: pointer;
+  font-weight: 500;
+}
 .btn-nav {
     cursor: pointer;
     border-bottom: 3px solid transparent; 
@@ -37,7 +41,7 @@
 }
 
 .btn-cart:hover {
-  border-bottom-color: var(--nav-color);
+  opacity: 0.8;
 }
 .ancor {
   display: flex;
@@ -75,8 +79,15 @@
   justify-content: center; 
   align-items: center; 
   padding: 3rem;
-
+ /* opacity: 0; */
+  /* visibility: hidden; */
+  transition: 3ms;
+  transition: opacity 0.3s ease-in-out, visibility 0s linear 0.3s;
+  /* transition: visibility 0s linear .3s,opacity .3s linear;  */
 }
+
+
+
 .center { 
   /* width: 600px; */
   display: grid;

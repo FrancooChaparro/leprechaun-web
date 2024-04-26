@@ -18,7 +18,7 @@ export const Nav = () => {
   return (
     <div className={styles["container-all"]}>
       <div>
-        <span className={styles["btn-nav"]}>LEPRECHAUN</span>
+        <span className={styles["btn-nav-logo"]}>LEPRECHAUN</span>
       </div>
       <div className={styles["container-data"]}>
       <span className={styles["btn-nav"]} onMouseEnter={handleMouseLeaveCor}>
@@ -47,7 +47,7 @@ export const Nav = () => {
                 })} 
                 </div>
              </div>
-          )}
+         )} 
         </div>
        
         <span className={styles["btn-nav"]} onMouseEnter={handleMouseLeaveCor}>

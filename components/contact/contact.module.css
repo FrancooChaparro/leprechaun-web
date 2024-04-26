@@ -1,0 +1,29 @@
+.container-contact {
+    width: 100%;
+    padding: 2rem;
+    border-top: 1px solid black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.container-contact-header {
+    padding: 0.5rem;
+    color: black;
+    font-size: 16px;
+}
+
+.container-contact-footer {
+    display: flex;
+    gap: 10px;
+}
+
+.container-contact-footer a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 2.5rem;
+    color: #1b1b1b;
+}

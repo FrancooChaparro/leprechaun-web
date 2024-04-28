@@ -12,8 +12,8 @@ export const NavCategorias = () => {
           {products.length &&
             products.map((e) => {
               return (
-                <div className={styles["container-categorias"]}>
-                  <span className={styles["categorias"]} key={e.id}>
+                <div className={styles["container-categorias"]} key={e.id}>
+                  <span className={styles["categorias"]}>
                     {e.nombre}
                   </span>
                 </div>

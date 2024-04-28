@@ -6,8 +6,11 @@ import "./globals.css";
 const inter = Oswald({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Leprechaun",
+  title: "Leprechaun®",
   description: "LEPRECHAUN destailing shop website",
+  icons: {
+    icon: "favicon.ico"
+  }
 };
 
 export default function RootLayout({

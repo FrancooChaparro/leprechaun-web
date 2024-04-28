@@ -1,11 +1,20 @@
 import React from "react";
 import styles from "./Nav.module.css";
 import { NavCategorias } from "../nav-categorias/NavCategorias";
+import Image from "next/image";
 
 export const Nav = () => {
   return (
     <div className={styles["container-all"]}>
       <div>
+      {/* <Image
+            src="/favicon.ico"
+            alt="LogoNetflix"
+            width={45}
+            height={45}
+            priority
+            loading="eager"
+          /> */}
         <span className={styles["btn-nav-logo"]}>LEPRECHAUN</span>
       </div>
       <div className={styles["container-data"]}>
@@ -22,7 +31,7 @@ export const Nav = () => {
             <svg
               stroke="currentColor"
               fill="currentColor"
-              stroke-width="0"
+              strokeWidth="0"
               viewBox="0 0 576 512"
               height="2em"
               width="2em"

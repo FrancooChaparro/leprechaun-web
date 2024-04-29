@@ -2,20 +2,22 @@ import type { Metadata } from "next";
 import { Inter, Oswald, Roboto } from "next/font/google";
 import { Nav } from "@/components/nav/Nav";
 import "./globals.css";
+import { Footer } from "@/components/footer/Footer";
+import { Contact } from "@/components/contact/Contact";
 
 // const inter = Oswald({ subsets: ["latin"] });
 const inter = Roboto({
-   style: ["normal"],
+  style: ["normal"],
   subsets: ["latin"],
-  weight: ["400"]
-})
+  weight: ["400"],
+});
 
 export const metadata: Metadata = {
   title: "Leprechaun®",
   description: "LEPRECHAUN destailing shop website",
   icons: {
-    icon: "favicon.ico"
-  }
+    icon: "favicon.ico",
+  },
 };
 
 export default function RootLayout({
@@ -28,7 +30,9 @@ export default function RootLayout({
       <body className={inter.className}>
         <Nav />
         {children}
-        </body>
+        <Contact />
+        <Footer />
+      </body>
     </html>
   );
 }

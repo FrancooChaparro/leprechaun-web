@@ -9,8 +9,6 @@ export default function Home() {
     <main className={styles.main}>
       <Banner />
       <GridLayout />   
-      <Contact />
-      <Footer />
     </main>
   );
 }

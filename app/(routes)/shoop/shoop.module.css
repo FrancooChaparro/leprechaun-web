@@ -1,0 +1,43 @@
+.container-main-shoop {
+    padding-left: 5rem;
+    padding-right: 5rem;
+    padding-top: 64px;
+    width: 100vw;
+    min-height: 100vh;
+    padding-bottom: 5rem;
+}
+
+.container-main-shoop-data {
+    width: 100%;
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    color: #000000;
+    gap: 15px;
+}
+
+.container-main-shoop-actions {
+    width: 100%;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    height: 64px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #000;
+}
+.test {
+    width: 100%;
+}
+.container-main-shoop-cards {
+        /* height: 26rem; */
+        /* width: 100%; */
+        display: grid;
+        grid-template-columns: repeat(4, 25%);
+        grid-template-columns: repeat(4,1fr);
+        grid-gap: 3rem; 
+        
+       gap: 1.2rem 
+}

@@ -41,3 +41,58 @@
         
        gap: 1.2rem 
 }
+
+.order {
+    display: flex;
+    align-items: center;
+}
+/* .order select {
+    background-image: url("https://www.devre.la/static/version1714067431/frontend/Dikter/default/es_AR/images/icons/down.svg");
+    background-position: right 10px top 50%;
+    background-size: 15px auto;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    -ms-appearance: none;
+    appearance: none;
+    background-repeat: no-repeat;
+}
+.order select {
+    background: #fff;
+    background-clip: padding-box;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    color: #000;
+    font-family: 'Nunito Sans','Helvetica Neue',Helvetica,Arial,sans-serif;
+    font-size: 14px;
+    height: 40px;
+    line-height: 20px;
+    padding: 0 35px 0 10px;
+    vertical-align: baseline;
+    width: 100%;
+    box-sizing: border-box;
+} */
+.filter {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+.order select {
+    background: #fff url("https://www.devre.la/static/version1714067431/frontend/Dikter/default/es_AR/images/icons/down.svg") no-repeat right 10px center;
+    background-size: 15px auto; /* Asegúrate de incluir esta línea si necesitas ajustar el tamaño de la imagen */
+    background-clip: padding-box;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    color: #000;
+    font-family: 'Nunito Sans','Helvetica Neue',Helvetica,Arial,sans-serif;
+    font-size: 14px;
+    height: 40px;
+    line-height: 20px;
+    padding: 0 35px 0 10px;
+    vertical-align: baseline;
+    width: 100%;
+    box-sizing: border-box;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    -ms-appearance: none;
+    appearance: none;
+}

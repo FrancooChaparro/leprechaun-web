@@ -23,6 +23,9 @@ body {
   background-color: var(--primary-white);
   color: var(--primary-white);
   font-family: 'Oswald';
+        
+        
+  background-color: #f7f4ed;
 }
 
 a {

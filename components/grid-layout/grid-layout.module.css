@@ -1,10 +1,20 @@
-.container-layout-images {
+/* .container-layout-images {
   display: grid;
   width: 100%;
   grid-template-columns: repeat(2, 1fr);
   grid-gap: 10px;
   grid-auto-rows: minmax(220px, auto);
+} */
+
+.container-layout-images {
+  display: grid;
+  width: 100%;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 10px;
+  grid-auto-rows: minmax(220px, auto);
 }
+
+
 
 .one img,
 .two img,
@@ -12,11 +22,11 @@
 .four img {
   position: absolute; 
   height: 100%;
-  width: 100%;
+  width: 100%; 
   left: 0;
   top: 0;
   right: 0;
-  bottom: 0; 
+  bottom: 0;  
   object-fit: cover;
   object-position: center;
   color: transparent;
@@ -32,30 +42,44 @@
 .one {
   grid-column: 1;
   grid-row: 1 / 3;
+
+  grid-column: 1;
+  grid-row: 1;
 }
 .two {
+  grid-column: 2;
+  grid-row: 1;
+
   grid-column: 2;
   grid-row: 1;
 }
 .three {
   grid-column: 1;
   grid-row: 3;
+
+  grid-column: 3;
+  grid-row: 1 / 3;
 }
 .four {
   grid-column: 2;
   grid-row: 2 / 4;
+
+  grid-column: 1 / 3;
+  grid-row:2;
 }
 
-.one img:hover,
-.two img:hover,
-.three img:hover,
-.four img:hover {
-  opacity: 0.8;
+.one:hover .container-overlay,
+.two:hover .container-overlay,
+.three:hover .container-overlay,
+.four:hover .container-overlay {
+  /* opacity: 0.9; */
   cursor: pointer;
+  visibility: visible;
+  /* left: 0; */
 }
 
 .container-all {
-  padding: 4rem;
+  padding: 10rem;
   width: 100vw;
   padding-top: 4rem;
   padding-bottom: 5rem;
@@ -67,5 +91,70 @@
 }
 .container-title h4 {
   font-size: 22px;
-  color: black;
+  color: rgb(41, 40, 40);
+}
+
+
+.container-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    padding: 2rem;
+    background-color: rgba(0,0,0,.2);
+    color: white;
+    opacity: 1;
+    /* transition: .2s ease-in-out; */
+    visibility: hidden;
+    /* filter: ; */
+    /* z-index: 2; */
+    /* transition: left 0.5s ease; / */
+   
+  }
+  .container-overlay-split {
+    display: flex;
+    height: 100%;
+    width: 100%;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    position: relative
+  }
+
+.guantes {
+  position: absolute;
+  top: 0;
+  font-size: 24px;
+  left: -200px; /* Inicialmente fuera de la pantalla */
+  transition: left 0.5s ease; /* Transición suave */
+}
+.vermas {
+  position: absolute;
+  /* top: 0; */
+  bottom: 0;
+  right: -200px;
+  font: 18px;
+  transition: right 0.5s ease; /* Transición suave */
+
+}
+  .container-overlay:hover .guantes {
+    left:0
+    
+  }
+  .container-overlay:hover .vermas {
+    right: 0;
+    
+  }
+  .container-overlay small {
+    font-size: 17px;
+      }
+
+      .container-overlay:hover small {
+        text-decoration: underline;
+      }
+      .container-overlay:hover {
+  filter: brightness(110%);
+    opacity: 1;
+    /* background-color: rgba(0,0,0,.1); */
 }

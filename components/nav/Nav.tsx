@@ -2,10 +2,13 @@ import React from "react";
 import styles from "./Nav.module.css";
 import { NavCategorias } from "../nav-categorias/NavCategorias";
 import Image from "next/image";
+import { Inter, Oswald, Roboto } from "next/font/google";
+
+const inter = Oswald({ subsets: ["latin"] });
 
 export const Nav = () => {
   return (
-    <div className={styles["container-all"]}>
+    <div className={`${styles["container-all"]} ${inter}`}>
       <div>
       {/* <Image
             src="/favicon.ico"

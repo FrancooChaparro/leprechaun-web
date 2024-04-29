@@ -1,9 +1,14 @@
 import type { Metadata } from "next";
-import { Inter, Oswald } from "next/font/google";
+import { Inter, Oswald, Roboto } from "next/font/google";
 import { Nav } from "@/components/nav/Nav";
 import "./globals.css";
 
-const inter = Oswald({ subsets: ["latin"] });
+// const inter = Oswald({ subsets: ["latin"] });
+const inter = Roboto({
+   style: ["normal"],
+  subsets: ["latin"],
+  weight: ["400"]
+})
 
 export const metadata: Metadata = {
   title: "Leprechaun®",

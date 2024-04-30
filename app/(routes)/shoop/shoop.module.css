@@ -17,60 +17,61 @@
     color: #000000;
     gap: 15px;
 }
-
-.container-main-shoop-actions {
+.resp {
     width: 100%;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    position: relative;
+
+}
+.fixed {
+    width: 89.5%;
     padding-top: 10px;
     padding-bottom: 10px;
     height: 64px;
     display: flex;
+    background-color: white;
     justify-content: space-between;
     align-items: center;
     color: #000;
+    position: fixed;
+    z-index: 2;
+    transition: top 0.3s ease-in;
+    top: 64px;
+
+    
+}
+.container-main-shoop-actions {
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    display: flex;
+    /* position: absolute;
+    top: 0;
+    transition: top 0.3s ease-in; */
+    padding-top: 10px;
+    padding-bottom: 10px;
+    color: #000;
+
+
 }
 .test {
     width: 100%;
 }
 .container-main-shoop-cards {
-        /* height: 26rem; */
-        /* width: 100%; */
         display: grid;
         grid-template-columns: repeat(4, 25%);
         grid-template-columns: repeat(4,1fr);
         grid-gap: 3rem; 
-        
        gap: 1.2rem 
 }
 
 .order {
     display: flex;
     align-items: center;
+    gap: 1px;
 }
-/* .order select {
-    background-image: url("https://www.devre.la/static/version1714067431/frontend/Dikter/default/es_AR/images/icons/down.svg");
-    background-position: right 10px top 50%;
-    background-size: 15px auto;
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    -ms-appearance: none;
-    appearance: none;
-    background-repeat: no-repeat;
-}
-.order select {
-    background: #fff;
-    background-clip: padding-box;
-    border: 1px solid #ddd;
-    border-radius: 3px;
-    color: #000;
-    font-family: 'Nunito Sans','Helvetica Neue',Helvetica,Arial,sans-serif;
-    font-size: 14px;
-    height: 40px;
-    line-height: 20px;
-    padding: 0 35px 0 10px;
-    vertical-align: baseline;
-    width: 100%;
-    box-sizing: border-box;
-} */
+
 .filter {
     display: flex;
     align-items: center;

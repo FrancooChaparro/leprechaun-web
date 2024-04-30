@@ -1,16 +1,9 @@
 import type { Metadata } from "next";
-import { Inter, Oswald, Roboto } from "next/font/google";
 import { Nav } from "@/components/nav/Nav";
 import "./globals.css";
 import { Footer } from "@/components/footer/Footer";
 import { Contact } from "@/components/contact/Contact";
-
-// const inter = Oswald({ subsets: ["latin"] });
-const inter = Roboto({
-  style: ["normal"],
-  subsets: ["latin"],
-  weight: ["400"],
-});
+import { roboto } from "@/utils/fonts";
 
 export const metadata: Metadata = {
   title: "Leprechaun®",
@@ -27,7 +20,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>
+      <body className={roboto.className}>
         <Nav />
         {children}
         <Contact />

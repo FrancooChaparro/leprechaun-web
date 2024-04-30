@@ -3,15 +3,13 @@ import React, { useState } from "react";
 import styles from "./Nav.module.css";
 import { NavCategorias } from "../nav-categorias/NavCategorias";
 import Image from "next/image";
-import { Inter, Oswald, Roboto } from "next/font/google";
 import { CartComponent } from "./cart-component/CartComponent";
-
-const inter = Oswald({ subsets: ["latin"] });
+import { oswald } from "@/utils/fonts";
 
 export const Nav = () => {
   const [abier, setab] = useState(false)
   return (
-    <div className={`${styles["container-all"]} ${inter}`}>
+    <div className={`${styles["container-all"]} ${oswald.className}`}>
       <div>
       {/* <Image
             src="/favicon.ico"

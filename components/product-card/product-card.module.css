@@ -1,29 +1,29 @@
-/* .container-card {
-    height: 400px;
-    width: 300px;
-    background-color: rgb(247, 243, 238);
-} */
 .container-card {
-position: relative;
-width: 100%;
-height: 26rem;
-min-height: 26rem;
-overflow: hidden;
-border: 1px solid rgb(192, 190, 190);
-}
-
-
-.container-card-image {
-position: relative;
-width: 100%;
-height: 19rem;
-min-height: 19rem;
-overflow: hidden;
-display: flex;
-justify-content: center;
-align-items: center;
-}
-.container-card-image img{
+    position: relative;
+    width: 100%;
+    height: 25.8rem;
+    min-height: 25.8rem;
+    overflow: hidden;
+    border: 1px solid rgb(192, 190, 190);
+    transition: box-shadow 0.3s ease; /* Añade transición para un efecto suave */
+  }
+  
+  .container-card:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Añade sombra en hover */
+  }
+  
+  .container-card-image {
+    position: relative;
+    width: 100%;
+    height: 17rem;
+    min-height: 17rem;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .container-card-image img {
     position: absolute;
     height: 100%;
     width: 100%;
@@ -34,33 +34,69 @@ align-items: center;
     object-fit: cover;
     object-position: center;
     color: transparent;
-}
-
-/* .container-card-image img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: center;
-} */
-
-.container-card-data {
-    height: 7rem;
-    min-height: 7rem;
-    padding-top: 1rem;
+  }
+  
+  .container-card-data {
+    height: 5.8rem;
+    min-height: 5.8rem;
+    padding-top: 0.8rem;
     padding-left: 0.8rem;
+    padding-right: 0.8rem;
     display: flex;
     flex-direction: column;
-    gap: 10px;
-}
-
-.name {
-    font-size: 22px;
-    color: black;
-}
-
-.price {
-    font-size: 22px;
+    gap: 8px;
+  }
+  
+  .name {
+    font-size: 15px;
+    color: rgb(0, 0, 0);
+    font-weight: 500;
+  }
+  
+  .description {
+    font-size: 12px;
+    color: rgb(59, 59, 59);
+  }
+  
+  .price {
+    font-size: 17px;
     font-weight: 700;
-    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    color: #6260ec;
-}
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: #000000;
+  }
+  
+  .container-btn {
+    position: absolute; 
+    bottom: 10px; 
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: aquamarine;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+    width: calc(100% - 80px); 
+  }
+  
+  .container-card:hover .container-btn {
+    opacity: 1;
+    visibility: visible;
+  }
+  
+  .buy-button {
+    background-color: #000;
+    color: #ffffff;
+    border-radius: 34px;
+    border-style: none;
+    cursor: pointer;
+    height: 38px;
+    width: 100%;
+    transition: background-color 0.3s ease;
+  }
+  
+  
+  
+
+
+
+
+    

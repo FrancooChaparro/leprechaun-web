@@ -5,6 +5,7 @@
     width: 100vw;
     min-height: 100vh;
     padding-bottom: 5rem;
+    background-color: rgb(188, 250, 229);
 }
 
 .container-main-shoop-data {
@@ -24,7 +25,7 @@
     position: relative;
 
 }
-.fixed {
+/* .fixed {
     width: 89.5%;
     padding-top: 10px;
     padding-bottom: 10px;
@@ -39,8 +40,8 @@
     transition: top 0.3s ease-in;
     top: 64px;
 
-    
-}
+     
+}*/
 .container-main-shoop-actions {
     width: 100%;
     justify-content: space-between;
@@ -59,11 +60,10 @@
     width: 100%;
 }
 .container-main-shoop-cards {
-        display: grid;
-        grid-template-columns: repeat(4, 25%);
-        grid-template-columns: repeat(4,1fr);
-        grid-gap: 3rem; 
-       gap: 1.2rem 
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); 
+    column-gap: 3rem;  
+    row-gap: 5rem;     
 }
 
 .order {

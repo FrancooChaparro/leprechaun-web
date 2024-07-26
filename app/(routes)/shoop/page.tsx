@@ -9,7 +9,6 @@ export const Shoop = () => {
   const [show, setShow] = useState<boolean>(false);
   const TOP_OFFSET = 400;
 
- 
 
   useEffect(() => {
     const handleScroll = () => {
@@ -26,6 +25,14 @@ export const Shoop = () => {
       window.removeEventListener("scroll", handleScroll);
     };
   }, []);
+
+
+
+
+
+
+
+  
   return (
     <div className={styles["container-main-shoop"] }>
     

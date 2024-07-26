@@ -22,10 +22,16 @@ body {
   overflow-x: hidden;
   background-color: var(--primary-white);
   color: var(--primary-white);
-  font-family: 'Oswald';
-        
-        
+  font-family: 'Oswald';       
   background-color: #f7f4ed;
+}
+
+/* .disable-scroll {
+  overflow: hidden; 
+}   */
+
+.no-scroll {
+  overflow-y: hidden;
 }
 
 a {

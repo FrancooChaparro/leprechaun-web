@@ -1,13 +1,67 @@
 "use client"
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import styles from "./Nav.module.css";
 import { NavCategorias } from "../nav-categorias/NavCategorias";
 import Image from "next/image";
 import { CartComponent } from "./cart-component/CartComponent";
 import { oswald } from "@/utils/fonts";
+import { useWindowSize } from "@/utils/size/useWindowsSize";
+import { useScrollPosition } from "@/utils/scroll/useScrollPosition";
+import { usePathname } from "next/navigation";
 
 export const Nav = () => {
+
   const [abier, setab] = useState(false)
+  const [isOpen, setIsOpen] = useState<boolean>(false)
+  useEffect(() => {
+    document.documentElement.classList.toggle('no-scroll', abier);
+    return () => {
+        document.documentElement.classList.remove('no-scroll');
+    };
+}, [abier]);
+
+  
+
+  // const pathName = usePathname()
+  // let pathWithoutSubdirectories = pathName;
+
+  // if (pathName.startsWith("/projects")) {
+  //     pathWithoutSubdirectories = pathName.replace(/\/projects\/.*/, "/projects");
+  // }
+
+  const { width } = useWindowSize();
+  const { isAtTop, showButton } = useScrollPosition();
+
+
+  const handleIsOpen = (isCLose?: boolean) => {
+      if (isCLose) {
+          setIsOpen(false)
+      } else {
+          setIsOpen(!isOpen)
+      }
+  }
+  useEffect(() => {
+      return () => {
+          document.documentElement.classList.remove('no-scroll');
+      };
+  }, []);
+
+  useEffect(() => {
+      if (width > 992) {
+          setIsOpen(false)
+      }
+  }, [width])
+
+  useEffect(() => {
+      document.documentElement.classList.toggle('no-scroll', isOpen);
+      return () => {
+          document.documentElement.classList.remove('no-scroll');
+      };
+  }, [isOpen]);
+
+
+
+
   return (
     <div className={`${styles["container-all"]} ${oswald.className}`}>
       <div>

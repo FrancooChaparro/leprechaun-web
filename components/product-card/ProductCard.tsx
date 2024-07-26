@@ -16,7 +16,7 @@ export const ProductCard = () => {
                 Cepillo tapizado
             </span>
             <span className={`${styles["description"]} ${inter.className}`}>
-                Description of the product - leprechaun
+                Description of the product - leprechaunasadsadasdasdasdasd
             </span>
             <span className={styles["price"]}>
                 $3000

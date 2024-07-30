@@ -1,0 +1,118 @@
+/* .container {
+    min-height: 100vh;
+    min-width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: black;
+    padding:  4rem 10rem;
+} */
+
+.container {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Dos columnas de igual tamaño */
+    width: 100%;
+    padding-top: 5rem;
+    padding-left: 10rem;
+    padding-right: 10rem;
+    padding-bottom: 2rem;
+    min-height: 100vh;
+    border-top: 1px solid black;
+}
+
+.containera {
+    width: 100%;
+    display: flex;
+    height: 400px;
+    flex-direction: column;
+    border-top: 1px solid grey;
+
+}
+.containerb {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    border-top: 1px solid grey;
+
+
+}
+.container-card-product {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    border-top: 1px solid grey;
+}
+
+.container-card-product-image {
+    width: 100%;
+    height: 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    background-size: cover;
+    position: relative;
+}
+
+.container-card-product-image img {
+    width: 100%;
+    height: 100%;
+    filter: brightness(110%);
+    /* object-fit: cover; */
+    object-position: center;
+  }
+
+.container-card-product-data {
+    padding-top: 2rem;
+    padding-left: 2rem;
+    padding-right: 7rem;
+}
+
+.container-card-product-data-top {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    color: black;
+    padding-bottom: 1rem;
+}
+.container-card-product-data-top button {
+   width: 100%;
+   height: 45px;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   color: white;
+   background-color: rgb(44, 44, 44);
+   border-style: none;
+   cursor: pointer;
+}
+
+
+.container-card-product-data-description { 
+    margin-top: 5px; 
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    padding-top: 0.8rem;
+    padding-bottom: 0.8rem;
+    border-top: 1px solid rgb(211, 211, 211);
+    border-bottom: 1px solid rgb(211, 211, 211);
+
+}
+
+.description {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    font-size: 14px;
+    color: grey;
+}
+.description-info {
+    font-size: 12px; 
+    color: black; 
+    display: flex;
+    font-weight: bold;
+    flex-direction: column;
+    gap: 5px;
+}

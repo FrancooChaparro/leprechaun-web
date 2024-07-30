@@ -65,16 +65,9 @@ export const Nav = () => {
   return (
     <div className={`${styles["container-all"]} ${oswald.className}`}>
       <div>
-      {/* <Image
-            src="/favicon.ico"
-            alt="LogoNetflix"
-            width={45}
-            height={45}
-            priority
-            loading="eager"
-          /> */}
         <span className={styles["btn-nav-logo"]}>LEPRECHAUN</span>
       </div>
+
       <div className={styles["container-data"]}>
         <span className={styles["btn-nav"]}>CONTACTO</span>
         <span className={styles["btn-nav"]}>
@@ -83,6 +76,8 @@ export const Nav = () => {
         </span>
         <span className={styles["btn-nav"]}>CONOCENOS</span>
       </div>
+
+
       <div>
         <span className={styles["btn-cart"]} >
           <a className={styles["ancor"]} onClick={()=> setab(!abier)} >
@@ -101,6 +96,8 @@ export const Nav = () => {
           <CartComponent isOpen={abier} />
         </span>
       </div>
+
+      
     </div>
   );
 };

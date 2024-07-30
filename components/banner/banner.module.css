@@ -6,6 +6,10 @@
     background-attachment: fixed;
     background-size: cover;
     position: relative;
+    background-color: #1f1f24;
+    display: flex;
+    justify-content: center;
+    align-items:flex-end;
   }
   
   .container-background img {
@@ -15,14 +19,15 @@
     object-fit: cover;
     object-position: center;
   }
-
+  
   .container-btn {
-    display: flex;
+    /* display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: center; */
     position: absolute;
     bottom: 0;
-    left: 45%;
+    left: 50%;
+    transform: translateX(-50%);
     top: auto;
     margin-bottom: 4rem;
   }

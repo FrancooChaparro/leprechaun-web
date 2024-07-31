@@ -116,3 +116,45 @@
     flex-direction: column;
     gap: 5px;
 }
+
+.container-select {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.container-select-color{ 
+    display: flex;
+    gap: 8px;
+}
+
+.selector {
+    padding: 2px;
+    border-radius: 50%;
+    border: 1px solid rgb(71, 71, 71);
+    border: 1px solid rgb(216, 216, 216);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.selector div {
+    border-radius: 50%;
+    border: 1px solid rgb(216, 216, 216);
+    background-color: pink;
+    height: 18px;
+    width: 18px;
+}
+
+.container-mount {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.container-mount input {    
+    width: 5.4rem;
+    height: 2.3rem;
+    border: 1px solid rgb(196, 196, 196);
+
+}

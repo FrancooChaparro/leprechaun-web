@@ -5,15 +5,12 @@ import { useState } from "react";
 
 const ProductDetails = () => {
   const [show, setShow] = useState(false);
-  const setModal = () => {
-    setShow(!show);
-  };
-
-  const [selectedColor, setSelectedColor] = useState("");
+  const [selectedColor, setSelectedColor] = useState("Amarillo");
 
   const handleSelectColor = (color: string) => {
     setSelectedColor(color);
   };
+
   return (
     <div className={styles["container"]}>
       <div className={styles["containera"]}>
@@ -35,17 +32,17 @@ const ProductDetails = () => {
               <div className={styles["container-select-color"]}>
                 <div
                   className={`${styles["selector"]} ${
-                    styles["selector-rosa"]
-                  } ${selectedColor === "Rosa" ? styles["selected"] : ""}`}
-                  onClick={() => handleSelectColor("Rosa")}
+                    styles["selector-amarillo"]
+                  } ${selectedColor === "Amarillo" ? styles["selected"] : ""}`}
+                  onClick={() => handleSelectColor("Amarillo")}
                 >
                   <div></div>
                 </div>
                 <div
                   className={`${styles["selector"]} ${
-                    styles["selector-azul"]
-                  } ${selectedColor === "Azul" ? styles["selected"] : ""}`}
-                  onClick={() => handleSelectColor("Azul")}
+                    styles["selector-rosa"]
+                  } ${selectedColor === "Rosa" ? styles["selected"] : ""}`}
+                  onClick={() => handleSelectColor("Rosa")}
                 >
                   <div></div>
                 </div>
@@ -63,7 +60,7 @@ const ProductDetails = () => {
               <p>Cantidad</p>
               <input type="text" />
             </div>
-            <button>AÑADIR AL CARRITO</button>
+            <button className={styles["btn-detail"]}>AÑADIR AL CARRITO</button>
           </div>
 
           <div className={styles["container-card-product-data-description"]}>
@@ -96,20 +93,3 @@ const ProductDetails = () => {
 };
 
 export default ProductDetails;
-
-{
-  /* <div className={styles["container-card-product"]}>
-          <div className={styles["container-card-product-image"]}>
-             <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS2XvpMZ2lfOGYwE9v4TerB5W1g6xLLD__61A&s" alt="product" />
-          </div>
-          <div className={styles["container-card-product-data"]}>
-              <div className={styles["container-card-product-data-top"]}>
-                  <h2>Falcon PHO Carwash</h2>
-                  <h4>$15.00</h4>
-                  <p>Color: Rosa</p>
-                  <p>Cantidad</p>
-                  <button>AÑADIR AL CARRITO</button> 
-              </div>
-          </div>
-       </div> */
-}

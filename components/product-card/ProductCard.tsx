@@ -1,25 +1,35 @@
+"use client"
 import React from 'react';
 import styles from "./product-card.module.css";
 import { Roboto } from "next/font/google";
+import { useRouter } from 'next/navigation';
 
 const inter = Roboto({ weight: ["400"], subsets: ["latin"] });
+interface ProductCardProps {
+    name: string;
+    description: string;
+    image: string;
+    price: number;
+  }
 
-export const ProductCard = () => {
+export const ProductCard: React.FC<ProductCardProps> = ({ name, description, image, price }) => {
+    const router = useRouter();
+
   return ( 
-    <div className={styles["container-card"]}>
+    <div className={styles["container-card"]} onClick={()=> router.push("/productDetails")}>
         <div className={styles["container-card-image"]}>
-            <img src="https://t2.uc.ltmcdn.com/es/posts/6/8/6/productos_de_limpieza_caseros_para_el_coche_37686_600.webp" alt="product" />
+            <img src={`${image}`} alt="product" />
         </div>
 
         <div className={styles["container-card-data"]}>
             <span className={`${styles["name"]} ${inter.className}`}>
-                Cepillo tapizado
+                {name}
             </span>
             <span className={`${styles["description"]} ${inter.className}`}>
-                Description of the product - leprechaunasadsadasdasdasdasd
+               {description}
             </span>
             <span className={styles["price"]}>
-                $3000
+               ${price}
             </span>
         </div>
 

@@ -68,7 +68,7 @@
 .order {
     display: flex;
     align-items: center;
-    gap: 1px;
+    gap: 4px;
 }
 
 .filter {
@@ -81,6 +81,7 @@
     background-size: 15px auto; /* Asegúrate de incluir esta línea si necesitas ajustar el tamaño de la imagen */
     background-clip: padding-box;
     border: 1px solid #ddd;
+    cursor: pointer;
     border-radius: 3px;
     color: #000;
     font-family: 'Nunito Sans','Helvetica Neue',Helvetica,Arial,sans-serif;

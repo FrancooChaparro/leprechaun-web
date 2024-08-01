@@ -1,8 +1,9 @@
 import React from "react";
+import styles from "./contact.module.css"
 
 const Contact = () => {
   return (
-    <div>
+    <div className={styles["container-contact"]}>
       <h1>Contact</h1>
       <h1>Contact</h1>
       <h1>Contact</h1>

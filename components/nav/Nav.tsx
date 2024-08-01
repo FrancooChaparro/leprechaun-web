@@ -7,12 +7,13 @@ import { CartComponent } from "./cart-component/CartComponent";
 import { oswald } from "@/utils/fonts";
 import { useWindowSize } from "@/utils/size/useWindowsSize";
 import { useScrollPosition } from "@/utils/scroll/useScrollPosition";
-import { usePathname } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 
 export const Nav = () => {
-
+  const router = useRouter()
   const [abier, setab] = useState(false)
   const [isOpen, setIsOpen] = useState<boolean>(false)
+
   useEffect(() => {
     document.documentElement.classList.toggle('no-scroll', abier);
     return () => {
@@ -65,11 +66,11 @@ export const Nav = () => {
   return (
     <div className={`${styles["container-all"]} ${oswald.className}`}>
       <div>
-        <span className={styles["btn-nav-logo"]}>LEPRECHAUN</span>
+        <span className={styles["btn-nav-logo"]} onClick={()=> router.push("/")}>LEPRECHAUN</span>
       </div>
 
       <div className={styles["container-data"]}>
-        <span className={styles["btn-nav"]}>CONTACTO</span>
+        <span className={styles["btn-nav"]} onClick={()=> router.push("/Contact")}>CONTACTO</span>
         <span className={styles["btn-nav"]}>
           CATEGORIAS
           <NavCategorias />

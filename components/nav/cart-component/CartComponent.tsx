@@ -33,6 +33,9 @@ export const CartComponent = ({
 
 
   const { Cart } = useMyContext()
+  const totalPrice = Cart.reduce((total, product) => {
+    return total + product.price;
+  }, 0);
 
   return (
     <>
@@ -68,12 +71,12 @@ export const CartComponent = ({
           {Cart.length &&
             Cart.map((e) => {
               return (
-                <ComponentCart />
+                <ComponentCart name={e.name} description={e.description} price={e.price} image={e.image} />
               );
             })}
 
        
-          <BtnCheckout />
+          <BtnCheckout price={totalPrice} />
           
         </div>
       </section>

@@ -1,12 +1,17 @@
 import React from 'react';
 import styles from "../nav/cart-component/cart-component.module.css"
 
-export const BtnCheckout = () => {
+interface BtnCheckoutProps {
+  price: number;
+}
+
+
+export const BtnCheckout: React.FC<BtnCheckoutProps> = ({ price }) => {
   return (
       <div className={styles["checkout-container"]}>
             <div className={styles["checkout-container-total"]}>
               <span>Total:</span>
-              <span>$99.089,55</span>
+              <span>${price}</span>
             </div>
             <button className={styles["checkout-container-btn"]}>
               ACCEDER AL CHECKOUT

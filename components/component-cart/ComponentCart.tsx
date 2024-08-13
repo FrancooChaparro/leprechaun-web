@@ -1,13 +1,21 @@
 import React from 'react'
 import styles from "@/components/nav/cart-component/cart-component.module.css"
 
+interface ProductCardProps {
+  name: string;
+  description: string;
+  image: string;
+  price: number;
+}
 
-export const ComponentCart = () => {
+export const ComponentCart:  React.FC<ProductCardProps> = ({ 
+  name, description, image, price
+}) => {
   return (
     <div className={styles["cart-product"]}>
     <div className={styles["cart-product-image"]}>
       <img
-        src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiVMOW5xlKTjbzuze_DmXKvE24mbn0vSRLWEtfDvUxFwmjk1eo6t9OB0bQPUSVxUbzhaHyBFkiiusze5IbuUnXb9X1KaP2xrxRvxCS3ngI52xfOjVUQfT3lI7LAbUFktnCNwXg5ldBHDspSHh_Q47-Z8fZ7GosjvccX_abBzJJI_6GWMLv5rVngBADz/s640/5a2c8f_a38cd96582f0413e868d3843853ba010_mv2.jpg"
+        src={image}
         alt="product"
       />
     </div>
@@ -15,7 +23,7 @@ export const ComponentCart = () => {
     <div className={styles["cart-product-info"]}>
       <div className={styles["top"]}>
         <div className={styles["title"]}>
-          <a href="">BUZO OVER VALUES</a>
+          <a href="">{name.toLocaleUpperCase()}</a>
           <small>(Azul oscuro, S)</small>
         </div>
         <div>
@@ -61,7 +69,7 @@ export const ComponentCart = () => {
           </span>
         </div>
         <div>
-          <span>$31.600,00</span>
+          <span>${price}</span>
         </div>
       </div>
     </div>

@@ -13,12 +13,13 @@ const MyProvider: FC<MyProviderProps> = ({ children }) => {
 
 
   const Add = (newValue: any[]) => {
-    setCart(newValue);
+    setCart([...Cart, newValue]);
   };
 
   const Discard = (itemToRemove: any) => {
     setCart((prevCart: any[]) => prevCart.filter(item => item !== itemToRemove));
   };
+
 
   
   const contextValue: MyContextType = {

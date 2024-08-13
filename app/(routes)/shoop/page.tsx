@@ -70,7 +70,7 @@ export const Shoop = () => {
         {Productos.length &&
             Productos.map((e) => {
               return (
-                <ProductCard key={e.id} name={e.name} price={e.price} image={e.image} description={e.description} />
+                <ProductCard key={e.id} name={e.name} price={e.price} image={e.image} description={e.description} added={e}/>
               );
             })}
         </div>

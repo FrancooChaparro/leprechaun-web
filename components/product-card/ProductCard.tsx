@@ -11,15 +11,18 @@ interface ProductCardProps {
     description: string;
     image: string;
     price: number;
+    added: any;
   }
 
-export const ProductCard: React.FC<ProductCardProps> = ({ name, description, image, price }) => {
+export const ProductCard: React.FC<ProductCardProps> = ({ name, description, image, price, added }) => {
     const router = useRouter();
-    const { Add, Discard } = useMyContext()
+    const { Add, Discard, Cart } = useMyContext()
 
+    console.log(Cart, "carrito");
+    
   return ( 
-    <div className={styles["container-card"]} onClick={()=> router.push("/productDetails")}>
-        <div className={styles["container-card-image"]}>
+    <div className={styles["container-card"]} >
+        <div className={styles["container-card-image"]} onClick={()=> router.push("/productDetails")}>
             <img src={`${image}`} alt="product" />
         </div>
 
@@ -36,7 +39,7 @@ export const ProductCard: React.FC<ProductCardProps> = ({ name, description, ima
         </div>
 
         <div className={`${styles["container-btn"]}`}>
-            <button className={`${styles["buy-button"]}`}>AGREGAR AL CARRITO</button>
+            <button className={`${styles["buy-button"]}`} onClick={()=> Add(added)} >AGREGAR AL CARRITO</button>
         </div>
     </div>
   )

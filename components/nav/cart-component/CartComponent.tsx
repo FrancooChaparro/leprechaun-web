@@ -68,15 +68,23 @@ export const CartComponent = ({
             </a>
           </div>
 
-          {Cart.length &&
-            Cart.map((e) => {
-              return (
-                <ComponentCart name={e.name} description={e.description} price={e.price} image={e.image} />
-              );
-            })}
-
-       
-          <BtnCheckout price={totalPrice} />
+          {Cart.length > 0 ? (
+  <>
+    {Cart.map((e) => (
+      <ComponentCart
+        key={e.id}
+        name={e.name}
+        description={e.description}
+        price={e.price}
+        image={e.image}
+        comp={e}
+      />
+    ))}
+    <BtnCheckout price={totalPrice} />
+  </>
+) : (
+  <span>No tienes productos en tu carrito</span>
+)}
           
         </div>
       </section>

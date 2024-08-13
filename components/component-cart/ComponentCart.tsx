@@ -1,16 +1,21 @@
 import React from 'react'
 import styles from "@/components/nav/cart-component/cart-component.module.css"
+import { useMyContext } from '@/context/ListContext';
 
 interface ProductCardProps {
   name: string;
   description: string;
   image: string;
   price: number;
+  comp: any;
 }
 
 export const ComponentCart:  React.FC<ProductCardProps> = ({ 
-  name, description, image, price
+  name, description, image, price, comp
 }) => {
+  const { Discard, Cart } = useMyContext()
+  console.log(Cart);
+  
   return (
     <div className={styles["cart-product"]}>
     <div className={styles["cart-product-image"]}>
@@ -27,7 +32,7 @@ export const ComponentCart:  React.FC<ProductCardProps> = ({
           <small>(Azul oscuro, S)</small>
         </div>
         <div>
-          <span className={styles["delete"]}>
+          <span className={styles["delete"]} onClick={()=> Discard(comp)}>
             <svg
               viewBox="0 0 24 24"
               fill="currentColor"

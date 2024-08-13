@@ -4,6 +4,7 @@ import "./globals.css";
 import { Footer } from "@/components/footer/Footer";
 import { Contact } from "@/components/contact/Contact";
 import { roboto } from "@/utils/fonts";
+import MyProvider from "@/context/ListProvider";
 
 export const metadata: Metadata = {
   title: "Leprechaun®",
@@ -19,6 +20,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
+    <MyProvider>
     <html lang="en">
       <body className={roboto.className}>
         <Nav />
@@ -27,5 +29,6 @@ export default function RootLayout({
         <Footer />
       </body>
     </html>
+    </MyProvider>
   );
 }

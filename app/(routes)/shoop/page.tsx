@@ -4,11 +4,14 @@ import styles from "./shoop.module.css";
 import { ProductCard } from "@/components/product-card/ProductCard";
 import { Filter } from "@/components/filter/Filter";
 import { products } from "@/models/products";
+import { useMyContext } from "@/context/ListContext";
+
 
 export const Shoop = () => {
   const [showBackground, setShowBackground] = useState<boolean>(false);
   const [show, setShow] = useState<boolean>(false);
   const TOP_OFFSET = 400;
+  const { Productos } = useMyContext()
 
 
   useEffect(() => {
@@ -64,8 +67,8 @@ export const Shoop = () => {
 
       <div className={styles["test"]}>
         <div className={styles["container-main-shoop-cards"]}>
-        {products.length &&
-            products.map((e) => {
+        {Productos.length &&
+            Productos.map((e) => {
               return (
                 <ProductCard key={e.id} name={e.name} price={e.price} image={e.image} description={e.description} />
               );

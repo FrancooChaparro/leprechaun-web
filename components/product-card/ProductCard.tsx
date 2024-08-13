@@ -3,6 +3,7 @@ import React from 'react';
 import styles from "./product-card.module.css";
 import { Roboto } from "next/font/google";
 import { useRouter } from 'next/navigation';
+import { useMyContext } from '@/context/ListContext';
 
 const inter = Roboto({ weight: ["400"], subsets: ["latin"] });
 interface ProductCardProps {
@@ -14,6 +15,7 @@ interface ProductCardProps {
 
 export const ProductCard: React.FC<ProductCardProps> = ({ name, description, image, price }) => {
     const router = useRouter();
+    const { Add, Discard } = useMyContext()
 
   return ( 
     <div className={styles["container-card"]} onClick={()=> router.push("/productDetails")}>

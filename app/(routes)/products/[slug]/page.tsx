@@ -1,10 +1,17 @@
 "use client";
-import React from "react";
-import styles from "./product-details.module.css";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { useRouter } from "next/navigation";
+import { useMyContext } from "@/context/ListContext";
+import styles from "../../productDetails/product-details.module.css";
 import LessIcon from "@/Icons/LessIcon";
+import { Product } from "@/types/types";
+import { Loader } from "@/components/loader/Loader";
 
-const ProductDetails = () => {
+
+export default function Page({ params }: { params: { slug: string } }) {
+  const router = useRouter();
+  const { Productos } = useMyContext()
+  const [teamID, setTeamID] = useState<Product>();
   const [show, setShow] = useState(true);
   const [selectedColor, setSelectedColor] = useState("Amarillo");
 
@@ -12,12 +19,38 @@ const ProductDetails = () => {
     setSelectedColor(color);
   };
 
+
+  useEffect(() => {
+    const param = async () => {
+      const team = Productos.find(
+        (e) => e.name.toLowerCase() === decodeURI(params.slug.toLowerCase())
+      );
+      if (team) {
+        setTeamID(team);
+      } else {
+        router.push("/");
+      }
+    };
+    param();
+    // eslint-disable-next-line
+  }, [params.slug]);
+
+  if (teamID === undefined) {
+    return (
+       <Loader />
+    );
+  }
+
+  
+
+console.log(teamID);
+
   return (
     <div className={styles["container"]}>
       <div className={styles["containera"]}>
         <div className={styles["container-card-product-image"]}>
           <img
-            src="https://masonlineprod.vtexassets.com/arquivos/ids/173320/Cera-Para-Auto-Autobrillo-Auto-Polish-650-Cc-1-32083.jpg?v=637835148027230000"
+            src={teamID.image}
             alt="product"
           />
         </div>
@@ -26,8 +59,8 @@ const ProductDetails = () => {
       <div className={styles["containerb"]}>
         <div className={styles["container-card-product-data"]}>
           <div className={styles["container-card-product-data-top"]}>
-            <h2>Falcon PHO Carwash</h2>
-            <h4>$15.00</h4>
+            <h2>{teamID.name}</h2>
+            <h4>${teamID.price}</h4>
             <div className={styles["container-select"]}>
               <p>Color: {selectedColor}</p>
               <div className={styles["container-select-color"]}>
@@ -91,6 +124,4 @@ const ProductDetails = () => {
       </div>
     </div>
   );
-};
-
-export default ProductDetails;
+}

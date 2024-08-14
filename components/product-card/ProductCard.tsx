@@ -14,7 +14,7 @@ export const ProductCard: React.FC<ProductCardProps> = ({ name, description, ima
 
   return ( 
     <div className={styles["container-card"]} >
-        <div className={styles["container-card-image"]} onClick={()=> router.push("/productDetails")}>
+        <div className={styles["container-card-image"]} onClick={()=> router.push(`products/${name}`)}>
             <img src={`${image}`} alt="product" />
         </div>
 

@@ -3,6 +3,7 @@ import React, { useEffect, useState } from "react";
 import styles from "./shoop.module.css";
 import { ProductCard } from "@/components/product-card/ProductCard";
 import { useMyContext } from "@/context/ListContext";
+import FilterIcon from "@/Icons/FilterIcon";
 
 export const Shoop = () => {
   const [showBackground, setShowBackground] = useState<boolean>(false);
@@ -41,7 +42,9 @@ export const Shoop = () => {
 
 
       <div className={styles["container-main-shoop-actions"]}>
-        <div className={styles["filter"]}><svg stroke="currentColor" fill="currentColor" strokeWidth="0" viewBox="0 0 1024 1024" height="1.2em" width="1.2em" xmlns="http://www.w3.org/2000/svg"><path d="M912 192H328c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h584c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zm0 284H328c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h584c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zm0 284H328c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h584c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zM104 228a56 56 0 1 0 112 0 56 56 0 1 0-112 0zm0 284a56 56 0 1 0 112 0 56 56 0 1 0-112 0zm0 284a56 56 0 1 0 112 0 56 56 0 1 0-112 0z"></path></svg><label  htmlFor="">FILTRAR</label></div>
+        <div className={styles["filter"]}>
+          <FilterIcon />
+          <label  htmlFor="">FILTRAR</label></div>
         <div className={styles["order"]}>
           <label htmlFor="" >ORDENAR</label>
           <select name="" id="">

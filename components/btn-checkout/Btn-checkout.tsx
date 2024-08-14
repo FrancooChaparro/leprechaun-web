@@ -5,7 +5,6 @@ interface BtnCheckoutProps {
   price: number;
 }
 
-
 export const BtnCheckout: React.FC<BtnCheckoutProps> = ({ price }) => {
   return (
       <div className={styles["checkout-container"]}>

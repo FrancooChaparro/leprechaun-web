@@ -50,8 +50,20 @@
   height: 2.5rem;
   width: 2.5rem;
   border-radius: 50%;
+  position: relative;
 }
 
+
+.render { 
+  position: absolute;
+  height: 10px;
+  width: 10px;
+  color: rgb(255, 255, 255);
+  font-size: 12px;
+  display: flex;
+  justify-content: center;
+  bottom: 39%;
+}
 .cor {
   position: fixed;
   top: 64px;

@@ -5,18 +5,3 @@
     padding-left: 1rem;
     color: black;
 }
-
-.ab {
-    width: 500px;
-    height: 300px;
-    background-color: aqua;
-    overflow-x: scroll;
-
-}
-
-.cd {
-    width: 1000px;
-    height: 100%;
-    background-color: rgb(183, 0, 255);
-
-}

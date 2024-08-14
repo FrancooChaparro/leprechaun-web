@@ -84,7 +84,9 @@ export const CartComponent = ({
     <BtnCheckout price={totalPrice} />
   </>
 ) : (
-  <p>No tienes productos en tu carrito</p>
+  <div className={styles["Cart-vacio"]}>
+      <span>El carrito de compras está vacío.</span>
+  </div>
 )}
           
         </div>

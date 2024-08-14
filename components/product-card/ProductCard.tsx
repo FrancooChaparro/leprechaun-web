@@ -4,11 +4,11 @@ import styles from "./product-card.module.css";
 import { Roboto } from "next/font/google";
 import { useRouter } from 'next/navigation';
 import { useMyContext } from '@/context/ListContext';
-import { ProductCardProps } from '@/types/types';
+import { ProductCardPropss } from '@/types/types';
 
 const inter = Roboto({ weight: ["400"], subsets: ["latin"] });
 
-export const ProductCard: React.FC<ProductCardProps> = ({ name, description, image, price, added }) => {
+export const ProductCard: React.FC<ProductCardPropss> = ({ name, description, image, price, added }) => {
     const router = useRouter();
     const { Add } = useMyContext()
 

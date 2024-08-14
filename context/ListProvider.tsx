@@ -2,23 +2,18 @@
 import React, { useState, FC, ReactNode } from "react";
 import MyContext, { MyContextType } from "./ListContext"
 import { products } from "@/models/products";
+import { Product } from "@/types/types";
 
 interface MyProviderProps {
   children: ReactNode;
 }
-interface Product {
-  id: number;
-  name: string;
-  description: string;
-  image: string;
-  amount: number;
-  price: number;
-}
-const MyProvider: FC<MyProviderProps> = ({ children }) => {
-  const [Cart, setCart] = useState<any>([]);
-  const [Productos, setProductos] = useState<any>(products);
 
-  const Add = (newValue: any) => {
+const MyProvider: FC<MyProviderProps> = ({ children }) => {
+  const [Cart, setCart] = useState<Product[]>([]);
+  const [Productos, setProductos] = useState<Product[]>(products);
+
+  const Add = (newValue: Product) => {
+    
     const productInCart = Cart.find((item:Product) => item.id === newValue.id);
   
     if (productInCart) {
@@ -33,8 +28,8 @@ const MyProvider: FC<MyProviderProps> = ({ children }) => {
     }
   };
   
-  const Discard = (itemToRemove: any) => {
-    setCart((prevCart: any[]) => prevCart.filter(item => item !== itemToRemove));
+  const Discard = (itemToRemove: Product) => {
+    setCart((prevCart: Product[]) => prevCart.filter(item => item !== itemToRemove));
   };
 
   const Subir = (productId: number) => {
@@ -61,9 +56,9 @@ const MyProvider: FC<MyProviderProps> = ({ children }) => {
   
   const contextValue: MyContextType = {
  Cart,
+ Productos,
  Discard,
  Add,
- Productos,
  Subir, 
  Bajar
   };

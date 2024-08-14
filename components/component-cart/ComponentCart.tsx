@@ -10,7 +10,7 @@ export const ComponentCart:  React.FC<ProductCardProps> = ({
   name, description, image, price, comp, amount
 }) => {
 
-  const { Discard, Cart, Subir, Bajar } = useMyContext()
+  const { Discard, Subir, Bajar } = useMyContext()
   
   return (
     <div className={styles["cart-product"]}>

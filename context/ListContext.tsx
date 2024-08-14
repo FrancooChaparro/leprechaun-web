@@ -1,13 +1,14 @@
 "use client"
+import { Product } from '@/types/types';
 import { createContext, useContext } from 'react';
 
 export type MyContextType = {
-  Add: (newValue: any[]) => void;
-  Discard: (newValue: any[]) => void;
+  Add: (newValue: Product) => void;
+  Discard: (newValue: Product) => void;
   Subir: (newValue: number) => void;
   Bajar: (newValue: number) => void;
-  Cart: any[] | [];
-  Productos: any[] | [];
+  Cart: Product[];
+  Productos: Product[];
 };
 
 const MyContext = createContext<MyContextType | undefined>(undefined);

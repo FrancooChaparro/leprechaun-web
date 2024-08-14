@@ -1,3 +1,27 @@
+export const data = [
+  {
+    url: "/images/3.jpg",
+    product: "Guantes",
+    variable: "one",
+  },
+  {
+    url: "/images/4.webp",
+    product: "Pilchas",
+    variable: "two",
+  },
+  {
+    url: "/images/esponjas.jpg",
+    product: "Jabon",
+    variable: "three",
+  },
+  {
+    url: "/images/3.jpg",
+    product: "Guandasdasdastes",
+    variable: "four",
+  },
+];
+
+
 export const categorias =  [
     {
       "id": 1,

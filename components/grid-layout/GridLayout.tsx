@@ -1,32 +1,9 @@
 import React from "react";
 import styles from "./grid-layout.module.css";
-import Image from "next/image";
 import { Catalogue } from "../catalogue/Catalogue";
+import { data } from "@/models/products";
 
 export const GridLayout = () => {
-  const data = [
-    {
-      url: "/images/3.jpg",
-      product: "Guantes",
-      variable: "one",
-    },
-    {
-      url: "/images/4.webp",
-      product: "Pilchas",
-      variable: "two",
-    },
-    {
-      url: "/images/esponjas.jpg",
-      product: "Jabon",
-      variable: "three",
-    },
-    {
-      url: "/images/3.jpg",
-      product: "Guandasdasdastes",
-      variable: "four",
-    },
-  ];
-
   return (
     <div className={styles["container-all"]}>
       <div className={styles["container-title"]}>

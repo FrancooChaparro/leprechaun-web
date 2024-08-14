@@ -2,12 +2,11 @@
 import React, { useEffect, useState } from "react";
 import styles from "./Nav.module.css";
 import { NavCategorias } from "../nav-categorias/NavCategorias";
-import Image from "next/image";
 import { CartComponent } from "./cart-component/CartComponent";
 import { oswald } from "@/utils/fonts";
 import { useWindowSize } from "@/utils/size/useWindowsSize";
 import { useScrollPosition } from "@/utils/scroll/useScrollPosition";
-import { usePathname, useRouter } from "next/navigation";
+import { useRouter } from "next/navigation";
 import { useMyContext } from "@/context/ListContext";
 import CartIcon from "@/Icons/CartIcon";
 
@@ -20,6 +19,7 @@ export const Nav = () => {
   const toggleCart = () => {
     setab(!abier);
   };
+  
   useEffect(() => {
     document.documentElement.classList.toggle("no-scroll", abier);
     return () => {
@@ -27,23 +27,9 @@ export const Nav = () => {
     };
   }, [abier]);
 
-  // const pathName = usePathname()
-  // let pathWithoutSubdirectories = pathName;
-
-  // if (pathName.startsWith("/projects")) {
-  //     pathWithoutSubdirectories = pathName.replace(/\/projects\/.*/, "/projects");
-  // }
-
   const { width } = useWindowSize();
   const { isAtTop, showButton } = useScrollPosition();
 
-  const handleIsOpen = (isCLose?: boolean) => {
-    if (isCLose) {
-      setIsOpen(false);
-    } else {
-      setIsOpen(!isOpen);
-    }
-  };
   useEffect(() => {
     return () => {
       document.documentElement.classList.remove("no-scroll");

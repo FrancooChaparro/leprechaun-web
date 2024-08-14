@@ -4,15 +4,7 @@ import { useMyContext } from '@/context/ListContext';
 import DeleteIcon from '@/Icons/DeleteIcon';
 import IncreaseIcon from '@/Icons/IncreaseIcon';
 import DecreaseIcon from '@/Icons/DecreaseIcon';
-
-interface ProductCardProps {
-  name: string;
-  description: string;
-  image: string;
-  price: number;
-  comp: any;
-  amount: number;
-}
+import { ProductCardProps } from '@/types/types';
 
 export const ComponentCart:  React.FC<ProductCardProps> = ({ 
   name, description, image, price, comp, amount

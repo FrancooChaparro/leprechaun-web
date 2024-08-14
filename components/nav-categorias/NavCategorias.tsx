@@ -1,11 +1,11 @@
 import React from "react";
 import styles from "@/components/nav/Nav.module.css";
 import { categorias } from "@/models/products";
-import { Product } from "@/types/types";
+import { Categorias } from "@/types/types";
 import { roboto } from "@/utils/fonts";
 
 export const NavCategorias = () => {
-  const products: Product[] = categorias;
+  const products: Categorias[] = categorias;
   return (
     <div className={`${styles["cor"]} ${roboto.className}`}>
       <div className={styles.cor}>

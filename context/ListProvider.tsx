@@ -28,8 +28,8 @@ const MyProvider: FC<MyProviderProps> = ({ children }) => {
     }
   };
   
-  const Discard = (itemToRemove: Product) => {
-    setCart((prevCart: Product[]) => prevCart.filter(item => item !== itemToRemove));
+  const Discard = (itemToRemove: number) => {
+    setCart((prevCart: Product[]) => prevCart.filter(item => item.id !== itemToRemove));
   };
 
   const Subir = (productId: number) => {

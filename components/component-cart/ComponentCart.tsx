@@ -4,10 +4,10 @@ import { useMyContext } from '@/context/ListContext';
 import DeleteIcon from '@/Icons/DeleteIcon';
 import IncreaseIcon from '@/Icons/IncreaseIcon';
 import DecreaseIcon from '@/Icons/DecreaseIcon';
-import { ProductCardProps } from '@/types/types';
+import { Product } from '@/types/types';
 
-export const ComponentCart:  React.FC<ProductCardProps> = ({ 
-  name, description, image, price, comp, amount
+export const ComponentCart:  React.FC<Product> = ({ 
+  name, description, image, price, amount, id
 }) => {
 
   const { Discard, Subir, Bajar } = useMyContext()
@@ -28,18 +28,18 @@ export const ComponentCart:  React.FC<ProductCardProps> = ({
           <small>({description.slice(0,15)})</small>
         </div>
         <div>
-          <span className={styles["delete"]} onClick={()=> Discard(comp)}>
+          <span className={styles["delete"]} onClick={()=> Discard(id)}>
             <DeleteIcon />
           </span>
         </div>
       </div>
       <div className={styles["bot"]}>
         <div className={styles["form-quality"]}>
-          <span onClick={()=> Bajar(comp.id)}>
+          <span onClick={()=> Bajar(id)}>
           <DecreaseIcon />
           </span>
           <span>{amount}</span>
-          <span onClick={()=> Subir(comp.id)}>
+          <span onClick={()=> Subir(id)}>
               <IncreaseIcon />
           </span>
         </div>

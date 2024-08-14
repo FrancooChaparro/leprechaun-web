@@ -1,29 +1,22 @@
+export interface Product {
+  id: number;
+  name: string;
+  description: string;
+  image: string;
+  amount: number;
+  price: number;
+}
+export interface Categorias {
+  id: number;
+  nombre: string;
+}
 
-
-export interface ProductCardProps {
+ export interface ProductCardProps { //Card en shoop
     name: string;
     description: string;
     image: string;
     price: number;
-    amount: number;
-    comp: any;
-  }
-  
-
- export interface ProductCardPropss {
-    name: string;
-    description: string;
-    image: string;
-    price: number;
-    added: any;
+    compose: Product;
   }
 
-  export interface Product {
-    id: number;
-    name: string;
-    description: string;
-    image: string;
-    amount: number;
-    price: number;
-  }
-
+ 

@@ -4,7 +4,7 @@ import { createContext, useContext } from 'react';
 
 export type MyContextType = {
   Add: (newValue: Product) => void;
-  Discard: (newValue: Product) => void;
+  Discard: (newValue: number) => void;
   Subir: (newValue: number) => void;
   Bajar: (newValue: number) => void;
   Cart: Product[];

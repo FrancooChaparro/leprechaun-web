@@ -77,8 +77,8 @@ export const CartComponent = ({
         description={e.description}
         price={e.price}
         image={e.image}
-        comp={e}
         amount={e.amount}
+        id={e.id}
       />
     ))}
     <BtnCheckout price={totalPrice} />

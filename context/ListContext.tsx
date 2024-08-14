@@ -4,6 +4,8 @@ import { createContext, useContext } from 'react';
 export type MyContextType = {
   Add: (newValue: any[]) => void;
   Discard: (newValue: any[]) => void;
+  Subir: (newValue: number) => void;
+  Bajar: (newValue: number) => void;
   Cart: any[] | [];
   Productos: any[] | [];
 };

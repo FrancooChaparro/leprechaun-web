@@ -78,12 +78,13 @@ export const CartComponent = ({
         price={e.price}
         image={e.image}
         comp={e}
+        amount={e.amount}
       />
     ))}
     <BtnCheckout price={totalPrice} />
   </>
 ) : (
-  <span>No tienes productos en tu carrito</span>
+  <p>No tienes productos en tu carrito</p>
 )}
           
         </div>

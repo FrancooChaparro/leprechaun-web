@@ -8,12 +8,13 @@ interface ProductCardProps {
   image: string;
   price: number;
   comp: any;
+  amount: number;
 }
 
 export const ComponentCart:  React.FC<ProductCardProps> = ({ 
-  name, description, image, price, comp
+  name, description, image, price, comp, amount
 }) => {
-  const { Discard, Cart } = useMyContext()
+  const { Discard, Cart, Subir, Bajar } = useMyContext()
   console.log(Cart);
   
   return (
@@ -47,7 +48,7 @@ export const ComponentCart:  React.FC<ProductCardProps> = ({
       </div>
       <div className={styles["bot"]}>
         <div className={styles["form-quality"]}>
-          <span>
+          <span onClick={()=> Bajar(comp.id)}>
             <svg
               viewBox="0 0 1024 1024"
               fill="currentColor"
@@ -57,8 +58,8 @@ export const ComponentCart:  React.FC<ProductCardProps> = ({
               <path d="M872 474H152c-4.4 0-8 3.6-8 8v60c0 4.4 3.6 8 8 8h720c4.4 0 8-3.6 8-8v-60c0-4.4-3.6-8-8-8z" />
             </svg>
           </span>
-          <span>0</span>
-          <span>
+          <span>{amount}</span>
+          <span onClick={()=> Subir(comp.id)}>
             <svg
               viewBox="0 0 1024 1024"
               fill="currentColor"

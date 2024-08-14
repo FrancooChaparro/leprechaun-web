@@ -63,6 +63,7 @@ export const categorias =  [
       "name": "Cepillo Tapizado",
       "description": "Description of the product - leprechaunasadsadasdasdasdasd",
       "image": "https://t2.uc.ltmcdn.com/es/posts/6/8/6/productos_de_limpieza_caseros_para_el_coche_37686_600.webp",
+      "amount": 1,
       "price": 3000
     },
     {
@@ -70,6 +71,7 @@ export const categorias =  [
       "name": "Escoba de Cerdas",
       "description": "Escoba de cerdas duras para limpieza en seco.",
       "image": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiVMOW5xlKTjbzuze_DmXKvE24mbn0vSRLWEtfDvUxFwmjk1eo6t9OB0bQPUSVxUbzhaHyBFkiiusze5IbuUnXb9X1KaP2xrxRvxCS3ngI52xfOjVUQfT3lI7LAbUFktnCNwXg5ldBHDspSHh_Q47-Z8fZ7GosjvccX_abBzJJI_6GWMLv5rVngBADz/s640/5a2c8f_a38cd96582f0413e868d3843853ba010_mv2.jpg",
+      "amount": 1,
       "price": 1500
     },
     {
@@ -77,6 +79,7 @@ export const categorias =  [
       "name": "Trapeador de Microfibra",
       "description": "Trapeador de microfibra ideal para todo tipo de superficies.",
       "image": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiVMOW5xlKTjbzuze_DmXKvE24mbn0vSRLWEtfDvUxFwmjk1eo6t9OB0bQPUSVxUbzhaHyBFkiiusze5IbuUnXb9X1KaP2xrxRvxCS3ngI52xfOjVUQfT3lI7LAbUFktnCNwXg5ldBHDspSHh_Q47-Z8fZ7GosjvccX_abBzJJI_6GWMLv5rVngBADz/s640/5a2c8f_a38cd96582f0413e868d3843853ba010_mv2.jpg",
+      "amount": 1,
       "price": 2500
     },
     {
@@ -84,6 +87,7 @@ export const categorias =  [
       "name": "Guantes de Limpieza",
       "description": "Guantes de limpieza de látex para protección y comodidad.",
       "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRy7eZraGVi_v_36LgVXIFWBuAskRy1FSOoNA&s",
+      "amount": 1,
       "price": 800
     },
     {
@@ -91,6 +95,7 @@ export const categorias =  [
       "name": "Raspador de Vidrio",
       "description": "Raspador de vidrio con mango ergonómico para fácil uso.",
       "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTZdmAGvDYznd3cHBkgi1pKQNPpJWpD0XSOlw&s",
+      "amount": 1,
       "price": 1200
     },
     {
@@ -98,6 +103,7 @@ export const categorias =  [
       "name": "Esponja Antibacteriana",
       "description": "Esponja antibacteriana para una limpieza profunda.",
       "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQZ7DCtwdoCH3oX8B1s9mfBjm1AJXXxJ8MgRA&s",
+      "amount": 1,
       "price": 500
     },
 
@@ -106,6 +112,7 @@ export const categorias =  [
       "name": "Cepillo Tapizado",
       "description": "Description of the product - leprechaunasadsadasdasdasdasd",
       "image": "https://t2.uc.ltmcdn.com/es/posts/6/8/6/productos_de_limpieza_caseros_para_el_coche_37686_600.webp",
+      "amount": 1,
       "price": 3000
     },
     {
@@ -113,6 +120,7 @@ export const categorias =  [
       "name": "Escoba de Cerdas",
       "description": "Escoba de cerdas duras para limpieza en seco.",
       "image": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiVMOW5xlKTjbzuze_DmXKvE24mbn0vSRLWEtfDvUxFwmjk1eo6t9OB0bQPUSVxUbzhaHyBFkiiusze5IbuUnXb9X1KaP2xrxRvxCS3ngI52xfOjVUQfT3lI7LAbUFktnCNwXg5ldBHDspSHh_Q47-Z8fZ7GosjvccX_abBzJJI_6GWMLv5rVngBADz/s640/5a2c8f_a38cd96582f0413e868d3843853ba010_mv2.jpg",
+      "amount": 1,
       "price": 1500
     },
     {
@@ -120,6 +128,7 @@ export const categorias =  [
       "name": "Trapeador de Microfibra",
       "description": "Trapeador de microfibra ideal para todo tipo de superficies.",
       "image": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiVMOW5xlKTjbzuze_DmXKvE24mbn0vSRLWEtfDvUxFwmjk1eo6t9OB0bQPUSVxUbzhaHyBFkiiusze5IbuUnXb9X1KaP2xrxRvxCS3ngI52xfOjVUQfT3lI7LAbUFktnCNwXg5ldBHDspSHh_Q47-Z8fZ7GosjvccX_abBzJJI_6GWMLv5rVngBADz/s640/5a2c8f_a38cd96582f0413e868d3843853ba010_mv2.jpg",
+      "amount": 1,
       "price": 2500
     },
     {
@@ -127,6 +136,7 @@ export const categorias =  [
       "name": "Guantes de Limpieza",
       "description": "Guantes de limpieza de látex para protección y comodidad.",
       "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRy7eZraGVi_v_36LgVXIFWBuAskRy1FSOoNA&s",
+      "amount": 1,
       "price": 800
     },
     {
@@ -134,6 +144,7 @@ export const categorias =  [
       "name": "Raspador de Vidrio",
       "description": "Raspador de vidrio con mango ergonómico para fácil uso.",
       "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTZdmAGvDYznd3cHBkgi1pKQNPpJWpD0XSOlw&s",
+      "amount": 1,
       "price": 1200
     },
     {
@@ -141,6 +152,7 @@ export const categorias =  [
       "name": "Esponja Antibacteriana",
       "description": "Esponja antibacteriana para una limpieza profunda.",
       "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQZ7DCtwdoCH3oX8B1s9mfBjm1AJXXxJ8MgRA&s",
+      "amount": 1,
       "price": 500
     },
     ];

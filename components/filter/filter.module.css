@@ -38,3 +38,12 @@
     transition: left 0.35s ease-in-out, opacity 0.35s ease-in-out;
 
 }
+
+
+@media screen and (max-width: 767px) { 
+    .container-section-burger-menu {
+        width: 100vh;
+        padding-left: 0.8rem;
+        padding-right: 0.8rem;
+    }
+  }

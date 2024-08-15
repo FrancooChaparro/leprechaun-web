@@ -8,18 +8,25 @@ import { useWindowSize } from "@/utils/size/useWindowsSize";
 import { useScrollPosition } from "@/utils/scroll/useScrollPosition";
 import { useRouter } from "next/navigation";
 import { useMyContext } from "@/context/ListContext";
-import { CartIcon } from "@/Icons/CartIcon";
+import { CartIcon, HamburgerMenuIcon } from "@/Icons/CartIcon";
+import { Filter } from "../filter/Filter";
 
 export const Nav = () => {
   const router = useRouter();
   const [abier, setab] = useState(false);
   const [isOpen, setIsOpen] = useState<boolean>(false);
   const { Cart } = useMyContext();
-  
+
+  const [burger, setBurger] = useState(false);
+
+  const toggleMenu = () => {
+    setBurger(!burger);
+  };
+
   const toggleCart = () => {
     setab(!abier);
   };
-  
+
   useEffect(() => {
     document.documentElement.classList.toggle("no-scroll", abier);
     return () => {
@@ -51,6 +58,15 @@ export const Nav = () => {
 
   return (
     <div className={`${styles["container-all"]} ${oswald.className}`}>
+      <div className={styles.hamburger}>
+        <span className={styles["btn-cart"]}>
+          <a className={styles["ancor"]} onClick={toggleMenu}>
+            <HamburgerMenuIcon />
+          </a>
+          <Filter isOpen={burger} />
+        </span>
+      </div>
+
       <div>
         <span
           className={styles["btn-nav-logo"]}
@@ -77,8 +93,10 @@ export const Nav = () => {
       <div>
         <span className={styles["btn-cart"]}>
           <a className={styles["ancor"]} onClick={() => setab(!abier)}>
-           {Cart.length > 0 && <div className={styles["render"]}>{Cart.length}</div>}
-           <CartIcon />
+            {Cart.length > 0 && (
+              <div className={styles["render"]}>{Cart.length}</div>
+            )}
+            <CartIcon />
           </a>
           <CartComponent isOpen={abier} toggleCart={toggleCart} />
         </span>

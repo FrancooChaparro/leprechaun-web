@@ -1,14 +1,8 @@
 .main {
   position: relative;
+  max-width: 100vw;
 }
-/* .CategoriesComponent_container-categories {
-  width: 100vw;
-  display: grid;
-  grid-template-columns: repeat(4,1fr);
-  grid-gap: 2.5rem;
-  gap: 1.5rem;
-  padding: 1.5rem;
-} */
+
 
  .CategoriesComponent_container-section {
   display: flex;

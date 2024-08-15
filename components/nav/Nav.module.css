@@ -108,3 +108,28 @@
   text-decoration: underline;
   cursor: pointer;
 }
+
+
+
+.hamburger {
+  font-size: 2rem;
+  cursor: pointer;
+  display: none; /* Ocultar en pantallas grandes */
+}
+
+
+
+
+@media screen and (max-width: 767px) { 
+  .container-data {
+    display: none;
+  }
+
+  .hamburger {
+    display: block; 
+  }
+
+  .container-all {
+    padding: 0 30px;
+  }
+}

@@ -3,8 +3,7 @@ import React, { useEffect, useState } from "react";
 import styles from "./shoop.module.css";
 import { ProductCard } from "@/components/product-card/ProductCard";
 import { useMyContext } from "@/context/ListContext";
-import FilterIcon from "@/Icons/FilterIcon";
-
+import { FilterIcon } from "@/Icons/CartIcon";
 export const Shoop = () => {
   const [showBackground, setShowBackground] = useState<boolean>(false);
   const [show, setShow] = useState<boolean>(false);

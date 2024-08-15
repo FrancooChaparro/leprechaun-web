@@ -1,9 +1,9 @@
 import React from 'react'
 import styles from "@/components/nav/cart-component/cart-component.module.css"
 import { useMyContext } from '@/context/ListContext';
-import DeleteIcon from '@/Icons/DeleteIcon';
-import IncreaseIcon from '@/Icons/IncreaseIcon';
-import DecreaseIcon from '@/Icons/DecreaseIcon';
+import {DeleteIcon} from '@/Icons/CartIcon';
+import {IncreaseIcon} from '@/Icons/CartIcon';;
+import {DecreaseIcon} from '@/Icons/CartIcon';;
 import { Product } from '@/types/types';
 
 export const ComponentCart:  React.FC<Product> = ({ 

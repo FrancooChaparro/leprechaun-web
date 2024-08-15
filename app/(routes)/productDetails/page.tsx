@@ -2,7 +2,7 @@
 import React from "react";
 import styles from "./product-details.module.css";
 import { useState } from "react";
-import LessIcon from "@/Icons/LessIcon";
+import {LessIcon} from "@/Icons/CartIcon";
 
 const ProductDetails = () => {
   const [show, setShow] = useState(true);

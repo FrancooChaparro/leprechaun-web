@@ -8,7 +8,7 @@ import { useWindowSize } from "@/utils/size/useWindowsSize";
 import { useScrollPosition } from "@/utils/scroll/useScrollPosition";
 import { useRouter } from "next/navigation";
 import { useMyContext } from "@/context/ListContext";
-import CartIcon from "@/Icons/CartIcon";
+import { CartIcon } from "@/Icons/CartIcon";
 
 export const Nav = () => {
   const router = useRouter();

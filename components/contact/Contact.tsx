@@ -1,7 +1,7 @@
 import React from "react";
 import styles from "./contact.module.css";
-import WhatsAppIcon from "@/Icons/WhatsAppIcon";
-import InstagramIcon from "@/Icons/InstagramIcon";
+import {WhatsAppIcon} from "@/Icons/CartIcon";
+import {InstagramIcon} from "@/Icons/CartIcon";
 
 export const Contact = () => {
   return (

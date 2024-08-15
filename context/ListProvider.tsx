@@ -1,16 +1,36 @@
 "use client";
-import React, { useState, FC, ReactNode } from "react";
+import React, { useState, FC, ReactNode, useEffect } from "react";
 import MyContext, { MyContextType } from "./ListContext"
 import { products } from "@/models/products";
 import { Product } from "@/types/types";
+import api from "@/models/api";
 
 interface MyProviderProps {
   children: ReactNode;
 }
 
+
+
 const MyProvider: FC<MyProviderProps> = ({ children }) => {
+  
   const [Cart, setCart] = useState<Product[]>([]);
-  const [Productos, setProductos] = useState<Product[]>(products);
+  const [Productos, setProductos] = useState<Product[]>([]);
+
+  useEffect(() => {
+    const fetchProducts = async () => {
+      try {
+        const listProduct = await api.match.list();
+        setProductos(listProduct); // Establecer los productos en el estado
+      } catch (err) {
+        console.error("Error fetching products:", err);
+      } 
+    };
+  
+    fetchProducts(); // Llama a la función para obtener los productos
+  }, []);
+  
+
+
 
   const Add = (newValue: Product) => {
     

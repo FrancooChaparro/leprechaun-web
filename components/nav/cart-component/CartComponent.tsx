@@ -3,7 +3,7 @@ import styles from "./cart-component.module.css";
 import { ComponentCart } from "@/components/component-cart/ComponentCart";
 import { BtnCheckout } from "@/components/btn-checkout/Btn-checkout";
 import { useMyContext } from "@/context/ListContext";
-import ClosedIcon from "@/Icons/ClosedIcon";
+import { ClosedIcon } from "@/Icons/CartIcon";
 
 export const CartComponent = ({
   isOpen,

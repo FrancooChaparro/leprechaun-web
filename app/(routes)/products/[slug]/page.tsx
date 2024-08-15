@@ -10,10 +10,17 @@ import { Loader } from "@/components/loader/Loader";
 
 export default function Page({ params }: { params: { slug: string } }) {
   const router = useRouter();
-  const { Productos } = useMyContext()
+  const { Productos, AddCard } = useMyContext()
   const [teamID, setTeamID] = useState<Product>();
   const [show, setShow] = useState(true);
   const [selectedColor, setSelectedColor] = useState("Amarillo");
+
+  const [cantidad, setCantidad] = useState(1); // Estado para almacenar la cantidad ingresada
+
+  const handleCantidadChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setCantidad(Number(e.target.value)); // Actualiza el estado con el valor ingresado
+  };
+
 
   const handleSelectColor = (color: string) => {
     setSelectedColor(color);
@@ -93,9 +100,13 @@ console.log(teamID);
             </div>
             <div className={styles["container-mount"]}>
               <p>Cantidad</p>
-              <input type="text" />
+              <input type="text" value={cantidad} onChange={handleCantidadChange} />
+
             </div>
-            <button className={styles["btn-detail"]}>AÑADIR AL CARRITO</button>
+            <button
+        className={styles["btn-detail"]}
+        onClick={() => AddCard(teamID, cantidad)}
+      >AÑADIR AL CARRITO</button>
           </div>
 
           <div className={styles["container-card-product-data-description"]}>

@@ -9,6 +9,7 @@ export type MyContextType = {
   Bajar: (newValue: number) => void;
   Cart: Product[];
   Productos: Product[];
+  AddCard: (newValue: Product, cantidad: number) => void;
 };
 
 const MyContext = createContext<MyContextType | undefined>(undefined);

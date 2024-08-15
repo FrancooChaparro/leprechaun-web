@@ -30,7 +30,28 @@ const MyProvider: FC<MyProviderProps> = ({ children }) => {
   }, []);
   
 
-
+  const AddCard = (newValue: Product, cantidad: number) => {
+    const productInCart = Cart.find((item: Product) => item.id === newValue.id);
+  
+    if (productInCart) {
+      const updatedCart = Cart.map((item: Product) =>
+        item.id === newValue.id
+          ? {
+              ...item,
+              amount: item.amount + cantidad,
+              price: item.price + newValue.price * cantidad, // Calcula el nuevo precio total
+            }
+          : item
+      );
+      setCart(updatedCart);
+    } else {
+      setCart([
+        ...Cart,
+        { ...newValue, amount: cantidad, price: newValue.price * cantidad }, // Establece el precio total basado en la cantidad
+      ]);
+    }
+  };
+  
 
   const Add = (newValue: Product) => {
     
@@ -80,7 +101,8 @@ const MyProvider: FC<MyProviderProps> = ({ children }) => {
  Discard,
  Add,
  Subir, 
- Bajar
+ Bajar,
+ AddCard
   };
 
   return (

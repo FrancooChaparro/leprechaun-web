@@ -135,12 +135,9 @@
   filter: brightness(110%);
   opacity: 1;
 }
-
-
-
-@media screen and (max-width: 767px) { 
+@media screen and (max-width: 1018px) { 
   .container-all {
-    padding: 2rem 3rem;
+    padding: 1.5rem 3rem;
   }
   .container-layout-images {
     display: grid;
@@ -169,4 +166,23 @@
     grid-column: 2;
     grid-row: 2;
   }
+}
+
+
+@media screen and (max-width: 767px) { 
+  .container-all {
+    padding: 2rem 3rem;
+  }
+ 
+}
+
+@media screen and (max-width: 496px) { 
+  .container-all {
+    padding: 1.2rem 1.5rem;
+  }
+  .container-title h4 {
+    font-size: 18px;
+  }
+  
+ 
 }

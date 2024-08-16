@@ -6,7 +6,12 @@ import { BannerButton }  from '../button-banner/ButtonBanner';
 export const Banner = () => {
   return (
     <div className={styles["container-background"]}>
-      <img src="/images/taos.jpg" alt="banner" /> 
+      <Image 
+        src="/images/taos.jpg"
+        alt="banner"
+        fill
+        loading="lazy"
+      />
       <div className={styles["container-btn"]}>
       <BannerButton />
       </div>

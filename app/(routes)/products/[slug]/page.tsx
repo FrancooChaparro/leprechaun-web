@@ -6,6 +6,7 @@ import styles from "../../productDetails/product-details.module.css";
 import {LessIcon} from "@/Icons/CartIcon";
 import { Product } from "@/types/types";
 import { Loader } from "@/components/loader/Loader";
+import Image from "next/image";
 
 
 export default function Page({ params }: { params: { slug: string } }) {
@@ -57,10 +58,12 @@ console.log(teamID);
     <div className={styles["container"]}>
       <div className={styles["containera"]}>
         <div className={styles["container-card-product-image"]}>
-          <img
-            src={teamID.image}
-            alt="product"
-          />
+          <Image 
+           src={teamID.image}
+           alt="product"
+           fill
+           loading="lazy"
+           />
         </div>
       </div>
 

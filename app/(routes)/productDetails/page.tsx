@@ -3,6 +3,7 @@ import React from "react";
 import styles from "./product-details.module.css";
 import { useState } from "react";
 import {LessIcon} from "@/Icons/CartIcon";
+import Image from "next/image";
 
 const ProductDetails = () => {
   const [show, setShow] = useState(true);
@@ -16,10 +17,16 @@ const ProductDetails = () => {
     <div className={styles["container"]}>
       <div className={styles["containera"]}>
         <div className={styles["container-card-product-image"]}>
-          <img
+          {/* <img
             src="https://masonlineprod.vtexassets.com/arquivos/ids/173320/Cera-Para-Auto-Autobrillo-Auto-Polish-650-Cc-1-32083.jpg?v=637835148027230000"
             alt="product"
-          />
+          /> */}
+          <Image 
+           src="https://masonlineprod.vtexassets.com/arquivos/ids/173320/Cera-Para-Auto-Autobrillo-Auto-Polish-650-Cc-1-32083.jpg?v=637835148027230000"
+           alt="product"
+           fill
+           loading="lazy"
+           />
         </div>
       </div>
 

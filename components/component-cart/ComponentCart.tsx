@@ -5,6 +5,7 @@ import {DeleteIcon} from '@/Icons/CartIcon';
 import {IncreaseIcon} from '@/Icons/CartIcon';;
 import {DecreaseIcon} from '@/Icons/CartIcon';;
 import { Product } from '@/types/types';
+import Image from 'next/image';
 
 export const ComponentCart:  React.FC<Product> = ({ 
   name, description, image, price, amount, id
@@ -15,9 +16,11 @@ export const ComponentCart:  React.FC<Product> = ({
   return (
     <div className={styles["cart-product"]}>
     <div className={styles["cart-product-image"]}>
-      <img
-        src={image}
-        alt="product-image-cart"
+      <Image
+      src={image}
+      alt="product-image-cart"
+      fill
+      loading='lazy'
       />
     </div>
     

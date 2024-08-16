@@ -5,6 +5,7 @@ import { Roboto } from "next/font/google";
 import { useRouter } from 'next/navigation';
 import { useMyContext } from '@/context/ListContext';
 import { ProductCardProps } from '@/types/types';
+import Image from 'next/image';
 
 const inter = Roboto({ weight: ["400"], subsets: ["latin"] });
 
@@ -15,7 +16,7 @@ export const ProductCard: React.FC<ProductCardProps> = ({ name, description, ima
   return ( 
     <div className={styles["container-card"]} >
         <div className={styles["container-card-image"]} onClick={()=> router.push(`products/${name}`)}>
-            <img src={`${image}`} alt="product" />
+            <Image src={`${image}`} alt="product" fill loading='lazy'/>
         </div>
 
         <div className={styles["container-card-data"]}>

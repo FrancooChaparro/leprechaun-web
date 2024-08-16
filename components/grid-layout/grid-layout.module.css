@@ -135,3 +135,38 @@
   filter: brightness(110%);
   opacity: 1;
 }
+
+
+
+@media screen and (max-width: 767px) { 
+  .container-all {
+    padding: 2rem 3rem;
+  }
+  .container-layout-images {
+    display: grid;
+    width: 100%;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 10px;
+    grid-auto-rows: minmax(220px, auto);
+  }
+  .one {
+
+    grid-column: 1;
+    grid-row: 1;
+  }
+  .two {
+  
+    grid-column: 2;
+    grid-row: 1;
+  }
+  .three {
+
+    grid-column: 1;
+    grid-row: 2;
+  }
+  .four {
+    
+    grid-column: 2;
+    grid-row: 2;
+  }
+}

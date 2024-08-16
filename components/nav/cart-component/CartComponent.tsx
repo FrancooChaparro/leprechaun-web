@@ -14,12 +14,12 @@ export const CartComponent = ({
 }) => {
   const cartRef = useRef<HTMLDivElement>(null);
 
+  
   const handleClickOutside = (event: MouseEvent) => {
     if (cartRef.current && !cartRef.current.contains(event.target as Node)) {
       toggleCart(); // Cierra el carrito si se hace clic fuera de él
     }
   };
-
   useEffect(() => {
     if (isOpen) {
       document.addEventListener("mousedown", handleClickOutside);
@@ -30,7 +30,7 @@ export const CartComponent = ({
     return () => {
       document.removeEventListener("mousedown", handleClickOutside);
     };
-  }, [isOpen]);
+  }, [isOpen]);// eslint-disable-line react-hooks/exhaustive-deps
 
 
   const { Cart } = useMyContext()

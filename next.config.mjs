@@ -1,7 +1,7 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
     images: {
-      domains: ['masonlineprod.vtexassets.com', "https://t2.uc.ltmcdn.com/"], 
+      domains: ['masonlineprod.vtexassets.com', "t2.uc.ltmcdn.com"], 
     },
   };
 

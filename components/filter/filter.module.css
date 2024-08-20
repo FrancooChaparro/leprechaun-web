@@ -42,7 +42,7 @@
 
 @media screen and (max-width: 767px) { 
     .container-section-burger-menu {
-        width: 70vh;
+        width: 100%;
         padding-left: 0.8rem;
         padding-right: 0.8rem;
     }

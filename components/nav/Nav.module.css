@@ -10,8 +10,8 @@
   align-items: center;
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
   position: fixed;
-  z-index: 2;
-  user-select: none;
+  z-index: 20;
+ /* user-select: none;*/
 }
 .container-data {
   display: flex;

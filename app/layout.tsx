@@ -23,7 +23,8 @@ export default function RootLayout({
     <MyProvider>
     <html lang="en">
       <body className={roboto.className}>
-        <Nav />
+      <Nav />
+
         {children}
         <Contact />
         <Footer />

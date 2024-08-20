@@ -58,7 +58,51 @@ export const Nav = () => {
 
   return (
     <div className={`${styles["container-all"]} ${oswald.className}`}>
-          <button onClick={()=> router.push("/shoop")}>1</button><button onClick={()=> router.push("/")}>2</button><button onClick={()=> router.push("/Contact")}>3</button>
+          <div className={styles["hamburger"]}>
+        <span className={styles["btn-cart"]}>
+          <a className={styles["ancor"]} onClick={toggleMenu}>
+            <HamburgerMenuIcon />
+          </a>
+          <Filter isOpen={burger} />
+        </span>
+      </div>
+
+      <div>
+        <span
+          className={styles["btn-nav-logo"]}
+          onClick={() => router.push("/")}
+        >
+          LEPRECHAUN
+        </span>
+      </div>
+
+      <div className={styles["container-data"]}>
+        <span
+          className={styles["btn-nav"]}
+          onClick={() => router.push("/Contact")}
+        >
+          CONTACTO
+        </span>
+        <span className={styles["btn-nav"]}>
+          CATEGORIAS
+          <NavCategorias />
+        </span>
+        <span className={styles["btn-nav"]}>CONOCENOS</span>
+      </div>
+
+
+      <div >
+      <span className={styles["btn-cart"]}>
+          <a className={styles["ancor"]} onClick={() => setab(!abier)}> 
+            {Cart.length > 0 && (
+              <div className={styles["render"]}>{Cart.length}</div>
+            )}
+            <CartIcon />
+          </a>
+          <CartComponent isOpen={abier} toggleCart={toggleCart} />
+        </span>
+      </div>
+
     </div>
   );
 };

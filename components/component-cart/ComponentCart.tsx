@@ -16,10 +16,9 @@ export const ComponentCart:  React.FC<Product> = ({
   return (
     <div className={styles["cart-product"]}>
     <div className={styles["cart-product-image"]}>
-      <Image
+      <img
       src={image}
       alt="product-image-cart"
-      fill
       loading='lazy'
       />
     </div>

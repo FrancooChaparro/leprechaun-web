@@ -1,3 +1,19 @@
+.container-all {
+  padding: 10rem;
+  width: 100vw;
+  padding-top: 4rem;
+  padding-bottom: 5rem;
+}
+
+.container-title {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+.container-title h4 {
+  font-size: 22px;
+  color: rgb(41, 40, 40);
+}
+
 .container-layout-images {
   display: grid;
   width: 100%;
@@ -69,22 +85,8 @@
   visibility: visible;
 }
 
-.container-all {
-  padding: 10rem;
-  width: 100vw;
-  padding-top: 4rem;
-  padding-bottom: 5rem;
-}
 
-.container-title {
-  padding-top: 1rem;
-  padding-bottom: 1rem;
-}
-.container-title h4 {
-  font-size: 22px;
-  color: rgb(41, 40, 40);
-}
-
+/*CSS CATALOGUE*/
 .container-overlay {
   position: absolute;
   top: 0;
@@ -93,7 +95,7 @@
   width: 100%;
   padding: 2rem;
   background-color: rgba(0, 0, 0, 0.2);
-  color: white;
+  color: var(--primary-white);
   opacity: 1;
   visibility: hidden;
 }
@@ -135,6 +137,8 @@
   filter: brightness(110%);
   opacity: 1;
 }
+
+
 @media screen and (max-width: 1018px) { 
   .container-all {
     padding: 1.5rem 3rem;

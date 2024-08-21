@@ -244,4 +244,9 @@
   }
 
 
-  
+  @media screen and (max-width: 495px)  { 
+    .selector div {
+        height: 24px;
+        width: 24px;
+    }
+  }

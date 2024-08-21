@@ -47,3 +47,9 @@
   .btn-banner:hover {
     opacity: 0.8;
   } 
+
+  @media screen and (max-width: 767px) { 
+    .container-btn {
+      margin-bottom: 6rem;
+    }
+  }

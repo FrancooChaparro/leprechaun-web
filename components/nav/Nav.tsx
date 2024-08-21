@@ -8,7 +8,7 @@ import { useWindowSize } from "@/utils/size/useWindowsSize";
 import { useScrollPosition } from "@/utils/scroll/useScrollPosition";
 import { useRouter } from "next/navigation";
 import { useMyContext } from "@/context/ListContext";
-import { CartIcon, HamburgerMenuIcon } from "@/Icons/CartIcon";
+import { CartIcon, ClosedIcon, DeleteIcon, HamburgerMenuIcon } from "@/Icons/CartIcon";
 import { Filter } from "../filter/Filter";
 
 export const Nav = () => {
@@ -58,10 +58,11 @@ export const Nav = () => {
 
   return (
     <div className={`${styles["container-all"]} ${oswald.className}`}>
-          <div className={styles["hamburger"]}>
-        <span className={styles["btn-cart"]}>
-          <a className={styles["ancor"]} onClick={toggleMenu}>
-            <HamburgerMenuIcon />
+
+        <div className={styles["hamburger-container"]}>
+        <span className={styles["container-icon-btn-nav"]}>
+          <a className={styles["ancor"]} style={{zIndex: "15000"}} onClick={toggleMenu}>
+           {burger ?  <ClosedIcon /> : <HamburgerMenuIcon /> }
           </a>
           <Filter isOpen={burger} />
         </span>
@@ -91,8 +92,8 @@ export const Nav = () => {
       </div>
 
 
-      <div >
-      <span className={styles["btn-cart"]}>
+      <div>
+      <span className={styles["container-icon-btn-nav"]}>
           <a className={styles["ancor"]} onClick={() => setab(!abier)}> 
             {Cart.length > 0 && (
               <div className={styles["render"]}>{Cart.length}</div>

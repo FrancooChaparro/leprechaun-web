@@ -123,3 +123,12 @@
         padding-bottom: 1rem;
     }
 }
+
+@media screen and (max-width: 400px) { 
+    .filter label {
+        font-size: 12px;
+    }
+    .order label {
+        font-size: 12px;
+    }
+}

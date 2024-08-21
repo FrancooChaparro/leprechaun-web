@@ -8,7 +8,7 @@ export const NavCategorias = () => {
   const products: Categorias[] = categorias;
   return (
     <div className={`${styles["cor"]} ${roboto.className}`}>
-      <div className={styles.cor}>
+      <div className={styles.cor}> 
         <div className={styles["center"]}>
           {products.length &&
             products.map((e) => {

@@ -106,9 +106,47 @@
   }
   
   
+  @media screen and (max-width: 950px) {
+    .container-btn {
+      width: calc(100% - 60px); 
+    }
+    .buy-button {
+      font-size: 11px;
+    }
+  }
+
+
+
+  @media screen and (max-width: 820px) {
+  .container-btn {
+    width: calc(100% - 60px); 
+  }
+  .buy-button {
+    font-size: 11px;
+    height: 30px;
+  }
+}
+
   
+@media screen and (max-width: 720px) {
+  .container-btn {
+    width: calc(100% - 50px); 
+  }
+  .buy-button {
+    font-size: 10px;
+    height: 30px;
+  }
+}
 
+@media screen and (max-width: 495px) {
+  .container-btn {
+    width: calc(100% - 22px); 
+  }
+}
 
+@media screen and (max-width: 320px) {
 
-
-    
+  .buy-button {
+    font-size: 9px;
+  }
+}

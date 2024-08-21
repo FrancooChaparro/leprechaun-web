@@ -14,7 +14,6 @@ export const CartComponent = ({
 }) => {
   const cartRef = useRef<HTMLDivElement>(null);
 
-  
   const handleClickOutside = (event: MouseEvent) => {
     if (cartRef.current && !cartRef.current.contains(event.target as Node)) {
       toggleCart(); // Cierra el carrito si se hace clic fuera de él
@@ -30,10 +29,9 @@ export const CartComponent = ({
     return () => {
       document.removeEventListener("mousedown", handleClickOutside);
     };
-  }, [isOpen]);// eslint-disable-line react-hooks/exhaustive-deps
+  }, [isOpen]); // eslint-disable-line react-hooks/exhaustive-deps
 
-
-  const { Cart } = useMyContext()
+  const { Cart } = useMyContext();
   const totalPrice = Cart.reduce((total, product) => {
     return total + product.price;
   }, 0);
@@ -58,31 +56,30 @@ export const CartComponent = ({
               CARRITO DE COMPRAS
             </span>
             <a className={styles["container-head-x"]} onClick={toggleCart}>
-            <ClosedIcon />
+              <ClosedIcon />
             </a>
           </div>
 
           {Cart.length > 0 ? (
-  <>
-    {Cart.map((e) => (
-      <ComponentCart
-        key={e.id}
-        name={e.name}
-        description={e.description}
-        price={e.price}
-        image={e.image}
-        amount={e.amount}
-        id={e.id}
-      />
-    ))}
-    <BtnCheckout price={totalPrice} />
-  </>
-) : (
-  <div className={styles["Cart-vacio"]}>
-      <span>El carrito de compras está vacío.</span>
-  </div>
-)}
-          
+            <>
+              {Cart.map((e) => (
+                <ComponentCart
+                  key={e.id}
+                  name={e.name}
+                  description={e.description}
+                  price={e.price}
+                  image={e.image}
+                  amount={e.amount}
+                  id={e.id}
+                />
+              ))}
+              <BtnCheckout price={totalPrice} />
+            </>
+          ) : (
+            <div className={styles["Cart-vacio"]}>
+              <span>El carrito de compras está vacío.</span>
+            </div>
+          )}
         </div>
       </section>
     </>

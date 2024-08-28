@@ -30,6 +30,8 @@
     padding: 3rem 2rem;
     border-left: 1px solid var(var(--primary-white));
     color: var(--primary-black);
+    overflow-y: scroll; 
+
 }
 .active {
     left: 0;
@@ -37,8 +39,21 @@
     transition: left 0.35s ease-in-out, opacity 0.35s ease-in-out;
 
 }
+.wraper {
+    width: 100%;
+    min-height: 100%;
+    padding: 0.4rem;
+}
+.container-section { 
+    width: 100%;
+    padding-top: 0.3rem;
+    padding-bottom: 0.3rem;
+}
 
-
+.container-section-name {
+    color: rgb(41, 41, 41);
+    font-size: 24px;
+}
 @media screen and (max-width: 767px) { 
     .container-section-burger-menu {
         width: 100%;

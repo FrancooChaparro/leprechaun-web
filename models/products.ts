@@ -78,7 +78,8 @@ export const categorias =  [
     {
       "id": 14,
       "nombre": "Menzerna"
-    }
+    },
+    
   ]
 
   export const products = [

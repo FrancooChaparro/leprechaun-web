@@ -6,17 +6,20 @@ import { CartComponent } from "./cart-component/CartComponent";
 import { oswald } from "@/utils/fonts";
 import { useWindowSize } from "@/utils/size/useWindowsSize";
 import { useScrollPosition } from "@/utils/scroll/useScrollPosition";
-import { useRouter } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 import { useMyContext } from "@/context/ListContext";
 import { CartIcon, ClosedIcon, DeleteIcon, HamburgerMenuIcon } from "@/Icons/CartIcon";
 import { Filter } from "../filter/Filter";
+import { buttonMain } from "@/utils/functions/buttonMain";
 
 export const Nav = () => {
   const router = useRouter();
   const [abier, setab] = useState(false);
   const [isOpen, setIsOpen] = useState<boolean>(false);
   const { Cart } = useMyContext();
-
+  const pathName = usePathname()
+  const { width } = useWindowSize();
+  const { isAtTop, showButton } = useScrollPosition();
   const [burger, setBurger] = useState(false);
 
   const toggleMenu = () => {
@@ -33,9 +36,6 @@ export const Nav = () => {
       document.documentElement.classList.remove("no-scroll");
     };
   }, [abier]);
-
-  const { width } = useWindowSize();
-  const { isAtTop, showButton } = useScrollPosition();
 
   useEffect(() => {
     return () => {
@@ -71,7 +71,7 @@ export const Nav = () => {
       <div>
         <span
           className={styles["btn-nav-logo"]}
-          onClick={() => router.push("/")}
+          onClick={() => buttonMain(pathName, router)}
         >
           LEPRECHAUN
         </span>

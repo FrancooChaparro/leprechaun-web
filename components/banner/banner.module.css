@@ -48,6 +48,13 @@
     opacity: 0.8;
   } 
 
+  .video {
+    width: 100%;
+    height: 100%; 
+    filter: brightness(110%);
+    object-fit: cover;
+    object-position: center;
+  }
   @media screen and (max-width: 767px) { 
     .container-btn {
       margin-bottom: 6rem;

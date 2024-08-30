@@ -11,7 +11,7 @@ import Image from "next/image";
 
 export default function Page({ params }: { params: { slug: string } }) {
   const router = useRouter();
-  const { Productos, AddCard } = useMyContext()
+  const { Productos, Add } = useMyContext()
   const [teamID, setTeamID] = useState<Product>();
   const [show, setShow] = useState(true);
   const [selectedColor, setSelectedColor] = useState("Amarillo");
@@ -58,12 +58,14 @@ console.log(teamID);
     <div className={styles["container"]}>
       <div className={styles["containera"]}>
         <div className={styles["container-card-product-image"]}>
-          <Image 
+          {/* <Image 
            src={teamID.image}
            alt="product"
            fill
            loading="lazy"
-           />
+           /> */}
+           <img src={teamID.image}
+           alt="product" />
         </div>
       </div>
 
@@ -108,7 +110,7 @@ console.log(teamID);
             </div>
             <button
         className={styles["btn-detail"]}
-        onClick={() => AddCard(teamID, cantidad)}
+        onClick={() => Add(teamID, cantidad)}
       >AÑADIR AL CARRITO</button>
           </div>
 

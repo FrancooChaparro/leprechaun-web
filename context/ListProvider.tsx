@@ -19,30 +19,29 @@ const MyProvider: FC<MyProviderProps> = ({ children }) => {
   useEffect(() => {
     const fetchProducts = async () => {
       try {
-        const listProduct = await api.match.list();
-        setProductos(listProduct); // Establecer los productos en el estado
+        // const listProduct = await api.match.list();
+        // setProductos(listProduct); 
+         setProductos(products); 
+
       } catch (err) {
         console.error("Error fetching products:", err);
       } 
     };
   
-    fetchProducts(); // Llama a la función para obtener los productos
+    fetchProducts(); 
   }, []);
-  
 
-  const AddCard = (newValue: Product, cantidad: number) => {
-    console.log(newValue, "newvalue");
-    console.log(Cart, "amount");
-    
+
+  const Add = (newValue: Product, cantidad: number = 1) => {
     const productInCart = Cart.find((item: Product) => item.id === newValue.id);
-
+  
     if (productInCart) {
       const updatedCart = Cart.map((item: Product) =>
         item.id === newValue.id
           ? {
               ...item,
               amount: item.amount + cantidad,
-              price: item.price + newValue.price * cantidad, // Calcula el nuevo precio total
+              price: item.unitPrice * (item.amount + cantidad), 
             }
           : item
       );
@@ -50,29 +49,49 @@ const MyProvider: FC<MyProviderProps> = ({ children }) => {
     } else {
       setCart([
         ...Cart,
-        { ...newValue, amount: cantidad, price: newValue.price * cantidad }, // Establece el precio total basado en la cantidad
+        { ...newValue, amount: cantidad, price: newValue.unitPrice * cantidad }, 
       ]);
     }
   };
   
 
-  const Add = (newValue: Product) => {
-    
-    const productInCart = Cart.find((item:Product) => item.id === newValue.id);
-    
-    if (productInCart) {
-      // Si el producto ya está en el carrito, incrementa su cantidad
-      const updatedCart = Cart.map((item:Product) =>
-        item.id === newValue.id ? { ...item, amount: item.amount + 1, price: 3000 * (item.amount+1) } : item
-      );
-      setCart(updatedCart);
+  // const AddCard = (newValue: Product, cantidad: number) => {
+  //   const productInCart = Cart.find((item: Product) => item.id === newValue.id);
 
-    } else {
-      // Si el producto no está en el carrito, agrégalo
-      setCart([...Cart, { ...newValue }]);
+  //   if (productInCart) {
+  //     const updatedCart = Cart.map((item: Product) =>
+  //       item.id === newValue.id
+  //         ? {
+  //             ...item,
+  //             amount: item.amount + cantidad,
+  //             price: item.price + newValue.price * cantidad, 
+  //           }
+  //         : item
+  //     );
+  //     setCart(updatedCart);
+  //   } else {
+  //     setCart([
+  //       ...Cart,
+  //       { ...newValue, amount: cantidad, price: newValue.price * cantidad }, 
+  //     ]);
+  //   }
+  // };
+  
 
-    }
-  };
+  // const Add = (newValue: Product) => {
+  //   const productInCart = Cart.find((item:Product) => item.id === newValue.id);
+    
+  //   if (productInCart) {
+  //     const updatedCart = Cart.map((item:Product) =>
+  //       item.id === newValue.id ? { ...item, amount: item.amount + 1, price: item.unitPrice * (item.amount+1) } : item
+  //     );
+  //     setCart(updatedCart);
+
+  //   } else {
+  //     setCart([...Cart, { ...newValue }]);
+
+  //   }
+  // };
   
   const Discard = (itemToRemove: number) => {
     setCart((prevCart: Product[]) => prevCart.filter(item => item.id !== itemToRemove));
@@ -107,7 +126,7 @@ const MyProvider: FC<MyProviderProps> = ({ children }) => {
  Add,
  Subir, 
  Bajar,
- AddCard
+//  AddCard
   };
 
   return (

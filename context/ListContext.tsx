@@ -3,13 +3,13 @@ import { Product } from '@/types/types';
 import { createContext, useContext } from 'react';
 
 export type MyContextType = {
-  Add: (newValue: Product) => void;
+  Add: (newValue: Product, cantidad: number) => void;
   Discard: (newValue: number) => void;
   Subir: (newValue: number) => void;
   Bajar: (newValue: number) => void;
   Cart: Product[];
   Productos: Product[];
-  AddCard: (newValue: Product, cantidad: number) => void;
+  // AddCard: (newValue: Product, cantidad: number) => void;
 };
 
 const MyContext = createContext<MyContextType | undefined>(undefined);

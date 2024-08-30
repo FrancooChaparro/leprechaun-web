@@ -89,7 +89,8 @@ export const categorias =  [
       "description": "Description of the product - leprechaunasadsadasdasdasdasd",
       "image": "https://t2.uc.ltmcdn.com/es/posts/6/8/6/productos_de_limpieza_caseros_para_el_coche_37686_600.webp",
       "amount": 1,
-      "price": 3000
+      "price": 3000,
+      "unitPrice": 3000,
     },
     {
       "id": 2,
@@ -97,7 +98,9 @@ export const categorias =  [
       "description": "Escoba de cerdas duras para limpieza en seco.",
       "image": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiVMOW5xlKTjbzuze_DmXKvE24mbn0vSRLWEtfDvUxFwmjk1eo6t9OB0bQPUSVxUbzhaHyBFkiiusze5IbuUnXb9X1KaP2xrxRvxCS3ngI52xfOjVUQfT3lI7LAbUFktnCNwXg5ldBHDspSHh_Q47-Z8fZ7GosjvccX_abBzJJI_6GWMLv5rVngBADz/s640/5a2c8f_a38cd96582f0413e868d3843853ba010_mv2.jpg",
       "amount": 1,
-      "price": 1500
+      "price": 1500,
+      "unitPrice": 1500,
+
     },
     {
       "id": 3,
@@ -105,7 +108,8 @@ export const categorias =  [
       "description": "Trapeador de microfibra ideal para todo tipo de superficies.",
       "image": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiVMOW5xlKTjbzuze_DmXKvE24mbn0vSRLWEtfDvUxFwmjk1eo6t9OB0bQPUSVxUbzhaHyBFkiiusze5IbuUnXb9X1KaP2xrxRvxCS3ngI52xfOjVUQfT3lI7LAbUFktnCNwXg5ldBHDspSHh_Q47-Z8fZ7GosjvccX_abBzJJI_6GWMLv5rVngBADz/s640/5a2c8f_a38cd96582f0413e868d3843853ba010_mv2.jpg",
       "amount": 1,
-      "price": 2500
+      "price": 2500,
+      "unitPrice": 2500,
     },
     {
       "id": 4,
@@ -113,7 +117,8 @@ export const categorias =  [
       "description": "Guantes de limpieza de látex para protección y comodidad.",
       "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRy7eZraGVi_v_36LgVXIFWBuAskRy1FSOoNA&s",
       "amount": 1,
-      "price": 800
+      "price": 800,
+      "unitPrice": 800,
     },
     {
       "id": 5,
@@ -121,7 +126,8 @@ export const categorias =  [
       "description": "Raspador de vidrio con mango ergonómico para fácil uso.",
       "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTZdmAGvDYznd3cHBkgi1pKQNPpJWpD0XSOlw&s",
       "amount": 1,
-      "price": 1200
+      "price": 1200,
+      "unitPrice": 1200,
     },
     {
       "id": 6,
@@ -129,7 +135,8 @@ export const categorias =  [
       "description": "Esponja antibacteriana para una limpieza profunda.",
       "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQZ7DCtwdoCH3oX8B1s9mfBjm1AJXXxJ8MgRA&s",
       "amount": 1,
-      "price": 500
+      "price": 500,
+      "unitPrice": 500,
     },
 
     {
@@ -138,7 +145,8 @@ export const categorias =  [
       "description": "Description of the product - leprechaunasadsadasdasdasdasd",
       "image": "https://t2.uc.ltmcdn.com/es/posts/6/8/6/productos_de_limpieza_caseros_para_el_coche_37686_600.webp",
       "amount": 1,
-      "price": 3000
+      "price": 3000,
+      "unitPrice": 3000,
     },
     {
       "id": 8,
@@ -146,7 +154,8 @@ export const categorias =  [
       "description": "Escoba de cerdas duras para limpieza en seco.",
       "image": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiVMOW5xlKTjbzuze_DmXKvE24mbn0vSRLWEtfDvUxFwmjk1eo6t9OB0bQPUSVxUbzhaHyBFkiiusze5IbuUnXb9X1KaP2xrxRvxCS3ngI52xfOjVUQfT3lI7LAbUFktnCNwXg5ldBHDspSHh_Q47-Z8fZ7GosjvccX_abBzJJI_6GWMLv5rVngBADz/s640/5a2c8f_a38cd96582f0413e868d3843853ba010_mv2.jpg",
       "amount": 1,
-      "price": 1500
+      "price": 1500,
+      "unitPrice": 1500,
     },
     {
       "id": 9,
@@ -154,7 +163,8 @@ export const categorias =  [
       "description": "Trapeador de microfibra ideal para todo tipo de superficies.",
       "image": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiVMOW5xlKTjbzuze_DmXKvE24mbn0vSRLWEtfDvUxFwmjk1eo6t9OB0bQPUSVxUbzhaHyBFkiiusze5IbuUnXb9X1KaP2xrxRvxCS3ngI52xfOjVUQfT3lI7LAbUFktnCNwXg5ldBHDspSHh_Q47-Z8fZ7GosjvccX_abBzJJI_6GWMLv5rVngBADz/s640/5a2c8f_a38cd96582f0413e868d3843853ba010_mv2.jpg",
       "amount": 1,
-      "price": 2500
+      "price": 2500,
+      "unitPrice": 2500,
     },
     {
       "id": 10,
@@ -162,7 +172,8 @@ export const categorias =  [
       "description": "Guantes de limpieza de látex para protección y comodidad.",
       "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRy7eZraGVi_v_36LgVXIFWBuAskRy1FSOoNA&s",
       "amount": 1,
-      "price": 800
+      "price": 800,
+      "unitPrice": 800,
     },
     {
       "id": 11,
@@ -170,7 +181,8 @@ export const categorias =  [
       "description": "Raspador de vidrio con mango ergonómico para fácil uso.",
       "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTZdmAGvDYznd3cHBkgi1pKQNPpJWpD0XSOlw&s",
       "amount": 1,
-      "price": 1200
+      "price": 1200,
+      "unitPrice": 1200,
     },
     {
       "id": 12,
@@ -178,7 +190,8 @@ export const categorias =  [
       "description": "Esponja antibacteriana para una limpieza profunda.",
       "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQZ7DCtwdoCH3oX8B1s9mfBjm1AJXXxJ8MgRA&s",
       "amount": 1,
-      "price": 500
+      "price": 500,
+      "unitPrice": 500,
     },
     ];
     

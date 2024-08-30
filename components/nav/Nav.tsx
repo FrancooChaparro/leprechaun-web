@@ -86,7 +86,7 @@ export const Nav = () => {
         </span>
         <span className={styles["btn-nav"]}>
           CATEGORIAS
-          <NavCategorias />
+          <NavCategorias router={router}/>
         </span>
         <span className={styles["btn-nav"]}>CONOCENOS</span>
       </div>

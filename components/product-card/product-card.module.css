@@ -5,6 +5,8 @@
     min-height: 25.8rem;
     overflow: hidden;
     border: 1px solid rgb(192, 190, 190);
+    border: 1px solid rgb(216, 214, 214);
+
     transition: box-shadow 0.3s ease; 
   }
   
@@ -109,6 +111,9 @@
   @media screen and (max-width: 950px) {
     .container-btn {
       width: calc(100% - 60px); 
+      opacity: 1;
+      visibility: visible;
+
     }
     .buy-button {
       font-size: 11px;

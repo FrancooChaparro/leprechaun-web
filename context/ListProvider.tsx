@@ -31,8 +31,11 @@ const MyProvider: FC<MyProviderProps> = ({ children }) => {
   
 
   const AddCard = (newValue: Product, cantidad: number) => {
+    console.log(newValue, "newvalue");
+    console.log(Cart, "amount");
+    
     const productInCart = Cart.find((item: Product) => item.id === newValue.id);
-  
+
     if (productInCart) {
       const updatedCart = Cart.map((item: Product) =>
         item.id === newValue.id
@@ -56,16 +59,18 @@ const MyProvider: FC<MyProviderProps> = ({ children }) => {
   const Add = (newValue: Product) => {
     
     const productInCart = Cart.find((item:Product) => item.id === newValue.id);
-  
+    
     if (productInCart) {
       // Si el producto ya está en el carrito, incrementa su cantidad
       const updatedCart = Cart.map((item:Product) =>
-        item.id === newValue.id ? { ...item, amount: item.amount + 1 } : item
+        item.id === newValue.id ? { ...item, amount: item.amount + 1, price: 3000 * (item.amount+1) } : item
       );
       setCart(updatedCart);
+
     } else {
       // Si el producto no está en el carrito, agrégalo
       setCart([...Cart, { ...newValue }]);
+
     }
   };
   

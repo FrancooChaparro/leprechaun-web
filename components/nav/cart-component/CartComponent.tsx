@@ -1,4 +1,5 @@
-import React, { useEffect, useRef } from "react";
+"use client"
+import React, { useEffect, useRef, useState } from "react";
 import styles from "./cart-component.module.css";
 import { ComponentCart } from "@/components/component-cart/ComponentCart";
 import { BtnCheckout } from "@/components/btn-checkout/Btn-checkout";
@@ -35,6 +36,8 @@ export const CartComponent = ({
   const totalPrice = Cart.reduce((total, product) => {
     return total + product.price;
   }, 0);
+
+ 
 
   return (
     <>
@@ -76,7 +79,7 @@ export const CartComponent = ({
 
                 />
               ))}
-              <BtnCheckout price={totalPrice} />
+                <BtnCheckout price={totalPrice} />
             </>
           ) : (
             <div className={styles["Cart-vacio"]}>

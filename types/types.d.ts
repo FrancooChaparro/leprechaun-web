@@ -19,6 +19,8 @@ export interface Categorias {
     image: string;
     price: number;
     compose: Product;
+    id: number;
+    amount: number;
   }
 
  

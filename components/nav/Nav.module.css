@@ -10,7 +10,7 @@
   align-items: center;
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
   position: fixed;
-  z-index: 20;  /*zindex*/
+  z-index: 20; /*zindex*/
   user-select: none;
 }
 
@@ -61,7 +61,7 @@
   position: relative;
 }
 
-.render { 
+.render {
   position: absolute;
   height: 10px;
   width: 10px;
@@ -70,6 +70,21 @@
   display: flex;
   justify-content: center;
   bottom: 39%;
+}
+
+.render {
+  position: absolute;
+  height: 18px;
+  width: 18px;
+  border-radius: 50%;
+  background-color: rgb(255 106 26);
+  color: rgb(255, 255, 255);
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  top: 10%;
+  right: 0;
+  justify-content: center;
 }
 
 /*CSS HOVER CATEGORIAS*/
@@ -118,14 +133,13 @@
   cursor: pointer;
 }
 
-
-@media screen and (max-width: 767px) { 
+@media screen and (max-width: 767px) {
   .container-data {
     display: none;
   }
 
   .hamburger-container {
-    display: block; 
+    display: block;
   }
 
   .container-all {

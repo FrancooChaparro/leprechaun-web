@@ -6,7 +6,7 @@
     overflow: hidden;
     border: 1px solid rgb(192, 190, 190);
     border: 1px solid rgb(216, 214, 214);
-
+    user-select: none;
     transition: box-shadow 0.3s ease; 
   }
   
@@ -107,7 +107,34 @@
     transition: background-color 0.3s ease;
   }
   
+  .container-modal {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    color: black;
+    padding-left: 0.8rem;
+    padding-right: 0.8rem;
+  }
+
+  .container-left {
+    display: flex;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    font-size: 17px;
   
+  }
+
+  .container-rigth {
+    display: flex;
+    gap: 14px;
+    font-size: 19px;
+  }
+
+  .delete {
+    font-size: 20px;
+  }
   @media screen and (max-width: 950px) {
     .container-btn {
       width: calc(100% - 60px); 

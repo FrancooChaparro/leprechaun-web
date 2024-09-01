@@ -1,4 +1,5 @@
-import React from 'react'
+"use client"
+import React, { useState } from 'react'
 import styles from "@/components/nav/cart-component/cart-component.module.css"
 import { useMyContext } from '@/context/ListContext';
 import {DeleteIcon} from '@/Icons/CartIcon';
@@ -12,9 +13,16 @@ export const ComponentCart:  React.FC<Product> = ({
 }) => {
 
   const { Discard, Subir, Bajar } = useMyContext()
-  
+  const [isRemoving, setIsRemoving] = useState(false);
+
+  const handleRemove = () => {
+    setIsRemoving(true);
+    setTimeout(() => {
+      Discard(id, amount);
+    }, 800); // El tiempo debe coincidir con la duración de la animación
+  };
   return (
-    <div className={styles["cart-product"]}>
+    <div className={`${styles["cart-product"]} ${isRemoving ? styles["removing"] : ""}`}>
     <div className={styles["cart-product-image"]}>
       <img
       src={image}
@@ -30,7 +38,7 @@ export const ComponentCart:  React.FC<Product> = ({
           <small>({description.slice(0,15)})</small>
         </div>
         <div>
-          <span className={styles["delete"]} onClick={()=> Discard(id, amount)}>
+          <span className={styles["delete"]} onClick={handleRemove}>
             <DeleteIcon />
           </span>
         </div>

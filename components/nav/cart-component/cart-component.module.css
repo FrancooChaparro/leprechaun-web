@@ -122,10 +122,15 @@
 .form-quality {
     width: 90px;
     padding: 5px;
-    border: 1px solid grey;
+    border: 1px solid rgb(158, 158, 158);
     display: flex;
     justify-content: space-between;
     font-size: 13px;
+    border-radius: 4px;
+}
+.form-quality:hover {
+    border: 1px solid rgb(109, 109, 109);
+
 }
 
 .title {
@@ -138,16 +143,33 @@
 }
 
 .delete {
-    font-size: 20px;
+    font-size: 17px;
 }
 
+.delete:hover {
+    opacity: 0.9;
+}
 
+@keyframes fadeOut {
+    from {
+      opacity: 1;
+    }
+    to {
+      opacity: 0;
+    }
+  }
+  
+  .cart-product.removing {
+    animation: fadeOut 0.8s ease forwards; /* La animación dura 0.8 segundos */
+    pointer-events: none; /* Evita la interacción durante la animación */
+  }
 /*BUTTON CHECKCKOUT*/
 .checkout-container { 
     margin-top: 0.5rem;
     border-top: 1px solid rgb(211, 211, 211);
     width: 100%;
     padding-bottom: 1rem;
+    transition: transform 0.4s ease-in-out, ease-out 0.4s ease-in-out;
 }
 
 .checkout-container-total {
@@ -183,7 +205,6 @@
     font-size: 14px;
     color: rgb(71, 71, 71);
 }
-
 
 @media screen and (max-width: 767px) { 
     .container-section-burger-menu {

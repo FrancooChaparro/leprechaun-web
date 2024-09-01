@@ -10,7 +10,6 @@ interface MyProviderProps {
 }
 
 
-
 const MyProvider: FC<MyProviderProps> = ({ children }) => {
   
   const [Cart, setCart] = useState<Product[]>([]);
@@ -34,7 +33,6 @@ const MyProvider: FC<MyProviderProps> = ({ children }) => {
 
   const Add = (newValue: Product, cantidad: number = 1) => {
     // Actualizar la lista de productos
-    console.log(Productos[0].stock);
     
     const updatedProducts = Productos.map((item: Product) =>
       item.id === newValue.id
@@ -48,7 +46,6 @@ const MyProvider: FC<MyProviderProps> = ({ children }) => {
   
     // Buscar el producto en el carrito
     const productInCart = Cart.find((item: Product) => item.id === newValue.id);
-    console.log(Cart, "cart");
   
     if (productInCart) {
       // Verificar si la cantidad solicitada es mayor que el stock disponible
@@ -107,7 +104,6 @@ const MyProvider: FC<MyProviderProps> = ({ children }) => {
 
 
   const Subir = (productId: number) => {
-    console.log(Cart);
     
     const updatedCart = Cart.map((item: Product) => {
       if (item.id === productId) {

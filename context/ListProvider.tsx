@@ -34,6 +34,8 @@ const MyProvider: FC<MyProviderProps> = ({ children }) => {
 
   const Add = (newValue: Product, cantidad: number = 1) => {
     // Actualizar la lista de productos
+    console.log(Productos[0].stock);
+    
     const updatedProducts = Productos.map((item: Product) =>
       item.id === newValue.id
         ? {
@@ -88,16 +90,19 @@ const MyProvider: FC<MyProviderProps> = ({ children }) => {
 
   
   const Discard = (itemToRemove: number, amount: number) => {
+    const stockInCart = Cart.find((item: Product) => item.id === itemToRemove )
+    if (stockInCart) {
     setCart((prevCart: Product[]) => prevCart.filter(item => item.id !== itemToRemove));
     const updatedProducts = Productos.map((item: Product) =>
       item.id === itemToRemove
         ? {
             ...item,
-            stock: item.stock + amount, 
+            stock: stockInCart?.stock + amount, 
           }
         : item
     );
     setProductos(updatedProducts);
+   }
   };
 
 

@@ -3,8 +3,8 @@ import { Product } from '@/types/types';
 import { createContext, useContext } from 'react';
 
 export type MyContextType = {
-  Add: (newValue: Product, cantidad: number) => void;
-  Discard: (newValue: number) => void;
+  Add: (newValue: Product, cantidad?: number) => void;
+  Discard: (newValue: number, amount: number) => void;
   Subir: (newValue: number) => void;
   Bajar: (newValue: number) => void;
   Cart: Product[];

@@ -8,7 +8,7 @@ import { Product } from '@/types/types';
 import Image from 'next/image';
 
 export const ComponentCart:  React.FC<Product> = ({ 
-  name, description, image, price, amount, id
+  name, description, image, price, amount, id, unitPrice, stock
 }) => {
 
   const { Discard, Subir, Bajar } = useMyContext()
@@ -30,7 +30,7 @@ export const ComponentCart:  React.FC<Product> = ({
           <small>({description.slice(0,15)})</small>
         </div>
         <div>
-          <span className={styles["delete"]} onClick={()=> Discard(id)}>
+          <span className={styles["delete"]} onClick={()=> Discard(id, amount)}>
             <DeleteIcon />
           </span>
         </div>

@@ -6,6 +6,7 @@ export interface Product {
   amount: number;
   price: number;
   unitPrice: number;
+  stock: number;
 }
 export interface Categorias {
   id: number;

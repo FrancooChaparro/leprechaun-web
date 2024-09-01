@@ -52,7 +52,6 @@ export default function Page({ params }: { params: { slug: string } }) {
 
   
 
-console.log(teamID);
 
   return (
     <div className={styles["container"]}>

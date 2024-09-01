@@ -2,7 +2,7 @@
 import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import { useMyContext } from "@/context/ListContext";
-import styles from "../../productDetails/product-details.module.css";
+import styles from "./product-details.module.css";
 import {LessIcon} from "@/Icons/CartIcon";
 import { Product } from "@/types/types";
 import { Loader } from "@/components/loader/Loader";

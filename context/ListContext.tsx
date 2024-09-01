@@ -20,6 +20,6 @@ export const useMyContext = () => {
     throw new Error('useMyContext must be used within a MyProvider');
   }
   return context;
-};
+}; 
 
 export default MyContext;

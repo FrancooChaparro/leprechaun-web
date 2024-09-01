@@ -1,5 +1,5 @@
 import React from 'react'
-import styles from "@/app/(routes)/productDetails/product-details.module.css"
+import styles from "@/app/(routes)/products/[slug]/product-details.module.css"
 
 export const Loader = () => {
   return (

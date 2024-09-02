@@ -21,7 +21,9 @@ const api = {
                 description,
                 image, 
                 price: parseInt(price),
-                amount: parseInt(amount)
+                amount: parseInt(amount),
+                unitPrice: 10,
+                stock: 10,
               };
             });
         });

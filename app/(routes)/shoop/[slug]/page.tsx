@@ -64,7 +64,7 @@ export default function Page({ params }: { params: { slug: string } }) {
           {Productos.length &&
               Productos.map((e) => {
                 return (
-                  <ProductCard key={e.id} name={e.name} price={e.price} image={e.image} description={e.description} compose={e} />
+                  <ProductCard key={e.id} amount={e.amount} id={e.id} name={e.name} price={e.price} image={e.image} description={e.description} compose={e} />
                 );
               })}
           </div>

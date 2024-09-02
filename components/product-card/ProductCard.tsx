@@ -6,7 +6,12 @@ import { useRouter } from "next/navigation";
 import { useMyContext } from "@/context/ListContext";
 import { Product, ProductCardProps } from "@/types/types";
 import Image from "next/image";
-import { DecreaseIcon, DeleteIcon, IncreaseIcon, TildeIcon } from "@/Icons/CartIcon";
+import {
+  DecreaseIcon,
+  DeleteIcon,
+  IncreaseIcon,
+  TildeIcon,
+} from "@/Icons/CartIcon";
 
 const inter = Roboto({ weight: ["400"], subsets: ["latin"] });
 
@@ -17,25 +22,24 @@ export const ProductCard: React.FC<ProductCardProps> = ({
   price,
   compose,
   id,
-  amount
+  amount,
 }) => {
   const router = useRouter();
-  const { Add, Cart, Subir, Bajar, Discard } = useMyContext(); 
+  const { Add, Cart, Subir, Bajar, Discard } = useMyContext();
   const [isInCart, setIsInCart] = useState<boolean>(false);
   const [Producto, setProducto] = useState<Product>();
-
 
   useEffect(() => {
     // Verifica si el producto está en el carrito
     const findProduct = Cart.find((item: Product) => item.id === id);
-  
+
     // Actualiza el estado basado en si el producto está en el carrito
     console.log(!!findProduct);
-    
+
     setIsInCart(!!findProduct);
-    setProducto(findProduct)
+    setProducto(findProduct);
   }, [Cart, id]); // Asegúrate de que se ejecute cuando el carrito cambie
-  
+
   const handleAddToCart = () => {
     Add(compose);
     // Espera a que el carrito se actualice y luego actualiza el estado
@@ -45,8 +49,8 @@ export const ProductCard: React.FC<ProductCardProps> = ({
   };
 
   const handleRemove = () => {
-      Discard(id, amount);
-      setIsInCart(false);
+    Discard(id, amount);
+    setIsInCart(false);
   };
 
   return (
@@ -67,32 +71,32 @@ export const ProductCard: React.FC<ProductCardProps> = ({
         <span className={styles["price"]}>${price}</span>
       </div>
 
-      {isInCart ? ( <div className={styles["container-modal"]}>
+      {isInCart ? (
+        <div className={styles["container-modal"]}>
+          <div className={styles["container-left"]}>
+            <TildeIcon />
+            <div>
+              <span>En carrito</span>
+            </div>
+          </div>
 
-          <div className={styles["container-left"]}><TildeIcon /><div><span>En carrito</span></div></div>
-        
           <div className={styles["container-rigth"]}>
-            {
-              Producto?.amount === 1 
-              ? <span className={styles["delete"]} onClick={handleRemove}>
-              <DeleteIcon />
-            </span> 
-              :  <span  className={styles["delete"]} onClick={()=> Bajar(id)}>
-              <DecreaseIcon />
+            {Producto?.amount === 1 ? (
+              <span className={styles["delete"]} onClick={handleRemove}>
+                <DeleteIcon />
               </span>
-            }
-           
-          <span>{Producto?.amount}</span>
-          <span onClick={()=> Subir(id)}>
+            ) : (
+              <span className={styles["delete"]} onClick={() => Bajar(id)}>
+                <DecreaseIcon />
+              </span>
+            )}
+
+            <span>{Producto?.amount}</span>
+            <span onClick={() => Subir(id)}>
               <IncreaseIcon />
-          </span>
-         </div>
-      
-       </div>
-
-
-
-
+            </span>
+          </div>
+        </div>
       ) : (
         <div className={`${styles["container-btn"]}`}>
           <button

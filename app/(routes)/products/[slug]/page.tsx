@@ -1,4 +1,4 @@
-"use client";
+"use client"; // lo sacamos
 import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import { useMyContext } from "@/context/ListContext";
@@ -7,9 +7,14 @@ import {LessIcon} from "@/Icons/CartIcon";
 import { Product } from "@/types/types";
 import { Loader } from "@/components/loader/Loader";
 import Image from "next/image";
-
+import { products } from "@/models/products"
 
 export default function Page({ params }: { params: { slug: string } }) {
+
+  // params.slug = cepillo
+  // const data = await fecth("asdasdasdas/cepillo")
+
+
   const router = useRouter();
   const { Productos, Add } = useMyContext()
   const [teamID, setTeamID] = useState<Product>();

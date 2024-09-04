@@ -61,10 +61,10 @@ export const Nav = () => {
 
         <div className={styles["hamburger-container"]}>
         <span className={styles["container-icon-btn-nav"]}>
-          <a className={styles["ancor"]} style={{zIndex: "15000"}} onClick={toggleMenu}>
-           {burger ?  <ClosedIcon /> : <HamburgerMenuIcon /> }
+          <a className={styles["ancor"]} onClick={toggleMenu}>
+           <HamburgerMenuIcon /> 
           </a>
-          <Filter isOpen={burger} />
+          <Filter isOpen={burger} toggleMenu={toggleMenu} />
         </span>
       </div>
 

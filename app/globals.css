@@ -9,6 +9,10 @@
   --nav-color: #1f1f24;
 }
 
+html {
+  position: relative;
+}
+
 * {
   box-sizing: border-box;
   padding: 0;
@@ -18,17 +22,13 @@
 html,
 body {
   max-width: 100vw;
-  width: 100vw;
+  min-height: 100vh;
   overflow-x: hidden;
   background-color: var(--primary-white);
   color: var(--primary-white);
   font-family: 'Oswald';       
   background-color: #f7f4ed;
 }
-
-/* .disable-scroll {
-  overflow: hidden; 
-}   */
 
 .no-scroll {
   overflow-y: hidden;

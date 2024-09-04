@@ -34,7 +34,6 @@ export const ProductCard: React.FC<ProductCardProps> = ({
     const findProduct = Cart.find((item: Product) => item.id === id);
 
     // Actualiza el estado basado en si el producto está en el carrito
-    console.log(!!findProduct);
 
     setIsInCart(!!findProduct);
     setProducto(findProduct);

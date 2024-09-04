@@ -91,7 +91,7 @@ export const categorias =  [
       "amount": 1,
       "price": 3000,
       "unitPrice": 3000,
-    "stock": 10
+      "stock": 10
     },
     {
       "id": 2,

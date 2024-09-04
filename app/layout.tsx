@@ -20,15 +20,15 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <MyProvider>
     <html lang="en">
+      <MyProvider>
       <body className={roboto.className}>
         <Nav />
         {children}
         <Contact />
         <Footer />
       </body>
-    </html>
     </MyProvider>
+    </html>
   );
 }

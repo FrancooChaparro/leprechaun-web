@@ -7,7 +7,6 @@ const Contact = () => {
 
   const incrementCount = () => {
       countRef.current++; // Incrementa el valor referenciado
-      console.log(`Count (ref): ${countRef.current}`);
   };
 
   const forceRender = () => {

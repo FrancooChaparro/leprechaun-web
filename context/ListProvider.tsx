@@ -14,6 +14,8 @@ const MyProvider: FC<MyProviderProps> = ({ children }) => {
   
   const [Cart, setCart] = useState<Product[]>([]);
   const [Productos, setProductos] = useState<Product[]>([]);
+  const [message, setMessage] = useState<string | null>(null);
+
 
   useEffect(() => {
     const fetchProducts = async () => {
@@ -29,9 +31,15 @@ const MyProvider: FC<MyProviderProps> = ({ children }) => {
   
     fetchProducts(); 
   }, []);
-
-
+  
+  
+  
   const Add = (newValue: Product, cantidad: number = 1) => {
+    if (cantidad === 0)  { 
+      setMessage("Debes agregar un numero de productos.")
+      return "Debes agregar un numero de productos."
+
+    }
     // Actualizar la lista de productos
     
     const updatedProducts = Productos.map((item: Product) =>
@@ -50,12 +58,14 @@ const MyProvider: FC<MyProviderProps> = ({ children }) => {
     if (productInCart) {
       // Verificar si la cantidad solicitada es mayor que el stock disponible
       if (cantidad > productInCart.stock) {
-        return console.log("No hay suficiente stock.");
+        setMessage("No hay suficiente stock.")
+        return "No hay suficiente stock."
       } 
   
       // Verificar si el stock es cero
       if (productInCart.stock === 0) {
-        return console.log("No hay más stock.");
+        setMessage("No hay más stock.")
+        return "No hay más stock."
       } 
   
       // Si todo está bien, actualiza el carrito
@@ -74,13 +84,21 @@ const MyProvider: FC<MyProviderProps> = ({ children }) => {
     } else {
       // Si el producto no está en el carrito, añadirlo
       if (cantidad > newValue.stock) {
-        return console.log("No puedes añadir más de la cantidad disponible en stock.");
+        setMessage("No puedes añadir más de la cantidad disponible en stock.")
+        return "No puedes añadir más de la cantidad disponible en stock."
       }
   
       setCart([
         ...Cart,
         { ...newValue, amount: cantidad, price: newValue.unitPrice * cantidad, stock: newValue.stock - cantidad },
       ]);
+      if (cantidad <= 1) {
+        setMessage("Producto Añadido correctamente")
+      } else {
+        setMessage("Productos Añadido correctamente")
+
+      }
+
     }
   };
   
@@ -150,6 +168,7 @@ const MyProvider: FC<MyProviderProps> = ({ children }) => {
   const contextValue: MyContextType = {
  Cart,
  Productos,
+ message,
  Discard,
  Add,
  Subir, 

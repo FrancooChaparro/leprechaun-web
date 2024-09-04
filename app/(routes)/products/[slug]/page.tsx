@@ -3,35 +3,40 @@ import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import { useMyContext } from "@/context/ListContext";
 import styles from "./product-details.module.css";
-import {LessIcon} from "@/Icons/CartIcon";
+import { LessIcon } from "@/Icons/CartIcon";
 import { Product } from "@/types/types";
 import { Loader } from "@/components/loader/Loader";
 import Image from "next/image";
-import { products } from "@/models/products"
+import { products } from "@/models/products";
 
 export default function Page({ params }: { params: { slug: string } }) {
-
   // params.slug = cepillo
   // const data = await fecth("asdasdasdas/cepillo")
 
-
   const router = useRouter();
-  const { Productos, Add } = useMyContext()
+  const { Productos, Add, message } = useMyContext();
   const [teamID, setTeamID] = useState<Product>();
   const [show, setShow] = useState(true);
   const [selectedColor, setSelectedColor] = useState("Amarillo");
-
+  const [test, setTest] = useState(false);
   const [cantidad, setCantidad] = useState(1); // Estado para almacenar la cantidad ingresada
+
+
+  const fuc = (teamID: any, cantidad: any) => { 
+    Add(teamID, cantidad)
+    setTest(true)
+    setTimeout(()=> {
+    setTest(false)
+    }, 4800)
+  }
 
   const handleCantidadChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setCantidad(Number(e.target.value)); // Actualiza el estado con el valor ingresado
   };
 
-
   const handleSelectColor = (color: string) => {
     setSelectedColor(color);
   };
-
 
   useEffect(() => {
     const param = async () => {
@@ -41,7 +46,6 @@ export default function Page({ params }: { params: { slug: string } }) {
       if (team) {
         setTeamID(team);
       } else {
-        
         router.push("/");
       }
     };
@@ -50,13 +54,8 @@ export default function Page({ params }: { params: { slug: string } }) {
   }, [params.slug]);
 
   if (teamID === undefined) {
-    return (
-       <Loader />
-    );
+    return <Loader />;
   }
-
-  
-
 
   return (
     <div className={styles["container"]}>
@@ -68,8 +67,7 @@ export default function Page({ params }: { params: { slug: string } }) {
            fill
            loading="lazy"
            /> */}
-           <img src={teamID.image}
-           alt="product" />
+          <img src={teamID.image} alt="product" />
         </div>
       </div>
 
@@ -109,15 +107,23 @@ export default function Page({ params }: { params: { slug: string } }) {
             </div>
             <div className={styles["container-mount"]}>
               <p>Cantidad</p>
-              <input type="text" value={cantidad} onChange={handleCantidadChange} />
-
+              <input
+                type="text"
+                value={cantidad}
+                onChange={handleCantidadChange}
+              />
             </div>
             <button
-        className={styles["btn-detail"]}
-        onClick={() => Add(teamID, cantidad)}
-      >AÑADIR AL CARRITO</button>
+              className={styles["btn-detail"]}
+              onClick={() => fuc(teamID, cantidad)}
+            >
+              AÑADIR AL CARRITO
+            </button>
+            
           </div>
-
+           {test && <div className={styles["modal-cart-btn"]}>
+              {message}
+            </div> }
           <div className={styles["container-card-product-data-description"]}>
             <div className={styles["description"]}>
               <span>DESCRIPCIÓN</span>
@@ -125,7 +131,7 @@ export default function Page({ params }: { params: { slug: string } }) {
                 style={{ cursor: "pointer" }}
                 onClick={() => setShow(!show)}
               >
-               <LessIcon />
+                <LessIcon />
               </span>
             </div>
             {show && (

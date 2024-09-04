@@ -1,5 +1,5 @@
 "use client";
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useMemo, useState } from "react";
 import styles from "./Nav.module.css";
 import { NavCategorias } from "../nav-categorias/NavCategorias";
 import { CartComponent } from "./cart-component/CartComponent";
@@ -11,6 +11,7 @@ import { useMyContext } from "@/context/ListContext";
 import { CartIcon, ClosedIcon, DeleteIcon, HamburgerMenuIcon } from "@/Icons/CartIcon";
 import { Filter } from "../filter/Filter";
 import { buttonMain } from "@/utils/functions/buttonMain";
+import { Product } from "@/types/types";
 
 export const Nav = () => {
   const router = useRouter();
@@ -22,6 +23,7 @@ export const Nav = () => {
   const { isAtTop, showButton } = useScrollPosition();
   const [burger, setBurger] = useState(false);
 
+  
   const toggleMenu = () => {
     setBurger(!burger);
   };
@@ -56,9 +58,13 @@ export const Nav = () => {
     };
   }, [isOpen]);
 
+  const cantidad = useMemo(() => 
+    Cart.reduce((total, product) => total + product.amount, 0), 
+    [Cart]
+  );
+
   return (
     <div className={`${styles["container-all"]} ${oswald.className}`}>
-
         <div className={styles["hamburger-container"]}>
         <span className={styles["container-icon-btn-nav"]}>
           <a className={styles["ancor"]} onClick={toggleMenu}>
@@ -96,7 +102,7 @@ export const Nav = () => {
       <span className={styles["container-icon-btn-nav"]}>
           <a className={styles["ancor"]} onClick={() => setab(!abier)}> 
             {Cart.length > 0 && (
-              <div className={styles["render"]}>{Cart.length}</div>
+              <div className={styles["render"]}>{cantidad}</div>
             )}
             <CartIcon />
           </a>

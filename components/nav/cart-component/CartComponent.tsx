@@ -59,7 +59,7 @@ export const CartComponent = ({
               CARRITO DE COMPRAS
             </span>
             <a className={styles["container-head-x"]} onClick={toggleCart}>
-              <ClosedIcon />
+              <ClosedIcon className="1.4rem"/>
             </a>
           </div>
 

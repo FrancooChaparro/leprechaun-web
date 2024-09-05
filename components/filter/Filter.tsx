@@ -14,13 +14,14 @@ export const Filter = ({ isOpen, toggleMenu } : { isOpen: boolean, toggleMenu: (
         <div className={styles["wraper"]}>
         <div className={styles["container-head"]}>
             <a className={styles["container-head-x"]} onClick={toggleMenu}>
-              <ClosedIcon />
+              <ClosedIcon  className='1.4rem'/>
             </a>
           </div>
 
 
-          <div style={{ paddingTop: "64px", paddingLeft: "0.8rem", paddingRight: "0.8rem"}}>
-        {products.length &&
+    <div className={styles["container-data"]}> 
+
+        {products.length > 0 &&
             products.map((e) => {
               return (
                 <div className={styles["container-section"]} key={e.id}>
@@ -32,7 +33,8 @@ export const Filter = ({ isOpen, toggleMenu } : { isOpen: boolean, toggleMenu: (
                 </div>
               );
             })}
-        </div>
+     
+     </div> 
         </div>
     </section>
 </>

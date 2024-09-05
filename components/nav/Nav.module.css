@@ -61,6 +61,8 @@
   position: relative;
 }
 
+
+
 .render {
   position: absolute;
   height: 10px;
@@ -132,6 +134,69 @@
   text-decoration: underline;
   cursor: pointer;
 }
+ 
+.modal-view { 
+  width: 290px;
+  height: 100px;
+  position: absolute;
+  top: 68px;
+  right: 30px;
+  border: 1px solid black;
+  background-color: white;
+  z-index: 15000;
+  border-radius: 3px;
+  overflow: hidden;
+  opacity: 0;              
+  visibility: hidden;       
+  transition: opacity 0.5s ease, visibility 0.5s ease;  
+}
+.modal-btn-closed {
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 4px;
+}
+
+.modal-btn-closed:hover {
+  opacity: 0.9;
+  cursor: pointer;
+}
+.modal-view.show {
+  opacity: 1;
+  /* pointer-events: none;    */
+  visibility: visible;
+}
+.container-primary {
+  display: flex;
+  padding: 10px 30px 10px 10px;
+  gap: 6px;
+}
+
+.container-img {
+  width: 55px;
+  height: 55px;
+  overflow: hidden;
+  position: relative;
+}
+
+.container-data-modal {
+  display: flex;
+  flex-direction: column;
+  width: 180px;
+}
+.container-data-modal span {
+  font-size: 14px;
+}
+
+.container-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+
+
+
 
 @media screen and (max-width: 767px) {
   .container-data {

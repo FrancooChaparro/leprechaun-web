@@ -5,6 +5,7 @@ import { createContext, useContext } from 'react';
 export type MyContextType = {
   Add: (newValue: Product, cantidad?: number) => void;
   Discard: (newValue: number, amount: number) => void;
+  ModalProduct: Product | null;
   message: string | null;
   Subir: (newValue: number) => void;
   Bajar: (newValue: number) => void;

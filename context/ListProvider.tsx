@@ -15,7 +15,7 @@ const MyProvider: FC<MyProviderProps> = ({ children }) => {
   const [Cart, setCart] = useState<Product[]>([]);
   const [Productos, setProductos] = useState<Product[]>([]);
   const [message, setMessage] = useState<string | null>(null);
-
+  const [ModalProduct, setModalProduct] = useState<Product | null>(null);
 
   useEffect(() => {
     const fetchProducts = async () => {
@@ -51,6 +51,7 @@ const MyProvider: FC<MyProviderProps> = ({ children }) => {
         : item
     );
     setProductos(updatedProducts);
+    setModalProduct(newValue);
   
     // Buscar el producto en el carrito
     const productInCart = Cart.find((item: Product) => item.id === newValue.id);
@@ -80,7 +81,7 @@ const MyProvider: FC<MyProviderProps> = ({ children }) => {
           : item
       );
       setCart(updatedCart);
-  
+      setModalProduct(newValue);
     } else {
       // Si el producto no está en el carrito, añadirlo
       if (cantidad > newValue.stock) {
@@ -92,6 +93,7 @@ const MyProvider: FC<MyProviderProps> = ({ children }) => {
         ...Cart,
         { ...newValue, amount: cantidad, price: newValue.unitPrice * cantidad, stock: newValue.stock - cantidad },
       ]);
+      setModalProduct(newValue);
       if (cantidad <= 1) {
         setMessage("Producto Añadido correctamente")
       } else {
@@ -130,7 +132,7 @@ const MyProvider: FC<MyProviderProps> = ({ children }) => {
           console.log("No se puede agregar más, se ha alcanzado el límite de stock.");
           return item; 
         }
-  
+        setModalProduct(item);
         return {
           ...item,
           amount: item.amount + 1,
@@ -139,10 +141,12 @@ const MyProvider: FC<MyProviderProps> = ({ children }) => {
         };
       }
   
+      
       return item;
     });
   
     setCart(updatedCart);
+
   };
   
   const Bajar = (productId: number) => {
@@ -173,6 +177,7 @@ const MyProvider: FC<MyProviderProps> = ({ children }) => {
  Add,
  Subir, 
  Bajar,
+ ModalProduct,
   };
 
   return (

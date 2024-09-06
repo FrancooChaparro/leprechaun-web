@@ -79,7 +79,7 @@ export const CartComponent = ({
 
                 />
               ))}
-                <BtnCheckout price={totalPrice} />
+                <BtnCheckout price={totalPrice} toggleCart={toggleCart}/>
             </>
           ) : (
             <div className={styles["Cart-vacio"]}>

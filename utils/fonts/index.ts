@@ -1,4 +1,4 @@
-import { Roboto, Oswald } from 'next/font/google'
+import { Roboto, Oswald, Lexend } from 'next/font/google'
 
 export const roboto = Roboto({
     subsets: ['latin'],
@@ -10,3 +10,12 @@ export const roboto = Roboto({
 })
 
 export const oswald = Oswald({ subsets: ["latin"]});
+
+export const lexend = Lexend({
+    subsets: ['latin'],
+    weight: ['300', '400', '700'],
+    style: 'normal',
+    preload: true,
+    variable: '--lexend-font',
+    display: 'swap'
+});

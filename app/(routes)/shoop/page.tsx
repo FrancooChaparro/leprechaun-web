@@ -52,7 +52,7 @@ import { FilterIcon } from "@/Icons/CartIcon";
               Nombre A - Z
             </option>
             <option value="name" data-direction="asc">
-              Nombre A - Z
+              Nombre A - B
             </option>
             <option value="name" data-direction="asc">
               Nombre A - Z

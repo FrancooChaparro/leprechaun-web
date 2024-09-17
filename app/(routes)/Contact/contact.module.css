@@ -374,14 +374,19 @@
     font-size: 14px;
     text-decoration: underline;
     transform: translatey(-50%);
-    
+    display: flex;
+    align-items: center;
   }
+
+ 
   .der {
     position: absolute;
     right: 14px;
     top: 50%;
     transform: translatey(-50%);
     font-weight: bold;
+    display: flex;
+    align-items: center;
 
   }
 }

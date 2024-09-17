@@ -1,5 +1,27 @@
 import React from "react";
 
+export const UpIcon: React.FC<{ className?: string }> = ({ className }) => (
+  <svg
+      viewBox="0 0 24 24"
+      fill="currentColor"
+      height="1.3rem"
+      width="1.3rem"
+    >
+      <path d="M6.293 13.293l1.414 1.414L12 10.414l4.293 4.293 1.414-1.414L12 7.586z" />
+    </svg>
+  );
+
+  export const DownIcon: React.FC<{ className?: string }> = ({ className }) => (
+    <svg
+    viewBox="0 0 24 24"
+    fill="currentColor"
+    height="1.3rem"
+    width="1.3rem"
+  >
+    <path d="M16.293 9.293L12 13.586 7.707 9.293l-1.414 1.414L12 16.414l5.707-5.707z" />
+  </svg>
+    );
+
 export const ShopIcon: React.FC<{ className?: string }> = ({ className }) => (
 <svg
 viewBox="0 0 1024 1024"

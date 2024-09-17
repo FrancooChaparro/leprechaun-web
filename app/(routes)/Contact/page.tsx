@@ -6,6 +6,7 @@ import { useMyContext } from "@/context/ListContext";
 import { CardCheckout } from "@/components/card-checkout/CardCheckout";
 import { Product } from "@/types/types";
 import { useWindowSize } from "@/utils/size/useWindowsSize";
+import { DownIcon, UpIcon } from "@/Icons/CartIcon";
 
 interface Order {
   email: string;
@@ -76,7 +77,7 @@ const Contact = () => {
     return total + product.price;
   }, 0);
 
-  const [shopOpen, setShopOpen] = useState<boolean>(true);
+  const [shopOpen, setShopOpen] = useState<boolean>(false);
 
   const [error, setError] = useState<boolean>(false);
   const [inputValues, setInputValues] = useState<Order>({
@@ -101,9 +102,9 @@ const Contact = () => {
 
   useEffect(() => {
     if (windowSize.width > 1000) {
-      setShopOpen(true); // Si el ancho es mayor a 1000px, actualiza el estado a false
+      setShopOpen(true); 
     } else {
-      setShopOpen(false);  // Si es menor o igual, actualiza a true
+      setShopOpen(false);  
     }
   }, [windowSize.width]);
 
@@ -283,7 +284,7 @@ const Contact = () => {
       <div className={styles["bbbbb"]}>
 
 <div onClick={()=> setShopOpen(!shopOpen)} className={styles["desplegable"]}>
-  <span className={styles["izq"]}> Ver detalles de la compra</span><span className={styles["der"]}>$ {totalPrice}</span>
+  <span className={styles["izq"]}>{shopOpen ? <span > <UpIcon /> </span> : <span> <DownIcon /> </span>} Ver detalles de la compra</span><span className={styles["der"]}>$ {totalPrice}</span>
 </div>
 <div className={`${styles["modal"]} ${
           shopOpen ? styles["accordion-open"] : styles["accordion-closed"]

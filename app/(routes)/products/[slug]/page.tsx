@@ -8,6 +8,7 @@ import { Product } from "@/types/types";
 import { Loader } from "@/components/loader/Loader";
 import Image from "next/image";
 import { products } from "@/models/products";
+import { AcordionCart } from "@/components/acordion-cart/Acordion-cart";
 
 export default function Page({ params }: { params: { slug: string } }) {
   // params.slug = cepillo
@@ -21,14 +22,13 @@ export default function Page({ params }: { params: { slug: string } }) {
   const [test, setTest] = useState(false);
   const [cantidad, setCantidad] = useState(1); // Estado para almacenar la cantidad ingresada
 
-
-  const fuc = (teamID: any, cantidad: any) => { 
-    Add(teamID, cantidad)
-    setTest(true)
-    setTimeout(()=> {
-    setTest(false)
-    }, 4800)
-  }
+  const fuc = (teamID: any, cantidad: any) => {
+    Add(teamID, cantidad);
+    setTest(true);
+    setTimeout(() => {
+      setTest(false);
+    }, 4800);
+  };
 
   const handleCantidadChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setCantidad(Number(e.target.value)); // Actualiza el estado con el valor ingresado
@@ -56,6 +56,7 @@ export default function Page({ params }: { params: { slug: string } }) {
   if (teamID === undefined) {
     return <Loader />;
   }
+  console.log(show);
 
   return (
     <div className={styles["container"]}>
@@ -119,13 +120,14 @@ export default function Page({ params }: { params: { slug: string } }) {
             >
               AÑADIR AL CARRITO
             </button>
-            
           </div>
-           {test && <div className={styles["modal-cart-btn"]}>
-              {message}
-            </div> }
-          <div className={styles["container-card-product-data-description"]}>
-            <div className={styles["description"]}>
+          {test && <div className={styles["modal-cart-btn"]}>{message}</div>}
+
+          <div className={styles["container-shop"]}>
+            <div
+              className={styles["container-shop-top"]}
+              onClick={() => setShow(!show)}
+            >
               <span>DESCRIPCIÓN</span>
               <span
                 style={{ cursor: "pointer" }}
@@ -134,8 +136,12 @@ export default function Page({ params }: { params: { slug: string } }) {
                 <LessIcon />
               </span>
             </div>
-            {show && (
-              <div className={styles["description-info"]}>
+            <div
+              className={`${styles["container-shop-bot"]} ${
+                show ? styles["accordion-open"] : styles["accordion-closed"]
+              }`}
+            >
+              <div className={styles["container-shop-bot-modal"]}>
                 <p>Tamaño: 2x2</p>
                 <p>Material: Algondodn</p>
                 <p>
@@ -145,7 +151,7 @@ export default function Page({ params }: { params: { slug: string } }) {
                 </p>
                 <p>dwqdqwdqwdqwdqwdwqdwqdwqwdw</p>
               </div>
-            )}
+            </div>
           </div>
         </div>
       </div>

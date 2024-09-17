@@ -148,7 +148,7 @@
   overflow: hidden;
   opacity: 0;              
   visibility: hidden;       
- transition: opacity 0.5s ease, visibility 0.5s ease;   
+  transition: opacity 0.5s ease, visibility 0.5s ease;   
 }
 .modal-btn-closed {
   position: absolute;
@@ -210,4 +210,38 @@
   .container-all {
     padding: 0 30px;
   }
+}
+
+
+@media screen and (max-width: 670px) {
+  .modal-view { 
+    width: calc(100% - 20px); /* Hace que el ancho sea el 100% menos 20px */
+    height: 100px;
+    position: absolute;
+    top: 68px;
+    left: 10px; /* Establece un margen de 10px a la izquierda */
+    right: 10px; /* Establece un margen de 10px a la derecha */
+    border: 1px solid black;
+    background-color: white;
+    z-index: 15000;
+    border-radius: 3px;
+    overflow: hidden;
+    opacity: 0;              
+    visibility: hidden;       
+    transition: opacity 0.5s ease, visibility 0.5s ease;   
+  }
+  
+.container-img {
+  width: 70px;
+  height: 70px;
+  overflow: hidden;
+  position: relative;
+}
+.container-data-modal {
+  width: 210px;
+
+}
+.container-data-modal span {
+  font-size: 15px;
+}
 }

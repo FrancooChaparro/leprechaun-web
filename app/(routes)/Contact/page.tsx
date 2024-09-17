@@ -1,10 +1,11 @@
 "use client";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import styles from "./contact.module.css";
 import { Input } from "@/components/input/Input";
 import { useMyContext } from "@/context/ListContext";
 import { CardCheckout } from "@/components/card-checkout/CardCheckout";
 import { Product } from "@/types/types";
+import { useWindowSize } from "@/utils/size/useWindowsSize";
 
 interface Order {
   email: string;
@@ -69,13 +70,13 @@ function validate(input: Order) {
 }
 
 const Contact = () => {
-
+  const windowSize = useWindowSize();
   const { Cart } = useMyContext();
   const totalPrice = Cart.reduce((total, product) => {
     return total + product.price;
   }, 0);
 
-  const [shopOpen, setShopOpen] = useState<boolean>(false);
+  const [shopOpen, setShopOpen] = useState<boolean>(true);
 
   const [error, setError] = useState<boolean>(false);
   const [inputValues, setInputValues] = useState<Order>({
@@ -97,6 +98,14 @@ const Contact = () => {
     delivery: "",
     aditionalMsg: "",
   });
+
+  useEffect(() => {
+    if (windowSize.width > 1000) {
+      setShopOpen(true); // Si el ancho es mayor a 1000px, actualiza el estado a false
+    } else {
+      setShopOpen(false);  // Si es menor o igual, actualiza a true
+    }
+  }, [windowSize.width]);
 
   function handleChange(
     e: React.ChangeEvent<
@@ -127,6 +136,7 @@ const Contact = () => {
       setError(false);
     }, 3000);
   };
+
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -272,20 +282,26 @@ const Contact = () => {
 
       <div className={styles["bbbbb"]}>
 
-
+<div onClick={()=> setShopOpen(!shopOpen)} className={styles["desplegable"]}>
+  <span className={styles["izq"]}> Ver detalles de la compra</span><span className={styles["der"]}>$ {totalPrice}</span>
+</div>
+<div className={`${styles["modal"]} ${
+          shopOpen ? styles["accordion-open"] : styles["accordion-closed"]
+        }`}>
 
         <div className={styles["total-card"]}>
+  
           <div className={`${styles["overflow-card"]} ${Cart.length > 0 ? styles["border"] : ""}` }>
           {Cart.length > 0 && (
             Cart.map((e: Product) => (
-                <CardCheckout
+              <CardCheckout
                   key={e.id}
                   name={e.name}
                   price={e.price}
                   image={e.image}
                   amount={e.amount}
                   />
-              ))
+                ))
             )}
           
           </div>
@@ -305,6 +321,7 @@ const Contact = () => {
             </div>
           </div>
 }
+    </div>
 
         </div>
 

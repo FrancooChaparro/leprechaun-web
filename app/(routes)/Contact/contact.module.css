@@ -215,6 +215,59 @@
   font-weight: 600;
 }
 
+.desplegable {
+  width: 520px;
+  padding: 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 19px;
+  color: black;
+  margin: 0 auto;
+  border-bottom: 1px solid rgb(190, 190, 190);
+  display: none;
+  position: relative;
+}
+
+
+
+
+.container-shop-top {
+  display: flex;
+  justify-content: space-between;
+}
+
+.container-shop-bot {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.container-shop-bot {   
+      display: grid;
+      overflow: hidden;
+      transition: all 0.3s ease-in-out;
+      color: #64748b; /* Color similar a text-slate-600 */
+      font-size: 0.875rem; /* Equivale a text-sm */
+    }
+    
+    .accordion-open {
+      grid-template-rows: 1fr; /* Equivale a grid-rows-[1fr] */
+      opacity: 100;
+    }
+    
+    .accordion-closed {
+      grid-template-rows: 0fr; /* Equivale a grid-rows-[0fr] */
+      opacity: 0;
+    }
+    .container-shop-bot-modal {
+      overflow: hidden;
+      display: flex;
+      justify-content: space-between;
+      background-color: rgba(209, 209, 209, 0.5);
+      padding: 8px;
+    }
+
+
 @media screen and (max-width: 1000px) {
   .container-contact {
     width: 100%;
@@ -235,13 +288,30 @@
   }
 
   .total-card {
+    display: grid;
+    overflow: hidden;
     width: 750px;
     padding: 0.2rem;
     padding-left: 0.5rem;
     margin: 0 auto;
     position: static;
   }
+  .accordion-open {
+    grid-template-rows: 1fr; /* Equivale a grid-rows-[1fr] */
+    opacity: 100;
+  }
+  
+  .accordion-closed {
+    grid-template-rows: 0fr; /* Equivale a grid-rows-[0fr] */
+    opacity: 0;
+  }
 
+.modal {
+  display: grid;
+  overflow: hidden;
+  transition: all 0.3s ease-in-out;
+
+}
   .br,
   .br-total {
     width: 100%;
@@ -294,6 +364,26 @@
     width: 150px;
     font-size: 15px;
   }
+  .desplegable {
+    display: block;
+  }
+  .izq {
+    position: absolute;
+    left: 14px;
+    top: 50%;
+    font-size: 14px;
+    text-decoration: underline;
+    transform: translatey(-50%);
+    
+  }
+  .der {
+    position: absolute;
+    right: 14px;
+    top: 50%;
+    transform: translatey(-50%);
+    font-weight: bold;
+
+  }
 }
 
 @media screen and (max-width: 1000px) {
@@ -304,6 +394,7 @@
   .bbbbb {
     width: 100%;
     padding-left: 0px;
+
   }
 
   .total-card {
@@ -316,7 +407,7 @@
     width: 100%;
   }
 
-  .total-card {
+  .total-card, .desplegable {
     width: 100%;
   }
 }

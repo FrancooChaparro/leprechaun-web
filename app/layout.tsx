@@ -19,14 +19,15 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+
   return (
     <html lang="en">
       <MyProvider>
       <body className={roboto.className}>
-        <Nav />
-        {children}
-        <Contact />
-        <Footer />
+         <Nav />
+          {children}
+          <Contact />
+          <Footer />
       </body>
     </MyProvider>
     </html>

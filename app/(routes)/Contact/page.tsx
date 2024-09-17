@@ -75,6 +75,7 @@ const Contact = () => {
     return total + product.price;
   }, 0);
 
+  const [shopOpen, setShopOpen] = useState<boolean>(false);
 
   const [error, setError] = useState<boolean>(false);
   const [inputValues, setInputValues] = useState<Order>({
@@ -270,6 +271,9 @@ const Contact = () => {
       </form>
 
       <div className={styles["bbbbb"]}>
+
+
+
         <div className={styles["total-card"]}>
           <div className={`${styles["overflow-card"]} ${Cart.length > 0 ? styles["border"] : ""}` }>
           {Cart.length > 0 && (
@@ -301,6 +305,7 @@ const Contact = () => {
             </div>
           </div>
 }
+
         </div>
 
       </div>

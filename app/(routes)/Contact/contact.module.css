@@ -2,7 +2,6 @@
   width: 1000px;
   display: grid;
   grid-template-columns: 2fr 1fr;
-  padding-top: 64px; /* padding nav*/
   color: black;
   margin-left: auto;
   margin-right: auto;
@@ -11,9 +10,7 @@
 
 .aaaaa {
   width: 600px;
-  /* border: 1px solid grey; */
   padding: 1rem;
-  background-color: #ffffff;
 }
 
 .bbbbb {
@@ -22,7 +19,6 @@
 }
 
 .total-card {
-  position: fixed;
   width: 300px;
   padding: 0.2rem;
 }
@@ -169,7 +165,7 @@
 }
 
 .overflow-card {
-  max-height: 182px;
+  max-height: 200px;
   min-height: 80px;
   width: 100%;
   overflow-y: auto;

@@ -284,7 +284,7 @@ const Contact = () => {
       </form>
 
       <div className={styles["bbbbb"]}>
-        <div
+        {totalPrice !== 0 && <div
           onClick={() => setShopOpen(!shopOpen)}
           className={styles["desplegable"]}
         >
@@ -304,6 +304,7 @@ const Contact = () => {
           </span>
           <span className={styles["der"]}>$ {totalPrice}</span>
         </div>
+        }
         <div
           className={`${styles["modal"]} ${
             shopOpen ? styles["accordion-open"] : styles["accordion-closed"]

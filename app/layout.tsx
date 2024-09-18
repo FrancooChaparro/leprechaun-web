@@ -5,6 +5,7 @@ import { Footer } from "@/components/footer/Footer";
 import { Contact } from "@/components/contact/Contact";
 import { roboto } from "@/utils/fonts";
 import MyProvider from "@/context/ListProvider";
+import { NavFooterWrapper } from "@/components/Nav-footer-wrapper/NavFooterWrapper";
 
 export const metadata: Metadata = {
   title: "Leprechaun®",
@@ -24,10 +25,9 @@ export default function RootLayout({
     <html lang="en">
       <MyProvider>
       <body className={roboto.className}>
-         <Nav />
-          {children}
-          <Contact />
-          <Footer />
+      <NavFooterWrapper>
+            {children}
+      </NavFooterWrapper>
       </body>
     </MyProvider>
     </html>

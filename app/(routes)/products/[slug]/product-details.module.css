@@ -270,15 +270,16 @@
         grid-template-columns: 1fr ;
         width: 100%;
         min-height: 100vh;
-        padding: 5rem 1rem 1rem;
+        padding: 5rem 0rem;
         user-select: none;
     }
     .containera{
-        height: 700px;
+        height: 500px;
         margin-bottom: 0px;
-    }
-    .containerb {
+      }
+      .containerb {
         height: max-content;
+        padding: 0 0.5rem;
     }
     .container-card-product-data {
         padding: 0.5rem 0.5rem 0 0.5rem;

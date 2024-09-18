@@ -123,13 +123,16 @@
   border: 1px solid #d13b3b;
 }
 
+
 .card {
   width: 270px;
   height: 60px;
   display: flex;
   justify-content: space-between;
 }
-
+.container-space {
+  display: flex;
+}
 .container-img {
   width: 60px;
   height: 60px;
@@ -310,7 +313,6 @@
   display: grid;
   overflow: hidden;
   transition: all 0.3s ease-in-out;
-
 }
   .br,
   .br-total {
@@ -349,13 +351,12 @@
   }
 
   .container-name {
-    width: 350px;
+    width: 200px;
     height: 100%;
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
-    padding-left: 8px;
-    font-size: 13px;
+    font-size: 14px;
   }
   .container-price {
     display: flex;
@@ -363,6 +364,7 @@
     align-items: center;
     width: 150px;
     font-size: 15px;
+    padding-right: 8px;
   }
   .desplegable {
     display: block;

@@ -28,43 +28,48 @@ function validate(input: Order) {
     delivery: "",
     aditionalMsg: "",
   };
+
   const regexName = /^([a-zA-Z ]+)$/i;
   const regexEmail = /^[\w-.]+@([\w-]+\.)+[\w-]{2,4}$/g;
 
   if (!input.name) {
-    errors.name = "name is required";
+    errors.name = "El nombre es requerido";
   }
 
   if (input.name && !regexName.test(input.name)) {
-    errors.name = "insert name valid";
+    errors.name = "Inserta un nombre válido";
   }
 
   if (input.name.length > 15 || input.name.length < 4) {
-    errors.name = "insert username valid";
+    errors.name = "El nombre debe tener entre 4 y 15 caracteres";
   }
+
   if (!input.number) {
-    errors.number = "number is required";
+    errors.number = "El número de teléfono es requerido";
   }
+
   if (input.number.length > 12 || input.number.length < 8) {
-    errors.number = "insert number valid";
+    errors.number = "El número debe tener entre 8 y 12 dígitos";
   }
+
   if (!input.direction) {
-    errors.direction = "direction is required";
+    errors.direction = "La dirección es requerida";
   }
 
   if (input.direction.length > 25 || input.direction.length < 4) {
-    errors.direction = "insert direction valid";
+    errors.direction = "La dirección debe tener entre 4 y 25 caracteres";
   }
 
   if (input.aditionalMsg && input.aditionalMsg.length > 60) {
-    errors.aditionalMsg = "Superaste el maximo de caracteres";
+    errors.aditionalMsg = "Superaste el máximo de 60 caracteres";
   }
+
   if (!input.email) {
-    errors.email = "email is required";
+    errors.email = "El correo electrónico es requerido";
   }
 
   if (input.email && !regexEmail.test(input.email)) {
-    errors.email = "insert email valid";
+    errors.email = "Inserta un correo electrónico válido";
   }
 
   return errors;
@@ -102,9 +107,9 @@ const Contact = () => {
 
   useEffect(() => {
     if (windowSize.width > 1000) {
-      setShopOpen(true); 
+      setShopOpen(true);
     } else {
-      setShopOpen(false);  
+      setShopOpen(false);
     }
   }, [windowSize.width]);
 
@@ -116,7 +121,7 @@ const Contact = () => {
     const { name, value } = e.target as
       | HTMLInputElement
       | HTMLSelectElement
-      | HTMLTextAreaElement; 
+      | HTMLTextAreaElement;
 
     setInputValues({
       ...inputValues,
@@ -137,7 +142,6 @@ const Contact = () => {
       setError(false);
     }, 3000);
   };
-
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -173,20 +177,15 @@ const Contact = () => {
         return handler();
       }
     }
-    if (
-      inputValues.number === ""
-    ) {
+    if (inputValues.number === "") {
       return handler();
     }
-    if (
-      inputValues.direction.length > 25 ||
-      inputValues.direction.length < 4
-    ) {
+    if (inputValues.direction.length > 25 || inputValues.direction.length < 4) {
       return handler();
     }
-     
-    //aca deberiamos hacer el post a wpp o mail 
-    return
+
+    //aca deberiamos hacer el post a wpp o mail
+    return;
   };
 
   return (
@@ -275,57 +274,76 @@ const Contact = () => {
           <small className={styles["danger"]}>{errors.aditionalMsg}</small>
         )}
         <button type="submit">REALIZAR EL PEDIDO</button>
-        {error && <div className={styles["container-danger-msg"]}>
-          <span className={styles["danger"]}>Algunos de los campos esta incorrecto</span>
+        {error && (
+          <div className={styles["container-danger-msg"]}>
+            <span className={styles["danger"]}>
+              Algunos de los campos esta incorrecto
+            </span>
           </div>
-}
+        )}
       </form>
 
       <div className={styles["bbbbb"]}>
-
-<div onClick={()=> setShopOpen(!shopOpen)} className={styles["desplegable"]}>
-  <span className={styles["izq"]}>{shopOpen ? <span > <UpIcon /> </span> : <span> <DownIcon /> </span>} Ver detalles de la compra</span><span className={styles["der"]}>$ {totalPrice}</span>
-</div>
-<div className={`${styles["modal"]} ${
-          shopOpen ? styles["accordion-open"] : styles["accordion-closed"]
-        }`}>
-
-        <div className={styles["total-card"]}>
-  
-          <div className={`${styles["overflow-card"]} ${Cart.length > 0 ? styles["border"] : ""}` }>
-          {Cart.length > 0 && (
-            Cart.map((e: Product) => (
-              <CardCheckout
-                  key={e.id}
-                  name={e.name}
-                  price={e.price}
-                  image={e.image}
-                  amount={e.amount}
-                  />
-                ))
-            )}
-          
-          </div>
-{
-  Cart.length > 0 && <div className={styles["container-total"]}>
-            <div className={styles["br"]}>
-              <span>Subtotal</span>
-              <span>$ {totalPrice}</span>
-            </div>
-            <div className={styles["br"]}>
-              <span>Costo de envío</span>
-              <span>Gratis</span>
-            </div>
-            <div className={styles["br-total"]}>
-              <span>Total</span>
-              <span>$ {totalPrice}</span>
-            </div>
-          </div>
-}
-    </div>
-
+        <div
+          onClick={() => setShopOpen(!shopOpen)}
+          className={styles["desplegable"]}
+        >
+          <span className={styles["izq"]}>
+            {shopOpen ? (
+              <span>
+                {" "}
+                <UpIcon />{" "}
+              </span>
+            ) : (
+              <span>
+                {" "}
+                <DownIcon />{" "}
+              </span>
+            )}{" "}
+            Ver detalles de la compra
+          </span>
+          <span className={styles["der"]}>$ {totalPrice}</span>
         </div>
-
+        <div
+          className={`${styles["modal"]} ${
+            shopOpen ? styles["accordion-open"] : styles["accordion-closed"]
+          }`}
+        >
+          <div className={styles["total-card"]}>
+            <div
+              className={`${styles["overflow-card"]} ${
+                Cart.length > 0 ? styles["border"] : ""
+              }`}
+            >
+              {Cart.length > 0 &&
+                Cart.map((e: Product) => (
+                  <CardCheckout
+                    key={e.id}
+                    name={e.name}
+                    price={e.price}
+                    image={e.image}
+                    amount={e.amount}
+                  />
+                ))}
+            </div>
+            {Cart.length > 0 && (
+              <div className={styles["container-total"]}>
+                <div className={styles["br"]}>
+                  <span>Subtotal</span>
+                  <span>$ {totalPrice}</span>
+                </div>
+                <div className={styles["br"]}>
+                  <span>Costo de envío</span>
+                  <span>Gratis</span>
+                </div>
+                <div className={styles["br-total"]}>
+                  <span>Total</span>
+                  <span>$ {totalPrice}</span>
+                </div>
+              </div>
+            )}
+          </div>
+        </div>
       </div>
     </div>
   );

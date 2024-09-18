@@ -123,7 +123,6 @@
     align-items: center;
     gap: 5px;
     font-size: 17px;
-  
   }
 
   .container-rigth {
@@ -157,6 +156,9 @@
     font-size: 11px;
     height: 30px;
   }
+  .container-left {
+    font-size: 15px;
+  }
 }
 
   
@@ -171,10 +173,19 @@
 }
 
 @media screen and (max-width: 495px) {
+  .container-left {
+    font-size: 13px;
+  }
+ 
+}
+
+@media screen and (max-width: 416px) {
   .container-btn {
     width: calc(100% - 22px); 
   }
+ 
 }
+
 
 @media screen and (max-width: 320px) {
 

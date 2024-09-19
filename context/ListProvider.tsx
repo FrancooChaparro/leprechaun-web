@@ -20,9 +20,9 @@ const MyProvider: FC<MyProviderProps> = ({ children }) => {
   useEffect(() => {
     const fetchProducts = async () => {
       try {
-        // const listProduct = await api.match.list();
-        // setProductos(listProduct); 
-         setProductos(products); 
+        const listProduct = await api.match.list();
+        setProductos(listProduct); 
+        //  setProductos(products); 
 
       } catch (err) {
         console.error("Error fetching products:", err);

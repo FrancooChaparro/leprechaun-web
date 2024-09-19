@@ -75,9 +75,11 @@ export default function Page({ params }: { params: { slug: string } }) {
       <div className={styles["containerb"]}>
         <div className={styles["container-card-product-data"]}>
           <div className={styles["container-card-product-data-top"]}>
-            <h2>{teamID.name}</h2>
+            <h2 style={{color: "#3C3C3B"}}>{teamID.name}</h2>
+            <h3 style={{color: "#409735", fontSize: "20px"}}>{teamID?.subname}</h3>
+            <h5 style={{color: "#60697b", fontSize: "14px"}}>{teamID.marca}</h5>
             <h4>${teamID.price}</h4>
-            <div className={styles["container-select"]}>
+            {/* <div className={styles["container-select"]}>
               <p>Color: {selectedColor}</p>
               <div className={styles["container-select-color"]}>
                 <div
@@ -105,7 +107,7 @@ export default function Page({ params }: { params: { slug: string } }) {
                   <div></div>
                 </div>
               </div>
-            </div>
+            </div> */}
             <div className={styles["container-mount"]}>
               <p>Cantidad</p>
               <input
@@ -142,14 +144,15 @@ export default function Page({ params }: { params: { slug: string } }) {
               }`}
             >
               <div className={styles["container-shop-bot-modal"]}>
-                <p>Tamaño: 2x2</p>
+                <span>{teamID?.rubro}</span>
+                {/* <p>Tamaño: 2x2</p>
                 <p>Material: Algondodn</p>
                 <p>
                   Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni
                   temporibus quo vel debitis explicabo assumenda libero iure
                   tempora accusantium ru alias.
                 </p>
-                <p>dwqdqwdqwdqwdqwdwqdwqdwqwdw</p>
+                <p>dwqdqwdqwdqwdqwdwqdwqdwqwdw</p> */}
               </div>
             </div>
           </div>

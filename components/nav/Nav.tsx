@@ -135,8 +135,6 @@ export const Nav = () => {
     
         </span>
       </div>
-
-
       <div
         className={`${styles["modal-view"]} ${modalVisible ? styles["show"] : ""}`}
       >

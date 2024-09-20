@@ -106,7 +106,7 @@ const MyProvider: FC<MyProviderProps> = ({ children }) => {
   
 
   
-  const Discard = (itemToRemove: number, amount: number) => {
+  const Discard = (itemToRemove: string, amount: number) => {
     const stockInCart = Cart.find((item: Product) => item.id === itemToRemove )
     if (stockInCart) {
     setCart((prevCart: Product[]) => prevCart.filter(item => item.id !== itemToRemove));
@@ -123,7 +123,7 @@ const MyProvider: FC<MyProviderProps> = ({ children }) => {
   };
 
 
-  const Subir = (productId: number) => {
+  const Subir = (productId: string) => {
     
     const updatedCart = Cart.map((item: Product) => {
       if (item.id === productId) {
@@ -149,7 +149,7 @@ const MyProvider: FC<MyProviderProps> = ({ children }) => {
 
   };
   
-  const Bajar = (productId: number) => {
+  const Bajar = (productId: string) => {
     const updatedCart = Cart.map((item: Product) => {
       if (item.id === productId && item.amount > 1) {
         return {

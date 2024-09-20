@@ -17,12 +17,12 @@ export interface Categorias {
 }
 
  export interface ProductCardProps { //Card en shoop
+    id: string;
     name: string;
     description: string;
     image: string;
     price: number;
     compose: Product;
-    id: string;
     amount: number;
   }
 

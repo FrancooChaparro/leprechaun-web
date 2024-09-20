@@ -49,7 +49,7 @@ const api = {
               const [id, name, description, image, marca, price, amount, subname, rubro] = row.split("\t");
 
               return {
-                id,
+                id: id.toString(),
                 name,
                 description: `${description} - ${marca}`,
                 image: `/images/${image}`,

@@ -11,7 +11,7 @@ import { Loader } from "@/components/loader/Loader";
 
 export default function Page({ params }: { params: { slug: string } }) {
   const [prop, setProp] = useState<string>();
-
+  const [ProductsByParams,setProductsByParams] = useState<Product[]>([])
   // Decodificar el slug
   const decodedSlug = decodeURIComponent(params.slug);
 
@@ -21,11 +21,18 @@ export default function Page({ params }: { params: { slug: string } }) {
     setProp(decodedSlug);
   }, [decodedSlug]);
 
+  const { Productos } = useMyContext();
 
-    const { Productos } = useMyContext()
- 
+  useEffect(() => {
+    if (Productos) {
+      const filteredProducts = Productos.filter((e) => e.marca?.toLocaleLowerCase() === decodedSlug.toLocaleLowerCase());
+      setProductsByParams(filteredProducts);
+    }
+  }, [Productos, decodedSlug]);
+
+
+  console.log(ProductsByParams);
   
-    
     return (
       <div className={styles["container-main-shoop"] }>
       
@@ -41,7 +48,7 @@ export default function Page({ params }: { params: { slug: string } }) {
         <div className={styles["container-main-shoop-actions"]}>
           <div className={styles["filter"]}>
             <FilterIcon />
-            <label  htmlFor="">FILTRAR</label></div>
+            <label  htmlFor="">{ProductsByParams.length} productos encontrados</label></div>
           <div className={styles["order"]}>
             <label htmlFor="" >ORDENAR</label>
             <select name="" id="">
@@ -61,8 +68,8 @@ export default function Page({ params }: { params: { slug: string } }) {
   
         <div className={styles["test"]}>
           <div className={styles["container-main-shoop-cards"]}>
-          {Productos.length &&
-              Productos.map((e) => {
+          {ProductsByParams.length &&
+              ProductsByParams.map((e) => {
                 return (
                   <ProductCard key={e.id} amount={e.amount} id={e.id} name={e.name} price={e.price} image={e.image} description={e.description} compose={e} />
                 );

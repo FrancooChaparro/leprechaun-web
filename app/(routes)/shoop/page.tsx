@@ -44,7 +44,7 @@ import { FilterIcon } from "@/Icons/CartIcon";
       <div className={styles["container-main-shoop-actions"]}>
         <div className={styles["filter"]}>
           <FilterIcon />
-          <label  htmlFor="">FILTRAR</label></div>
+          <label  htmlFor="">{Productos.length} productos encontrados</label></div>
         <div className={styles["order"]}>
           <label htmlFor="" >ORDENAR</label>
           <select name="" id="">

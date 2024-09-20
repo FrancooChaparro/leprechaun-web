@@ -56,7 +56,6 @@ export default function Page({ params }: { params: { slug: string } }) {
   if (teamID === undefined) {
     return <Loader />;
   }
-  console.log(show);
 
   return (
     <div className={styles["container"]}>
@@ -75,39 +74,16 @@ export default function Page({ params }: { params: { slug: string } }) {
       <div className={styles["containerb"]}>
         <div className={styles["container-card-product-data"]}>
           <div className={styles["container-card-product-data-top"]}>
-            <h2 style={{color: "#3C3C3B"}}>{teamID.name}</h2>
-            <h3 style={{color: "#409735", fontSize: "20px"}}>{teamID?.subname}</h3>
-            <h5 style={{color: "#60697b", fontSize: "14px"}}>{teamID.marca}</h5>
+            <h2 style={{ color: "#3C3C3B" }}>{teamID.name}</h2>
+            {
+            teamID?.subname && <h3 style={{ color: "#409735", fontSize: "20px" }}>
+              {teamID?.subname}
+            </h3> 
+            }
+            <h5 style={{ color: "#60697b", fontSize: "14px" }}>
+              {teamID.description}
+            </h5>
             <h4>${teamID.price}</h4>
-            {/* <div className={styles["container-select"]}>
-              <p>Color: {selectedColor}</p>
-              <div className={styles["container-select-color"]}>
-                <div
-                  className={`${styles["selector"]} ${
-                    styles["selector-amarillo"]
-                  } ${selectedColor === "Amarillo" ? styles["selected"] : ""}`}
-                  onClick={() => handleSelectColor("Amarillo")}
-                >
-                  <div></div>
-                </div>
-                <div
-                  className={`${styles["selector"]} ${
-                    styles["selector-rosa"]
-                  } ${selectedColor === "Rosa" ? styles["selected"] : ""}`}
-                  onClick={() => handleSelectColor("Rosa")}
-                >
-                  <div></div>
-                </div>
-                <div
-                  className={`${styles["selector"]} ${
-                    styles["selector-verde"]
-                  } ${selectedColor === "Verde" ? styles["selected"] : ""}`}
-                  onClick={() => handleSelectColor("Verde")}
-                >
-                  <div></div>
-                </div>
-              </div>
-            </div> */}
             <div className={styles["container-mount"]}>
               <p>Cantidad</p>
               <input
@@ -144,15 +120,9 @@ export default function Page({ params }: { params: { slug: string } }) {
               }`}
             >
               <div className={styles["container-shop-bot-modal"]}>
-                <span>{teamID?.rubro}</span>
-                {/* <p>Tamaño: 2x2</p>
-                <p>Material: Algondodn</p>
-                <p>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni
-                  temporibus quo vel debitis explicabo assumenda libero iure
-                  tempora accusantium ru alias.
-                </p>
-                <p>dwqdqwdqwdqwdqwdwqdwqdwqwdw</p> */}
+                {teamID?.rubro && teamID.rubro.length > 0
+                  ? teamID.rubro.map((e, index) => <span key={index}>{e}</span>)
+                  : ""}
               </div>
             </div>
           </div>

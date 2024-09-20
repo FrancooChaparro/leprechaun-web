@@ -9,7 +9,7 @@ export interface Product {
   stock: number;
   marca?: string;
   subname?: string;
-  rubro?: string;
+  rubro?: string[];
 }
 export interface Categorias {
   id: number;

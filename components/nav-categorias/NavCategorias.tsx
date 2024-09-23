@@ -1,10 +1,9 @@
 "use client"
-import React, { useEffect, useState } from "react";
+import React from "react";
 import styles from "@/components/nav/Nav.module.css";
 import { categorias } from "@/models/products";
 import { Categorias } from "@/types/types";
 import { roboto } from "@/utils/fonts";
-import { useRouter } from "next/router";
 
 export const NavCategorias = ({ router } : { router: any} ) => {
   const products: Categorias[] = categorias;

@@ -1,22 +1,22 @@
 export const data = [
   {
-    url: "/images/3.jpg",
-    product: "Guantes",
+    url: "/images/pulimentos.jpeg",
+    product: "Pulimentos",
     variable: "one",
   },
   {
-    url: "/images/4.webp",
-    product: "Pilchas",
+    url: "/images/accesorios.jpeg",
+    product: "Accesorios",
     variable: "two",
   },
   {
-    url: "/images/esponjas.jpg",
-    product: "Jabon",
+    url: "/images/shampoo.jpeg",
+    product: "Shampoo",
     variable: "three",
   },
   {
-    url: "/images/3.jpg",
-    product: "Guandasdasdastes",
+    url: "/images/microfibras.jpeg",
+    product: "Microfibras",
     variable: "four",
   },
 ];
@@ -25,59 +25,59 @@ export const data = [
 export const categorias =  [
     {
       "id": 1,
-      "nombre": "Glabs"
+      "nombre": "Pulimentos"
     },
     {
       "id": 2,
-      "nombre": "Laffitte"
+      "nombre": "Ceras"
     },
     {
       "id": 3,
-      "nombre": "Mystic balsamo perfumes"
+      "nombre": "Sellador Acrilico"
     },
     {
       "id": 4,
-      "nombre": "Toxic shine"
+      "nombre": "Desengrasantes"
     },
     {
       "id": 5,
-      "nombre": "3D productos"
+      "nombre": "Accesorios"
     },
     {
       "id": 6,
-      "nombre": "Soff 99"
+      "nombre": "Backing"
     },
     {
       "id": 7,
-      "nombre": "Sonax"
+      "nombre": "Cepillos"
     },
     {
       "id": 8,
-      "nombre": "Ternova"
+      "nombre": "Acondicionador Exterior"
     },
     {
       "id": 9,
-      "nombre": "Overcars"
+      "nombre": "Shampoo"
     },
     {
       "id": 10,
-      "nombre": "Stretch"
+      "nombre": "Acondicionador Interior"
     },
     {
       "id": 11,
-      "nombre": "Pulimentos y selladores"
+      "nombre": "Pintura removible"
     },
     {
       "id": 12,
-      "nombre": "BACKING Y PADS"
+      "nombre": "Microfibras"
     },
     {
       "id": 13,
-      "nombre": "Accesorios detailing"
+      "nombre": "Sellador ceramico"
     },
     {
       "id": 14,
-      "nombre": "Menzerna"
+      "nombre": "PAD"
     },
     
   ]

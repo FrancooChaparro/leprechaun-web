@@ -25,22 +25,25 @@ export default function Page({ params }: { params: { slug: string } }) {
 
   useEffect(() => {
     if (Productos) {
-      const filteredProducts = Productos.filter((e) => e.marca?.toLocaleLowerCase() === decodedSlug.toLocaleLowerCase());
+      const filteredProducts = Productos.filter((e) => e.description?.toLocaleLowerCase() === decodedSlug.toLocaleLowerCase());
       setProductsByParams(filteredProducts);
     }
   }, [Productos, decodedSlug]);
 
 
-  console.log(ProductsByParams);
+  console.log(Productos, "productos");
+  console.log( ProductsByParams[0]?.subtitle, "decode");
+  
   
     return (
       <div className={styles["container-main-shoop"] }>
       
       <div className={styles["container-main-shoop-data"]}>
           <h2>{prop}</h2>
-          <h4>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia
-            tenetur quibusdam sit.
+          <h4 style={{textAlign: "center", lineHeight: "1.5"}}>
+            {
+              ProductsByParams[0]?.subtitle ?  ProductsByParams[0]?.subtitle : ""
+            }
           </h4>
         </div>
   

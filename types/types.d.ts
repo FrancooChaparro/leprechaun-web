@@ -10,6 +10,7 @@ export interface Product {
   marca?: string;
   subname?: string;
   rubro?: string[];
+  subtitle: string;
 }
 export interface Categorias {
   id: number;

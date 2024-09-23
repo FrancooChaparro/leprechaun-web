@@ -1,6 +1,8 @@
+"use client"
 import React from "react";
 import styles from "../grid-layout/grid-layout.module.css";
 import Image from "next/image";
+import { useRouter } from "next/navigation";
 
 interface props {
   url: string;
@@ -8,8 +10,9 @@ interface props {
   variable: string;
 }
 export const Catalogue: React.FC<props> = ({ url, product, variable }) => {
+  const router = useRouter();
   return (
-    <div className={styles[variable]}>
+    <div className={styles[variable]} onClick={()=> router.push("/shoop/" + product)}>
       <Image src={url} alt="image" fill loading="lazy" />
 
       <div className={styles["container-overlay"]}>

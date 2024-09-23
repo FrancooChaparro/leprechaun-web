@@ -81,7 +81,7 @@ export default function Page({ params }: { params: { slug: string } }) {
             </h3> 
             }
             <h5 style={{ color: "#60697b", fontSize: "14px" }}>
-              {teamID.description}
+              {teamID.description} - {teamID?.marca}
             </h5>
             <h4>${teamID.price}</h4>
             <div className={styles["container-mount"]}>

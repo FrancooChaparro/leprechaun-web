@@ -46,12 +46,12 @@ const api = {
             .split("\n")
             .slice(1)
             .map((row) => {
-              const [id, name, description, image, marca, price, amount, subname, rubro] = row.split("\t");
+              const [id, name, description, image, marca, price, amount, subname, rubro, categorias] = row.split("\t");
 
               return {
                 id: id.toString(),
                 name,
-                description: `${description} - ${marca}`,
+                description: `${description}`,
                 image: `/images/${image}`,
                 // image: "https://acdn.mitiendanube.com/stores/001/374/737/products/party-summer1-984881b4d1fa58278616716538018280-640-0.png",
                 marca,
@@ -60,7 +60,8 @@ const api = {
                 unitPrice: parseInt(price),
                 stock: 4,
                 rubro: rubro.split("zz"), 
-                subname
+                subname,
+                subtitle: categorias,
               };
             });
         });

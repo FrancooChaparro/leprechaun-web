@@ -76,6 +76,7 @@ export const CartComponent = ({
                   id={e.id}
                   stock={e.stock}
                   unitPrice={e.unitPrice}
+                  subtitle={e.subtitle}
 
                 />
               ))}

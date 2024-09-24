@@ -93,6 +93,12 @@
     height: 3.125rem;
   }
 
+  .buy-button a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 4px;
+  }
   .buy-button:hover {
     color: #fff;
     cursor: pointer;

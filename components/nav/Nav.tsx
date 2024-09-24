@@ -12,6 +12,7 @@ import { CartIcon, ClosedIcon, DeleteIcon, HamburgerMenuIcon } from "@/Icons/Car
 import { Filter } from "../filter/Filter";
 import { buttonMain } from "@/utils/functions/buttonMain";
 import { Product } from "@/types/types";
+import Image from "next/image";
 
 
 export const Nav = () => {
@@ -141,7 +142,14 @@ export const Nav = () => {
         <div className={styles["modal-btn-closed"]} onClick={()=> closedModal()}><ClosedIcon className="1.4rem"/></div>
       <div className={styles["container-primary"]}>
            <div className={styles["container-img"]}>
-              <img src={ModalProduct?.image} alt="modalImageProduct" />
+            <Image
+             src={ModalProduct?.image || "/images/taos.jpg"} 
+             alt="modalImageProduct"
+             width={55}
+             height={55}
+             objectFit="cover"
+            />
+              {/* <img src={ModalProduct?.image} alt="modalImageProduct" /> */}
            </div>
            <div className={styles["container-data-modal"]}>
               <span>{ModalProduct?.name}</span>

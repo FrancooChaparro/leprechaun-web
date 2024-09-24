@@ -23,17 +23,17 @@
     position: relative;
 }
 
-.container-card-product-image img {
+/* .container-card-product-image img {
     width: 100%;
     height: 100%;
     filter: brightness(110%);
-    /* object-fit: cover; */
+    object-fit: cover; 
     object-position: center;
     background-repeat: no-repeat;
     background-position: center;
     background-attachment: fixed;
     background-size: cover;
-  }
+  } */
 
 .container-card-product-data {
     padding: 2rem 7rem 0 2rem;

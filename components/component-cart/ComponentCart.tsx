@@ -24,11 +24,18 @@ export const ComponentCart:  React.FC<Product> = ({
   return (
     <div className={`${styles["cart-product"]} ${isRemoving ? styles["removing"] : ""}`}>
     <div className={styles["cart-product-image"]}>
-      <img
+      <Image 
+        src={image}
+        alt='product-image-cart'
+        loading='lazy'
+        fill
+        objectFit='cover'
+      />
+      {/* <img
       src={image}
       alt="product-image-cart"
       loading='lazy'
-      />
+      /> */}
     </div>
     
     <div className={styles["cart-product-info"]}>
@@ -36,7 +43,7 @@ export const ComponentCart:  React.FC<Product> = ({
         <div className={styles["title"]}>
           <a href="">{name.toLocaleUpperCase()}</a>
           <small>({description.slice(0,15)})</small>
-        </div>
+        </div> 
         <div>
           <span className={styles["delete"]} onClick={handleRemove}>
             <DeleteIcon />

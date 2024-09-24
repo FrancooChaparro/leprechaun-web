@@ -89,13 +89,14 @@ export default function Page({ params }: { params: { slug: string } }) {
     <div className={styles["container"]}>
       <div className={styles["containera"]}>
         <div className={styles["container-card-product-image"]}>
-          {/* <Image 
+          <Image 
            src={teamID.image}
            alt="product"
            fill
            loading="lazy"
-           /> */}
-          <img src={teamID.image} alt="product" />
+           style={{objectFit: "cover", objectPosition: "center", filter: "brightness(110%)"}}
+           />
+          {/* <img src={teamID.image} alt="product" /> */}
         </div>
       </div>
 

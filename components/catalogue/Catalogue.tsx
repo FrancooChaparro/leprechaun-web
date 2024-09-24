@@ -13,7 +13,7 @@ export const Catalogue: React.FC<props> = ({ url, product, variable }) => {
   const router = useRouter();
   return (
     <div className={styles[variable]} onClick={()=> router.push("/shoop/" + product)}>
-      <Image src={url} alt="image" fill loading="lazy" />
+      <Image src={url} alt="image" fill objectFit="cover" loading="lazy" />
 
       <div className={styles["container-overlay"]}>
         <div className={styles["container-overlay-split"]}>

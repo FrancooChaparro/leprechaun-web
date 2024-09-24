@@ -3,7 +3,7 @@ import React, { useEffect, useState } from "react";
 import styles from "./shoop.module.css";
 import { ProductCard } from "@/components/product-card/ProductCard";
 import { useMyContext } from "@/context/ListContext";
-import { FilterIcon } from "@/Icons/CartIcon";
+import { DownIcon, FilterIcon } from "@/Icons/CartIcon";
 
 const Shoop = () => {
   const [showBackground, setShowBackground] = useState<boolean>(false);
@@ -88,7 +88,7 @@ const Shoop = () => {
           }}
         >
           <button className={styles["buy-button"]} onClick={() => setShowMoreProducts(showMoreProducts + 20)}>
-            Quiero ver más
+            <a>Quiero ver más <DownIcon /></a>
           </button>
         </div>
       )}

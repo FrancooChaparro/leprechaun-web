@@ -134,11 +134,11 @@
   height: 60px;
 }
 
-.container-img img {
+/* .container-img img {
   height: 100%;
   width: 100%;
   object-fit: cover;
-}
+} */
 
 .container-name {
   width: 110px;
@@ -340,11 +340,11 @@
     height: 70px;
   }
 
-  .container-img img {
+  /* .container-img img {
     height: 100%;
     width: 100%;
     object-fit: cover;
-  }
+  } */
 
   .container-name {
     width: 200px;

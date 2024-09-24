@@ -26,7 +26,7 @@
     align-items: center;
   }
   
-  .container-card-image img {
+  /* .container-card-image img {
     position: absolute;
     height: 100%;
     width: 100%;
@@ -34,11 +34,11 @@
     top: 0;
     right: 0;
     bottom: 0;
-    /* object-fit: cover;
-    object-position: center; */
+    object-fit: cover;
+    object-position: center;
     color: transparent;
   }
-  
+   */
   .container-card-data {
     height: 5.8rem;
     min-height: 5.8rem;
@@ -102,9 +102,11 @@
     border-radius: 34px;
     border-style: none;
     cursor: pointer;
+    font-weight: 700;
     height: 38px;
     width: 100%;
     transition: background-color 0.3s ease;
+    font-size: 12px;
   }
   
   .container-modal {

@@ -22,7 +22,7 @@
   grid-auto-rows: minmax(220px, auto);
 }
 
-.one img,
+/* .one img,
 .two img,
 .three img,
 .four img {
@@ -36,7 +36,7 @@
   object-fit: cover;
   object-position: center;
   color: transparent;
-}
+} */
 
 .one,
 .two,

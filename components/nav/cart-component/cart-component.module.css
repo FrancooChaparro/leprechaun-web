@@ -98,13 +98,16 @@
     color: var(--primary-black);
     margin-top: 5px;
 }
+.cart-product-image {
+    position: relative;
+}
 
-.cart-product-image img {
+/* .cart-product-image img {
     height: 100%;
     width: 100%;
     object-fit: cover;
     object-position: center;
-}
+} */
 
 .cart-product-info {
     padding: 0.4rem;

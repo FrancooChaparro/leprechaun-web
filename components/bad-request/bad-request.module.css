@@ -1,0 +1,41 @@
+.container-bad-request {
+     width: 100vw;
+     height: 90vh;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     color: #3b3b3b;
+     font-size: 20px;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.btn {
+    display: inline-flex;
+    background-color: #409735;
+    color: white;
+    align-items: center;
+    justify-content: center;
+    line-height: 1.7;
+    letter-spacing: -.01rem;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    cursor: pointer;
+    user-select: none;
+    border: 2px solid transparent;
+    box-sizing: border-box;
+    padding: 0.45rem 1.2rem;
+    font-size: .8rem;
+    border-radius: .4rem;
+}
+
+.btn:hover { 
+    opacity: 0.9;
+}

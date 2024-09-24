@@ -4,7 +4,7 @@
     padding-top: 64px;
     width: 100vw;
     min-height: 100vh;
-    padding-bottom: 5rem;
+    padding-bottom: 4rem;
 }
 
 .container-main-shoop-data {
@@ -14,7 +14,7 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    color: #000000;
+    color: #2c2c2c;
     gap: 15px;
 }
 .resp {
@@ -79,7 +79,25 @@
     appearance: none;
 }
 
+.buy-button {
+    color: #000;
+    font-size: 14px;
+    font-weight: 500;
+    font-family: Arial, Helvetica, sans-serif;
+    border: 1px solid #000;
+    border-radius: 1.56rem;
+    background: #fff;
+    text-decoration: none;
+    transition-duration: .2s;
+    width: 13.75rem;
+    height: 3.125rem;
+  }
 
+  .buy-button:hover {
+    color: #fff;
+    cursor: pointer;
+    background-color:  #000;
+  }
 
 @media screen and (max-width: 1030px) { 
     .container-main-shoop-cards {

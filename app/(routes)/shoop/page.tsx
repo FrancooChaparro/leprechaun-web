@@ -1,16 +1,16 @@
-"use client"
+"use client";
 import React, { useEffect, useState } from "react";
 import styles from "./shoop.module.css";
 import { ProductCard } from "@/components/product-card/ProductCard";
 import { useMyContext } from "@/context/ListContext";
 import { FilterIcon } from "@/Icons/CartIcon";
 
- const Shoop = () => {
+const Shoop = () => {
   const [showBackground, setShowBackground] = useState<boolean>(false);
   const [show, setShow] = useState<boolean>(false);
+  const [showMoreProducts, setShowMoreProducts] = useState<number>(20);
   const TOP_OFFSET = 400;
-  const { Productos } = useMyContext()
-
+  const { Productos } = useMyContext();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -28,11 +28,9 @@ import { FilterIcon } from "@/Icons/CartIcon";
     };
   }, []);
 
-  
   return (
-    <div className={styles["container-main-shoop"] }>
-    
-    <div className={styles["container-main-shoop-data"]}>
+    <div className={styles["container-main-shoop"]}>
+      <div className={styles["container-main-shoop-data"]}>
         <h2>Guantes</h2>
         <h4>
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia
@@ -40,13 +38,13 @@ import { FilterIcon } from "@/Icons/CartIcon";
         </h4>
       </div>
 
-
       <div className={styles["container-main-shoop-actions"]}>
         <div className={styles["filter"]}>
           <FilterIcon />
-          <label  htmlFor="">{Productos.length} productos encontrados</label></div>
+          <label htmlFor="">{Productos.length} productos encontrados</label>
+        </div>
         <div className={styles["order"]}>
-          <label htmlFor="" >ORDENAR</label>
+          <label htmlFor="">ORDENAR</label>
           <select name="" id="">
             <option value="name" data-direction="asc">
               Nombre A - Z
@@ -59,22 +57,43 @@ import { FilterIcon } from "@/Icons/CartIcon";
             </option>
           </select>
         </div>
-        </div>
-
+      </div>
 
       <div className={styles["test"]}>
         <div className={styles["container-main-shoop-cards"]}>
-        {Productos.length &&
+          {Productos.length &&
             Productos.map((e) => {
               return (
-                <ProductCard key={e.id} amount={e.amount} id={e.id} name={e.name} price={e.price} image={e.image} description={e.description} compose={e} />
+                <ProductCard
+                  key={e.id}
+                  amount={e.amount}
+                  id={e.id}
+                  name={e.name}
+                  price={e.price}
+                  image={e.image}
+                  description={e.description}
+                  compose={e}
+                />
               );
-            })}
+            }).slice(0, showMoreProducts)}
         </div>
       </div>
-
-
+      {showMoreProducts < Productos.length && (
+        <div
+          style={{
+            width: "100%",
+            display: "flex",
+            justifyContent: "center",
+            marginTop: "2rem",
+          }}
+        >
+          <button className={styles["buy-button"]} onClick={() => setShowMoreProducts(showMoreProducts + 20)}>
+            Quiero ver más
+          </button>
+        </div>
+      )}
     </div>
+    
   );
 };
 

@@ -3,17 +3,19 @@ import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import { useMyContext } from "@/context/ListContext";
 import styles from "./product-details.module.css";
-import { LessIcon } from "@/Icons/CartIcon";
+import { EyeIcon, LessIcon } from "@/Icons/CartIcon";
 import { Product } from "@/types/types";
 import { Loader } from "@/components/loader/Loader";
 import Image from "next/image";
 import { products } from "@/models/products";
 import { AcordionCart } from "@/components/acordion-cart/Acordion-cart";
+import { BadRequest } from "@/components/bad-request/BadRequest";
 
 export default function Page({ params }: { params: { slug: string } }) {
   // params.slug = cepillo
   // const data = await fecth("asdasdasdas/cepillo")
 
+  
   const router = useRouter();
   const { Productos, Add, message } = useMyContext();
   const [teamID, setTeamID] = useState<Product>();
@@ -38,23 +40,49 @@ export default function Page({ params }: { params: { slug: string } }) {
     setSelectedColor(color);
   };
 
+  // useEffect(() => {
+  //   const param = async () => {
+  //     const team = Productos.find(
+  //       (e) => e.name.toLowerCase() === decodeURI(params.slug.toLowerCase())
+  //     );
+  //     if (team) {
+  //       setTeamID(team);
+  //     } else {
+  //       router.push("/");
+  //     }
+  //   };
+  //   param();
+  //   // eslint-disable-next-line
+  // }, [params.slug]);
+
   useEffect(() => {
     const param = async () => {
+      const formattedSlug = params.slug
+      .replace(/-/g, ' ') 
+      .replace(/_/g, '"') 
+      .toLowerCase(); 
+      console.log(formattedSlug);
+      
       const team = Productos.find(
-        (e) => e.name.toLowerCase() === decodeURI(params.slug.toLowerCase())
+        (e) => e.name.toLowerCase() === formattedSlug
       );
       if (team) {
         setTeamID(team);
       } else {
-        router.push("/");
+        return <div style={{width: "100vw", height: "100vh", color: "black", display: "flex", justifyContent: "center", alignItems:"center"}}>
+    No encontramos el producto que buscás
+  </div>
       }
     };
     param();
-    // eslint-disable-next-line
+     // eslint-disable-next-line
+
   }, [params.slug]);
+  
+
 
   if (teamID === undefined) {
-    return <Loader />;
+    return <BadRequest />
   }
 
   return (

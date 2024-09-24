@@ -14,6 +14,7 @@ export default function Page({ params }: { params: { slug: string } }) {
   const [ProductsByParams,setProductsByParams] = useState<Product[]>([])
   // Decodificar el slug
   const decodedSlug = decodeURIComponent(params.slug);
+  const [showMoreProducts, setShowMoreProducts] = useState<number>(20);
 
 
   // Aquí puedes usar el `decodedSlug` para lo que necesites
@@ -76,10 +77,23 @@ export default function Page({ params }: { params: { slug: string } }) {
                 return (
                   <ProductCard key={e.id} amount={e.amount} id={e.id} name={e.name} price={e.price} image={e.image} description={e.description} compose={e} />
                 );
-              })}
+              }).slice(0, showMoreProducts)}
           </div>
         </div>
-  
+        {showMoreProducts < ProductsByParams.length && (
+        <div
+          style={{
+            width: "100%",
+            display: "flex",
+            justifyContent: "center",
+            marginTop: "2rem",
+          }}
+        >
+          <button className={styles["buy-button"]} onClick={() => setShowMoreProducts(showMoreProducts + 20)}>
+            Quiero ver más
+          </button>
+        </div>
+      )}
   
       </div>
     );

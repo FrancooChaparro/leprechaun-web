@@ -4,13 +4,24 @@ import styles from "./shoop.module.css";
 import { ProductCard } from "@/components/product-card/ProductCard";
 import { useMyContext } from "@/context/ListContext";
 import { DownIcon, FilterIcon } from "@/Icons/CartIcon";
+import { Product } from "@/types/types";
+import { Loader } from "@/components/loader/Loader";
 
 const Shoop = () => {
+
+  const [selectedOption, setSelectedOption] = useState('');
+
   const [showBackground, setShowBackground] = useState<boolean>(false);
   const [show, setShow] = useState<boolean>(false);
   const [showMoreProducts, setShowMoreProducts] = useState<number>(20);
   const TOP_OFFSET = 400;
   const { Productos } = useMyContext();
+  // const [ko, setKo] = useState<Product[]>(Productos)
+ 
+  // useEffect(()=> {
+  //   setKo(Productos)
+
+  // }, [Productos])
 
   useEffect(() => {
     const handleScroll = () => {
@@ -27,6 +38,34 @@ const Shoop = () => {
       window.removeEventListener("scroll", handleScroll);
     };
   }, []);
+ 
+  // const handleSelectChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
+  //   const selectedValue = event.target.value;
+  //   const selectedOption = event.target.selectedOptions[0];
+  //   const dataDirection = selectedOption.getAttribute('data-direction'); 
+
+  //   aplicarFuncion(selectedValue, dataDirection);
+  // };
+
+
+
+  // const aplicarFuncion = (value: string, direction: string | null) => {
+  //   let sortedProducts = [...ko]; 
+
+  //   if (value === 'name') {
+  //     sortedProducts.sort((a, b) => a.name.localeCompare(b.name));
+  //     if (direction === 'desc') {
+  //       sortedProducts.reverse(); 
+  //     }
+  //   } else if (value === 'price') {
+  //     sortedProducts.sort((a, b) => a.price - b.price);
+  //     if (direction === 'desc') {
+  //       sortedProducts.reverse(); 
+  //     }
+  //   }
+
+  //   setKo(sortedProducts); 
+  // };
 
   return (
     <div className={styles["container-main-shoop"]}>
@@ -44,16 +83,16 @@ const Shoop = () => {
           <label htmlFor="">{Productos.length} productos encontrados</label>
         </div>
         <div className={styles["order"]}>
-          <label htmlFor="">ORDENAR</label>
-          <select name="" id="">
+          <label htmlFor="select-order">ORDENAR</label>
+          <select name="ordenar" id="select-order" >
             <option value="name" data-direction="asc">
               Nombre A - Z
             </option>
-            <option value="name" data-direction="asc">
-              Nombre A - B
+            <option value="price" data-direction="asc">
+              Menor-Mayor
             </option>
-            <option value="name" data-direction="asc">
-              Nombre A - Z
+            <option value="price" data-direction="desc">
+            Mayor-Menor
             </option>
           </select>
         </div>
@@ -61,8 +100,8 @@ const Shoop = () => {
 
       <div className={styles["test"]}>
         <div className={styles["container-main-shoop-cards"]}>
-          {Productos.length &&
-            Productos.map((e) => {
+          {Productos.length === 0 ? <Loader />
+           : Productos.map((e) => {
               return (
                 <ProductCard
                   key={e.id}
@@ -75,7 +114,7 @@ const Shoop = () => {
                   compose={e}
                 />
               );
-            }).slice(0, showMoreProducts)}
+            }).slice(0, showMoreProducts) }
         </div>
       </div>
       {showMoreProducts < Productos.length && (

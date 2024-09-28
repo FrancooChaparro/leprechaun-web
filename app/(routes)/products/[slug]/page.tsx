@@ -42,7 +42,7 @@ export default function Page({ params }: { params: { slug: string } }) {
       if (team) {
         setTeamID(team);
       } else {
-        return <Loader />;
+        return <BadRequest />;
       }
     };
     param();
@@ -51,7 +51,7 @@ export default function Page({ params }: { params: { slug: string } }) {
 
 
   if (!teamID) {
-    return <Loader />;
+    return <BadRequest />;
   }
 
   return (

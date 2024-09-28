@@ -2,59 +2,73 @@
     "categorias": [
       {
         "id": 1,
-        "nombre": "Glabs"
+        "nombre": "Glabs",
+        "url": "glabs"
       },
       {
         "id": 2,
-        "nombre": "Laffitte"
+        "nombre": "Laffitte",
+        "url": "laffitte"
       },
       {
         "id": 3,
-        "nombre": "Mystic balsamo perfumes"
+        "nombre": "Mystic balsamo perfumes",
+        "url": "mystic-balsamo-perfumes"
       },
       {
         "id": 4,
-        "nombre": "Toxic shine"
+        "nombre": "Toxic shine",
+        "url": "toxic-shine"
       },
       {
         "id": 5,
-        "nombre": "3D productos"
+        "nombre": "3D productos",
+        "url": "3d-productos"
       },
       {
         "id": 6,
-        "nombre": "Soff 99"
+        "nombre": "Soff 99",
+        "url": "soff99"
       },
       {
         "id": 7,
-        "nombre": "Sonax"
+        "nombre": "Sonax",
+        "url": "sonax"
       },
       {
         "id": 8,
-        "nombre": "Ternova"
+        "nombre": "Ternova",
+        "url": "ternova"
       },
       {
         "id": 9,
-        "nombre": "Overcars"
+        "nombre": "Overcars",
+        "url": "overcars"
       },
       {
         "id": 10,
-        "nombre": "Stretch"
+        "nombre": "Stretch",
+        "url": "stretch"
       },
       {
         "id": 11,
-        "nombre": "Pulimentos y selladores"
+        "nombre": "Pulimentos y selladores",
+        "url": "pulimentos-y-selladores"
       },
       {
         "id": 12,
-        "nombre": "BACKING Y PADS"
+        "nombre": "BACKING Y PADS",
+        "url": "backing-y-pads"
       },
       {
         "id": 13,
-        "nombre": "Accesorios detailing"
+        "nombre": "Accesorios detailing",
+        "url": "accesorios-detailing"
       },
       {
         "id": 14,
-        "nombre": "Menzerna"
+        "nombre": "Menzerna",
+        "url": "menzerna"
       }
     ]
   }

@@ -1,39 +1,6 @@
 import type { Product } from "@/types/types";
 
-// const api = {
-//   match: {
-//     list: async (): Promise<Product[]> => {
-//       return fetch(
-//         "https://docs.google.com/spreadsheets/d/e/2PACX-1vRkVHnsot25BjWlN6CH5XzRVH7vSyRMwJZfEWIBqmbcQNeLGew8NWP-BPLfLbpn3zS8XyQrDOU849r1/pub?output=tsv",
-//         {next: {tags: ["productos"]}},
-//       )
-//         .then((res) => res.text())
-//         .then((text) => {
-//           return text
-//             .split("\n")
-//             .slice(1)
-//             .map((row) => {
-//               const [id, name, description, image, price, amount] = row.split("\t");
-
-//               return {
-//                 id: id,
-//                 name,
-//                 description,
-//                 image, 
-//                 price: parseInt(price),
-//                 amount: parseInt(amount),
-//                 unitPrice: 10,
-//                 stock: 10,
-//               };
-//             });
-//         });
-//     },
-//   }
-// }
-"https://docs.google.com/spreadsheets/d/1-B59DSjDTqGMIKevd-FDU1LGCkcI666YXRpZCZL495U/edit?gid=0#gid=0"
-
-// "https://docs.google.com/spreadsheets/d/e/2PACX-1vRkVHnsot25BjWlN6CH5XzRVH7vSyRMwJZfEWIBqmbcQNeLGew8NWP-BPLfLbpn3zS8XyQrDOU849r1/pub?output=tsv"
-const api = {
+ const api = {
   match: {
     list: async (): Promise<Product[]> => {
       return fetch(
@@ -46,7 +13,7 @@ const api = {
             .split("\n")
             .slice(1)
             .map((row) => {
-              const [id, name, description, image, marca, price, amount, subname, rubro, categorias] = row.split("\t");
+              const [id, name, description, image, marca, price, amount, subname, rubro, categorias, url, tituloCategoria, pricears] = row.split("\t");
 
               return {
                 id: id.toString(),
@@ -59,9 +26,14 @@ const api = {
                 amount: parseInt(amount),
                 unitPrice: parseInt(price),
                 stock: 4,
-                rubro: rubro.split("zz"), 
+                // rubro: rubro.split("zz"), 
+                rubro: ["ee"],
                 subname,
-                subtitle: categorias,
+                subtitle: "TITULO ACA",
+                urlCategory: categorias,
+                urlProduct: url,
+                titleCategory: tituloCategoria,
+                pricears
               };
             });
         });

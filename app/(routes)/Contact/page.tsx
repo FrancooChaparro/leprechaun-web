@@ -7,6 +7,7 @@ import { CardCheckout } from "@/components/card-checkout/CardCheckout";
 import { Product } from "@/types/types";
 import { useWindowSize } from "@/utils/size/useWindowsSize";
 import { DownIcon, UpIcon } from "@/Icons/CartIcon";
+import { formatoContabilidad } from "@/utils/functions/buttonMain";
 
 interface Order {
   email: string;
@@ -145,8 +146,6 @@ const Contact = () => {
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    console.log(inputValues, "start");
-
     const regexName = /^([a-zA-Z ]+)$/i;
     const regexEmail = /^[\w-.]+@([\w-]+\.)+[\w-]{2,4}$/g;
     if (
@@ -331,7 +330,7 @@ const Contact = () => {
               <div className={styles["container-total"]}>
                 <div className={styles["br"]}>
                   <span>Subtotal</span>
-                  <span>$ {totalPrice}</span>
+                  <span>$ {formatoContabilidad(totalPrice)}</span>
                 </div>
                 <div className={styles["br"]}>
                   <span>Costo de envío</span>
@@ -339,7 +338,7 @@ const Contact = () => {
                 </div>
                 <div className={styles["br-total"]}>
                   <span>Total</span>
-                  <span>$ {totalPrice}</span>
+                  <span>$ {formatoContabilidad(totalPrice)}</span>
                 </div>
               </div>
             )}

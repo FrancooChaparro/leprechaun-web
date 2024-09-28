@@ -5,6 +5,7 @@ import { ComponentCart } from "@/components/component-cart/ComponentCart";
 import { BtnCheckout } from "@/components/btn-checkout/Btn-checkout";
 import { useMyContext } from "@/context/ListContext";
 import { ClosedIcon } from "@/Icons/CartIcon";
+import { formatoContabilidad } from "@/utils/functions/buttonMain";
 
 export const CartComponent = ({
   isOpen,
@@ -33,11 +34,12 @@ export const CartComponent = ({
   }, [isOpen]); // eslint-disable-line react-hooks/exhaustive-deps
 
   const { Cart } = useMyContext();
+
+
   const totalPrice = Cart.reduce((total, product) => {
     return total + product.price;
   }, 0);
 
- 
 
   return (
     <>
@@ -77,10 +79,13 @@ export const CartComponent = ({
                   stock={e.stock}
                   unitPrice={e.unitPrice}
                   subtitle={e.subtitle}
-
+                  urlCategory={e.urlCategory}
+                  urlProduct={e.urlProduct}
+                  pricears={e.pricears}
+                  titleCategory={e.titleCategory}
                 />
               ))}
-                <BtnCheckout price={totalPrice} toggleCart={toggleCart}/>
+                <BtnCheckout price={formatoContabilidad(totalPrice)} toggleCart={toggleCart}/>
             </>
           ) : (
             <div className={styles["Cart-vacio"]}>

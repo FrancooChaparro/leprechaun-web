@@ -7,6 +7,7 @@ import {IncreaseIcon} from '@/Icons/CartIcon';;
 import {DecreaseIcon} from '@/Icons/CartIcon';;
 import { Product } from '@/types/types';
 import Image from 'next/image';
+import { formatoContabilidad } from '@/utils/functions/buttonMain';
 
 export const ComponentCart:  React.FC<Product> = ({ 
   name, description, image, price, amount, id, unitPrice, stock
@@ -31,11 +32,6 @@ export const ComponentCart:  React.FC<Product> = ({
         fill
         objectFit='cover'
       />
-      {/* <img
-      src={image}
-      alt="product-image-cart"
-      loading='lazy'
-      /> */}
     </div>
     
     <div className={styles["cart-product-info"]}>
@@ -61,7 +57,7 @@ export const ComponentCart:  React.FC<Product> = ({
           </span>
         </div>
         <div>
-          <span>${price}</span>
+          <span>${formatoContabilidad(price)}</span>
         </div>
       </div>
     </div>

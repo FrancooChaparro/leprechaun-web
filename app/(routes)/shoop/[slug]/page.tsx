@@ -5,54 +5,59 @@ import { ProductCard } from "@/components/product-card/ProductCard";
 import { useMyContext } from "@/context/ListContext";
 import { FilterIcon } from "@/Icons/CartIcon";
 import { Product } from "@/types/types";
-import { useRouter } from "next/router";
 import { Loader } from "@/components/loader/Loader";
 
 
 export default function Page({ params }: { params: { slug: string } }) {
-  const [prop, setProp] = useState<string>();
   const [ProductsByParams,setProductsByParams] = useState<Product[]>([])
-  // Decodificar el slug
-  const decodedSlug = decodeURIComponent(params.slug);
   const [showMoreProducts, setShowMoreProducts] = useState<number>(20);
-
-
-  // Aquí puedes usar el `decodedSlug` para lo que necesites
-  useEffect(() => {
-    setProp(decodedSlug);
-  }, [decodedSlug]);
-
   const { Productos } = useMyContext();
 
   useEffect(() => {
     if (Productos) {
-      const filteredProducts = Productos.filter((e) => e.description?.toLocaleLowerCase() === decodedSlug.toLocaleLowerCase());
+      const filteredProducts = Productos.filter((e) => e.urlCategory === params.slug);
       setProductsByParams(filteredProducts);
     }
-  }, [Productos, decodedSlug]);
+  }, [Productos]);
 
+  
+  const fill = () => {
+    if (ProductsByParams.length === 0) {
+      return "No se encontraron productos";
+    } else if (ProductsByParams.length <= showMoreProducts) {
+      return `Mostrando ${ProductsByParams.length} productos`;
+    } else {
+      return `Mostrando 1-${showMoreProducts} de ${ProductsByParams.length} productos`;
+    }
+  };
+  
+  const handleShowMore = () => {
+    if (showMoreProducts + 20 > ProductsByParams.length) {
+      setShowMoreProducts(ProductsByParams.length); 
+    } else {
+      setShowMoreProducts(showMoreProducts + 20); 
+    }
+  };
 
-  console.log(Productos, "productos");
-  console.log( ProductsByParams[0]?.subtitle, "decode");
-  
-  
     return (
       <div className={styles["container-main-shoop"] }>
       
       <div className={styles["container-main-shoop-data"]}>
-          <h2>{prop}</h2>
-          <h4 style={{textAlign: "center", lineHeight: "1.5"}}>
-            {
+          <h2>{ProductsByParams[0]?.titleCategory}</h2>
+          <h4 style={{textAlign: "center", lineHeight: "1.5"}}> 
+            {/* {
               ProductsByParams[0]?.subtitle ?  ProductsByParams[0]?.subtitle : ""
-            }
+            } */}
+            En nuestra tienda encontrarás una selección premium de productos para el cuidado y detailing de autos. Trabajamos con las marcas más reconocidas del mercado como 3D Products, Menzerna, Acrochemical y muchas más, asegurando la mejor calidad para la protección y embellecimiento de tu vehículo. Ya sea que busques pulidores, ceras, limpiadores o accesorios especializados, tenemos todo lo que necesitas para mantener tu auto en perfecto estado.
           </h4>
         </div>
-  
-  
         <div className={styles["container-main-shoop-actions"]}>
           <div className={styles["filter"]}>
             <FilterIcon />
-            <label  htmlFor="">{ProductsByParams.length} productos encontrados</label></div>
+            <label htmlFor="">
+            {fill()}
+            </label>
+           </div>
           <div className={styles["order"]}>
             <label htmlFor="" >ORDENAR</label>
             <select name="" id="">
@@ -69,13 +74,12 @@ export default function Page({ params }: { params: { slug: string } }) {
           </div>
           </div>
   
-  
         <div className={styles["test"]}>
           <div className={styles["container-main-shoop-cards"]}>
-          {ProductsByParams.length &&
-              ProductsByParams.map((e) => {
+          {ProductsByParams.length === 0 ? <Loader />
+            :  ProductsByParams.map((e) => {
                 return (
-                  <ProductCard key={e.id} amount={e.amount} id={e.id} name={e.name} price={e.price} image={e.image} description={e.description} compose={e} />
+                  <ProductCard key={e.id} amount={e.amount} id={e.id} name={e.name} price={e.price} image={e.image} description={e.description} compose={e} urlProduct={e.urlProduct} pricears={e.pricears}/>
                 );
               }).slice(0, showMoreProducts)}
           </div>
@@ -89,7 +93,7 @@ export default function Page({ params }: { params: { slug: string } }) {
             marginTop: "2rem",
           }}
         >
-          <button className={styles["buy-button"]} onClick={() => setShowMoreProducts(showMoreProducts + 20)}>
+          <button className={styles["buy-button"]} onClick={handleShowMore}>
             Quiero ver más
           </button>
         </div>

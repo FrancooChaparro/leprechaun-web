@@ -10,7 +10,6 @@ import { Loader } from "@/components/loader/Loader";
 const Shoop = () => {
 
   const [selectedOption, setSelectedOption] = useState('');
-
   const [showBackground, setShowBackground] = useState<boolean>(false);
   const [show, setShow] = useState<boolean>(false);
   const [showMoreProducts, setShowMoreProducts] = useState<number>(20);
@@ -38,7 +37,7 @@ const Shoop = () => {
       window.removeEventListener("scroll", handleScroll);
     };
   }, []);
- 
+
   // const handleSelectChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
   //   const selectedValue = event.target.value;
   //   const selectedOption = event.target.selectedOptions[0];
@@ -67,20 +66,38 @@ const Shoop = () => {
   //   setKo(sortedProducts); 
   // };
 
+  const fill = () => {
+    if (Productos.length === 0) {
+      return "No se encontraron productos";
+    } else if (Productos.length <= showMoreProducts) {
+      return `Mostrando ${Productos.length} productos`;
+    } else {
+      return `Mostrando 1-${showMoreProducts} de ${Productos.length} productos`;
+    }
+  };
+  
+  const handleShowMore = () => {
+    if (showMoreProducts + 20 > Productos.length) {
+      setShowMoreProducts(Productos.length); 
+    } else {
+      setShowMoreProducts(showMoreProducts + 20); 
+    }
+  }
   return (
     <div className={styles["container-main-shoop"]}>
       <div className={styles["container-main-shoop-data"]}>
-        <h2>Guantes</h2>
+        <h2>Leprechaun Tienda</h2>
         <h4>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia
-          tenetur quibusdam sit.
+        En nuestra tienda encontrarás una selección premium de productos para el cuidado y detailing de autos. Trabajamos con las marcas más reconocidas del mercado como 3D Products, Menzerna, Acrochemical y muchas más, asegurando la mejor calidad para la protección y embellecimiento de tu vehículo. Ya sea que busques pulidores, ceras, limpiadores o accesorios especializados, tenemos todo lo que necesitas para mantener tu auto en perfecto estado.
         </h4>
       </div>
 
       <div className={styles["container-main-shoop-actions"]}>
         <div className={styles["filter"]}>
           <FilterIcon />
-          <label htmlFor="">{Productos.length} productos encontrados</label>
+         <label htmlFor="">
+          {fill()}
+          </label> 
         </div>
         <div className={styles["order"]}>
           <label htmlFor="select-order">ORDENAR</label>
@@ -111,7 +128,9 @@ const Shoop = () => {
                   price={e.price}
                   image={e.image}
                   description={e.description}
+                  urlProduct={e.urlProduct}
                   compose={e}
+                  pricears={e.pricears}
                 />
               );
             }).slice(0, showMoreProducts) }
@@ -126,7 +145,7 @@ const Shoop = () => {
             marginTop: "2rem",
           }}
         >
-          <button className={styles["buy-button"]} onClick={() => setShowMoreProducts(showMoreProducts + 20)}>
+          <button className={styles["buy-button"]} onClick={handleShowMore}>
             <a>Quiero ver más <DownIcon /></a>
           </button>
         </div>

@@ -23,6 +23,8 @@ export const ProductCard: React.FC<ProductCardProps> = ({
   compose,
   id,
   amount,
+  urlProduct,
+  pricears
 }) => {
   const router = useRouter();
   const { Add, Cart, Subir, Bajar, Discard } = useMyContext();
@@ -56,10 +58,9 @@ export const ProductCard: React.FC<ProductCardProps> = ({
     <div className={styles["container-card"]}>
       <div
         className={styles["container-card-image"]}
-        onClick={() => router.push(`/products/${name.replace(/\s+/g, '-').replace(/"/g, '_').toLowerCase()}`)}
+        onClick={() => router.push(`/products/${urlProduct}`)}
       >
-         <Image src={`${image}`} alt="product" fill priority /> 
-        {/* <img src={image} alt="image" /> */}
+         <Image src={`${image}`} alt="product" fill priority sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 25vw" placeholder="blur" blurDataURL="/images/image.webp"/> 
       </div>
 
       <div className={styles["container-card-data"]}>
@@ -67,7 +68,7 @@ export const ProductCard: React.FC<ProductCardProps> = ({
         <span className={`${styles["description"]} ${inter.className}`}>
           {description}
         </span>
-        <span className={styles["price"]}>${price}</span>
+        <span className={styles["price"]}>$ {pricears}</span>
       </div>
 
       {isInCart ? (

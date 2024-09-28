@@ -15,7 +15,7 @@ export const NavCategorias = ({ router } : { router: any} ) => {
             products.map((e) => {
               return (
                 <div className={styles["container-categorias"]} key={e.id}>
-                  <span className={styles["categorias"]} onClick={()=> router.push(`/shoop/${e.nombre}`)}> 
+                  <span className={styles["categorias"]} onClick={()=> router.push(`/shoop/${e.url}`)}> 
                     {e.nombre}
                   </span>
                 </div>

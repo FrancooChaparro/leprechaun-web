@@ -11,10 +11,16 @@ export interface Product {
   subname?: string;
   rubro?: string[];
   subtitle: string;
+  urlCategory: string;
+  urlProduct: string;
+  titleCategory: string;
+  pricears: string;
 }
 export interface Categorias {
   id: number;
   nombre: string;
+  url: string;
+  imageBlur: string;
 }
 
  export interface ProductCardProps { //Card en shoop
@@ -25,6 +31,8 @@ export interface Categorias {
     price: number;
     compose: Product;
     amount: number;
+    urlProduct: string;
+   pricears: string;
   }
 
  

@@ -147,13 +147,12 @@ export const Nav = () => {
              alt="modalImageProduct"
              width={55}
              height={55}
-             objectFit="cover"
+            //  style={{objectFit: "cover"}}
             />
-              {/* <img src={ModalProduct?.image} alt="modalImageProduct" /> */}
            </div>
            <div className={styles["container-data-modal"]}>
               <span>{ModalProduct?.name}</span>
-              <span>1 X ${ModalProduct?.unitPrice}</span>
+              <span>1 X ${ModalProduct?.pricears}</span>
               <span style={{fontWeight: "bold"}}>¡Agregado al carrito con éxito!</span>
            </div>
         </div>

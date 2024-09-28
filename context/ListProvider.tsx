@@ -1,7 +1,7 @@
 "use client";
 import React, { useState, FC, ReactNode, useEffect } from "react";
 import MyContext, { MyContextType } from "./ListContext"
-import { products } from "@/models/products";
+// import { products } from "@/models/products";
 import { Product } from "@/types/types";
 import api from "@/models/api";
 
@@ -129,7 +129,6 @@ const MyProvider: FC<MyProviderProps> = ({ children }) => {
       if (item.id === productId) {
         // Verifica si agregar uno más excedería el stock disponible
         if (item.stock === 0 ) {
-          console.log("No se puede agregar más, se ha alcanzado el límite de stock.");
           return item; 
         }
         setModalProduct(item);
@@ -159,10 +158,10 @@ const MyProvider: FC<MyProviderProps> = ({ children }) => {
           stock: item.stock + 1, // Incrementar el stock disponible
         };
       }
-  
+      
       return item;
     });
-  
+    
     setCart(updatedCart);
   };
   

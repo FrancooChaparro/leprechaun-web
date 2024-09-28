@@ -5,7 +5,6 @@ import { useMyContext } from "@/context/ListContext";
 
 export default function Home() {
   const { Productos } = useMyContext();
-  console.log(Productos);
   
   return (
     <main>

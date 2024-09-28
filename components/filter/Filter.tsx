@@ -53,7 +53,7 @@ export const Filter = ({ isOpen, toggleMenu } : { isOpen: boolean, toggleMenu: (
             products.map((e) => {
               return (
                 <div className={styles["container-section"]} key={e.id}>
-                  <Link href={`/shoop/${e.nombre}`} onClick={toggleMenu}>
+                  <Link href={`/shoop/${e.url}`} onClick={toggleMenu}>
                   <span className={styles["container-section-name"]}>
                     {e.nombre}
                   </span>

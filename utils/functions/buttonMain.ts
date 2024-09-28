@@ -14,3 +14,10 @@ export const buttonMain = (pathName : string, router: any ) => {
       return ScrollToTopButton()
     }
   }
+
+  export function formatoContabilidad(numero: any) {
+    return numero.toLocaleString('es-ES', {
+      minimumFractionDigits: 0, // Asegura 2 decimales
+      maximumFractionDigits: 0, // Asegura que no se muestren más de 2 decimales
+  })
+}

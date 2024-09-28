@@ -17,6 +17,8 @@ export const GridLayout = () => {
               url={prod.url}
               key={index}
               variable={prod.variable}
+              urlCategory={prod.urlCategory}
+              imageBlur={prod.imageBlur}
             />
           ))}
       </div>

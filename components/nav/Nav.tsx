@@ -75,6 +75,9 @@ export const Nav = () => {
   }, [isOpen]);
 
   useEffect(() => {
+    if(pathName === "/") {
+      return setModalVisible(false)
+    }
     if (ModalProduct) {
       setModalVisible(true); // Mostrar modal
       const timer = setTimeout(() => {

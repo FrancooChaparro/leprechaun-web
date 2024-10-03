@@ -1,10 +1,15 @@
 import type { Product } from "@/types/types";
 
+// fetch(
+//   "https://docs.google.com/spreadsheets/d/e/2PACX-1vRkVHnsot25BjWlN6CH5XzRVH7vSyRMwJZfEWIBqmbcQNeLGew8NWP-BPLfLbpn3zS8XyQrDOU849r1/pub?output=tsv",
+//   {next: {tags: ["productos"]}},
+// )
+
  const api = {
   match: {
     list: async (): Promise<Product[]> => {
       return fetch(
-        "https://docs.google.com/spreadsheets/d/e/2PACX-1vRkVHnsot25BjWlN6CH5XzRVH7vSyRMwJZfEWIBqmbcQNeLGew8NWP-BPLfLbpn3zS8XyQrDOU849r1/pub?output=tsv",
+        "https://docs.google.com/spreadsheets/d/e/2PACX-1vQm4z5xmWCoSu3ZdwiD0dYNsLdfa2RXe9-_tbFfpXEV0K3OmWl2CYiVENihQ8D0sp6wiwqVQQhqQn7A/pub?output=tsv",
         {next: {tags: ["productos"]}},
       )
         .then((res) => res.text())

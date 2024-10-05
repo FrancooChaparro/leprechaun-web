@@ -25,7 +25,7 @@ export const buttonMain = (pathName : string, router: any ) => {
 }
 
 
-export const productId = async (params: string) => {
+export const find_product_id = async (params: string) => {
   const data = await api.match.list();
 
   const FindProduct = data.find((e) => e.urlProduct === params);
@@ -37,4 +37,19 @@ export const globalData = async () => {
   const data = await api.match.list();
 
   return data
+}
+
+const checkIsMobile = (userAgent: any) => {
+  return /android.+mobile|ip(hone|[oa]d)/i.test(userAgent);
+};
+
+//Funcion que trae el userAgent
+export const getUserAgent =  (headerList: any) => {
+  
+  return {
+      device: checkIsMobile(headerList),
+      browser: {
+          name: "Safari"
+      }
+  }
 }

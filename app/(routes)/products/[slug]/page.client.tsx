@@ -12,7 +12,7 @@ export default function Page({product} : {product : Product}) {
   const [ModalActive, setModalActive] = useState(false);
   const [amount, setAmount] = useState(1); // Estado para almacenar la cantidad ingresada
 
-  console.log(product);
+  
   
   useEffect(() => {
     if (ModalActive) {

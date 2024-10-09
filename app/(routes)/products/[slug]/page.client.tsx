@@ -13,7 +13,27 @@ export default function Page({product} : {product : Product}) {
   const [amount, setAmount] = useState(1); // Estado para almacenar la cantidad ingresada
 
   
-  
+  const [userLocation, setUserLocation] = useState<any>(null);
+
+  useEffect(() => {
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition(
+        (position) => {
+          setUserLocation({
+            lat: position.coords.latitude,
+            lng: position.coords.longitude,
+          });
+        },
+        (error) => {
+          console.error("Error obteniendo la ubicación:", error);
+        }
+      );
+    } else {
+      console.log("La geolocalización no está disponible en este navegador.");
+    }
+  }, []);
+
+
   useEffect(() => {
     if (ModalActive) {
       const timer = setTimeout(() => setModalActive(false), 4800);
@@ -35,6 +55,7 @@ export default function Page({product} : {product : Product}) {
       setAmount(value);
     }
   }, []);
+console.log(userLocation, "location");
 
   return (
     <div className={styles["container"]}>

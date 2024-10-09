@@ -1,8 +1,5 @@
 import type { Metadata } from "next";
-import { Nav } from "@/components/nav/Nav";
 import "./globals.css";
-import { Footer } from "@/components/footer/Footer";
-import { Contact } from "@/components/contact/Contact";
 import { roboto } from "@/utils/fonts";
 import MyProvider from "@/context/ListProvider";
 import { NavFooterWrapper } from "@/components/Nav-footer-wrapper/NavFooterWrapper";

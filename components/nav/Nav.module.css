@@ -196,6 +196,39 @@
 
 
 
+/*Tailwind class*/
+
+.transition-visibility {
+  transition: visibility 0.5s ease;
+}
+
+.transition-visibility {
+  transition: visibility 0.5s ease;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 @media screen and (max-width: 767px) {
@@ -245,3 +278,5 @@
   font-size: 15px;
 }
 }
+
+

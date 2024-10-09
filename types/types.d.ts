@@ -20,7 +20,7 @@ export interface Categorias {
   id: number;
   nombre: string;
   url: string;
-  imageBlur: string;
+  imageBlur?: string;
 }
 
  export interface ProductCardProps { //Card en shoop

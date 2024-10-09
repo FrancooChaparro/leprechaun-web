@@ -1,6 +1,6 @@
 "use client"
 import React, { useEffect, useRef, useState } from "react";
-import styles from "./cart-component.module.css";
+// import styles from "./cart-component.module.css";
 import { ComponentCart } from "@/components/component-cart/ComponentCart";
 import { BtnCheckout } from "@/components/btn-checkout/Btn-checkout";
 import { useMyContext } from "@/context/ListContext";
@@ -45,22 +45,22 @@ export const CartComponent = ({
     <>
       {isOpen && (
         <div
-          className={styles["overlay-menu-container"]}
+          className="absolute top-0 right-0 min-w-[100vw] max-w-[100vw] min-h-[100vh] max-h-[100vh] h-[100vh] bg-[#000] opacity-50 z-[15999] pointer-events-auto cursor-default"
           onClick={toggleCart}
         />
       )}
       <section
         ref={cartRef}
-        className={`${styles["container-section-burger-menu"]} ${
-          isOpen ? styles["active"] : ""
+        className={`w-[100%] px-[0-8rem] absolute top-0 -right-[100vw] z-[16000] h-[100vh] opacity-0 flex justify-center min-h-[cal(100vh - 5rem)] text-[black] lg:px-[0.4rem] overflow-y-scroll cursor-default lg:w-[30vw] font-custom transition-all duration-300 bg-bknav ${
+          isOpen ? "right-0 opacity-100 transition-all duration-300" : ""
         }`}
       >
-        <div className={styles["wraper"]}>
-          <div className={styles["container-head"]}>
-            <span className={styles["container-head-cart"]}>
+        <div className="w-[100%] min-h-[100%]">
+          <div className="flex justify-center items-center relatieve border-b-[1px] border-t-[1px] border-[rgb(211_210_210)] w-[100%] h-16 text-[12px] text-center uppercase pt-1 tracking-[1px] cursor-pointer ">
+            <span className="absolute left-[50%] transform -translate-x-1/2">
               CARRITO DE COMPRAS
             </span>
-            <a className={styles["container-head-x"]} onClick={toggleCart}>
+            <a className="absolute right-2.5 text-[25px]" onClick={toggleCart}>
               <ClosedIcon className="1.4rem"/>
             </a>
           </div>
@@ -88,7 +88,7 @@ export const CartComponent = ({
                 <BtnCheckout price={formatoContabilidad(totalPrice)} toggleCart={toggleCart}/>
             </>
           ) : (
-            <div className={styles["Cart-vacio"]}>
+            <div className="h-[30px] border-[1px] border-[rgb(53_53_53)] rounded-[4px] flex justify-center items-center text-[11px] mt-1 ">
               <span>El carrito de compras está vacío.</span>
             </div>
           )}

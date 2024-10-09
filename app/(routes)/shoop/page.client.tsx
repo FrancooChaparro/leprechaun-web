@@ -84,10 +84,12 @@ const Shoop = ({products}:{products: Product[]}) => {
       setShowMoreProducts(showMoreProducts + 20); 
     }
   }
+
+
   return (
     <div className={styles["container-main-shoop"]}>
       <div className={styles["container-main-shoop-data"]}>
-        <h2>Leprechaun Tienda</h2>
+        <h2 className="text-red-900 text-[25px] font-bold">Leprechaun Tienda</h2>
         <h4>
         En nuestra tienda encontrarás una selección premium de productos para el cuidado y detailing de autos. Trabajamos con las marcas más reconocidas del mercado como 3D Products, Menzerna, Acrochemical y muchas más, asegurando la mejor calidad para la protección y embellecimiento de tu vehículo. Ya sea que busques pulidores, ceras, limpiadores o accesorios especializados, tenemos todo lo que necesitas para mantener tu auto en perfecto estado.
         </h4>

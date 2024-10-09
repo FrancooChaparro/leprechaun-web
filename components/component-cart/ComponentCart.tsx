@@ -23,8 +23,8 @@ export const ComponentCart:  React.FC<Product> = ({
     }, 800); // El tiempo debe coincidir con la duración de la animación
   };
   return (
-    <div className={`${styles["cart-product"]} ${isRemoving ? styles["removing"] : ""}`}>
-    <div className={styles["cart-product-image"]}>
+    <div className={`grid grid-cols-[1fr_4fr] h-[100px] w-[100%] select-none bg-bknav text-navcolor mt-[5px] ${isRemoving ? "animate-fadeOut pointer-events-none" : ""}`}>
+    <div className="relative">
       <Image 
         src={image}
         alt='product-image-cart'
@@ -34,20 +34,20 @@ export const ComponentCart:  React.FC<Product> = ({
       />
     </div>
     
-    <div className={styles["cart-product-info"]}>
-      <div className={styles["top"]}>
-        <div className={styles["title"]}>
+    <div className="p-[0.4rem] pt-[0.8rem]">
+      <div className="flex justify-between">
+        <div className="text-[13px]">
           <a href="">{name.toLocaleUpperCase()}</a>
-          <small>({description.slice(0,15)})</small>
+          <small className='text-[11px] ml-[3px]'>({description.slice(0,15)})</small>
         </div> 
         <div>
-          <span className={styles["delete"]} onClick={handleRemove}>
+          <span className="text-[17px] hover:cursor-pointer hover:opacity-90" onClick={handleRemove}>
             <DeleteIcon />
           </span>
         </div>
       </div>
-      <div className={styles["bot"]}>
-        <div className={styles["form-quality"]}>
+      <div className="flex justify-between pt-[9px] text-[13px]">
+        <div className="w-[90px] p-[5px] border-[1px] border-[rgb(158_158_158)] flex justify-between text-[13px] rounded-[4px] hover:border-[1px] hover:border-[rgb(109_109_109)] cursor-pointer">
           <span onClick={()=> Bajar(id)}>
           <DecreaseIcon />
           </span>

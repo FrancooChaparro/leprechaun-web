@@ -1,5 +1,5 @@
 "use client";
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import styles from "./contact.module.css";
 import { Input } from "@/components/input/Input";
 import { useMyContext } from "@/context/ListContext";
@@ -8,6 +8,9 @@ import { Product } from "@/types/types";
 import { useWindowSize } from "@/utils/size/useWindowsSize";
 import { DownIcon, UpIcon } from "@/Icons/CartIcon";
 import { formatoContabilidad } from "@/utils/functions/buttonMain";
+import { useRouter } from "next/navigation";
+import { ContactFormAction } from "@/app/actions";
+import { bagCheckoutAction } from "@/app/actions/checkoutAction";
 
 interface Order {
   email: string;
@@ -96,6 +99,55 @@ const Contact = () => {
     aditionalMsg: "",
   });
 
+
+
+const formRef = useRef<HTMLFormElement>(null);
+const [loading, setLoading] = useState<boolean>(false);
+// const [toast, setToast] = useState<{ message: string; type: 'success' | 'error' } | null>(null);
+const router = useRouter()
+
+
+const handleForm = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setLoading(true);
+
+    try {
+       
+        const formData = new FormData(formRef.current!);
+        const result: { success: boolean } = await ContactFormAction(formData);
+
+        if (result.success) {
+            router.push("/")
+            formRef.current?.reset();
+            // setToast({ message: 'Formulario enviado con éxito', type: 'success' });
+        } else {
+            router.push("/")
+            formRef.current?.reset();
+            // setToast({ message: 'Hubo un error al enviar el formulario', type: 'error' });
+        }
+    } catch (error) {
+        router.push("/")
+        formRef.current?.reset();
+        // setToast({ message: 'Hubo un error al validar el reCAPTCHA', type: 'error' });
+    } finally {
+        setLoading(false);
+    }
+}
+
+
+const testFunction =  ({ Cart, totalPrice }: { Cart: Product[], totalPrice: number }) => {
+  const cleanCart =  Cart.map((e: Product) => ({
+      amount: e.amount,
+      name: e.name,
+      id: e.id,
+      price: e.price
+  }));
+  return {
+      cleanCart, totalPrice
+  };
+};
+
+
   const [errors, setErrors] = useState({
     email: "",
     number: "",
@@ -144,8 +196,12 @@ const Contact = () => {
     }, 3000);
   };
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    if(errors.name || errors.delivery || errors.email || errors.number || errors.direction || errors.pay) {
+      return handler()
+    }
+    setLoading(true)
     const regexName = /^([a-zA-Z ]+)$/i;
     const regexEmail = /^[\w-.]+@([\w-]+\.)+[\w-]{2,4}$/g;
     if (
@@ -184,12 +240,33 @@ const Contact = () => {
     }
 
     //aca deberiamos hacer el post a wpp o mail
-    return;
-  };
+    try {
+      const formData = new FormData(formRef.current!);
+      
+      formData.append("cart", JSON.stringify(Cart));
+      formData.append("total", totalPrice.toString());
+      const result: { success: boolean } = await ContactFormAction(formData);
 
+      if (result.success) {
+          alert("mensaje enviado")
+          formRef.current?.reset();
+          // setToast({ message: 'Formulario enviado con éxito', type: 'success' });
+      } else {
+          alert("mensaje enviado")
+          formRef.current?.reset();
+          // setToast({ message: 'Hubo un error al enviar el formulario', type: 'error' });
+      }
+  } catch (error) {
+      alert("mensaje enviado")
+      formRef.current?.reset();
+      // setToast({ message: 'Hubo un error al validar el reCAPTCHA', type: 'error' });
+  } finally {
+      setLoading(false);
+  };
+ }
   return (
     <div className={styles["container-contact"]}>
-      <form action="" onSubmit={handleSubmit} className={styles["aaaaa"]}>
+      <form action="" ref={formRef}  onSubmit={handleSubmit} className={styles["aaaaa"]}>
         <h4>DATOS DE CONTACTO</h4>
         <Input
           type="email"
@@ -272,7 +349,7 @@ const Contact = () => {
         {errors.aditionalMsg && (
           <small className={styles["danger"]}>{errors.aditionalMsg}</small>
         )}
-        <button type="submit">REALIZAR EL PEDIDO</button>
+        <button disabled={loading} type="submit">{loading ? "Enviando..." : "REALIZAR EL PEDIDO"}</button>
         {error && (
           <div className={styles["container-danger-msg"]}>
             <span className={styles["danger"]}>
@@ -337,7 +414,7 @@ const Contact = () => {
                   <span>Gratis</span>
                 </div>
                 <div className={styles["br-total"]}>
-                  <span>Total</span>
+                  <span onClick={()=> testFunction({Cart, totalPrice})}>Total</span>
                   <span>$ {formatoContabilidad(totalPrice)}</span>
                 </div>
               </div>

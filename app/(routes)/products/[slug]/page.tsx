@@ -14,7 +14,7 @@ export default async function ProductData({ params }: { params: { slug: string }
 console.log("ESTOY MODIFICANDO ALGO ACA");
 console.log("stash");
 
-
+ 
 
   const product = await find_product_id(params.slug)
     

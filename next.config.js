@@ -6,3 +6,11 @@ const nextConfig = {
   };
 
 export default nextConfig;
+// next.config.js
+module.exports = {
+  api: {
+    bodyParser: {
+      sizeLimit: '1mb', // Ajusta según tus necesidades
+    },
+  },
+};

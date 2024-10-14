@@ -1,4 +1,5 @@
 import api from "@/models/api";
+import { useMyContext } from "@/context/ListContext";
 
 export const ScrollToTopButton = () => {
     const scrollToTop = () => {
@@ -26,6 +27,8 @@ export const buttonMain = (pathName : string, router: any ) => {
 
 
 export const find_product_id = async (params: string) => {
+  // const { Productos } =  useMyContext();
+
   const data = await api.match.list();
 
   const FindProduct = data.find((e) => e.urlProduct === params);

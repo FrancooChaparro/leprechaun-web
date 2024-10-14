@@ -7,12 +7,12 @@ import { Product } from "@/types/types";
 import Image from "next/image";
 
 export default function Page({product} : {product : Product}) {
-  const { Add, message } = useMyContext();
+  const { Add, message, Productos } = useMyContext();
   const [show, setShow] = useState(true);
   const [ModalActive, setModalActive] = useState(false);
   const [amount, setAmount] = useState(1); // Estado para almacenar la cantidad ingresada
 
-  
+
   
   useEffect(() => {
     if (ModalActive) {

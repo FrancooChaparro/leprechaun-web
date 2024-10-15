@@ -7,7 +7,6 @@ import { roboto } from "@/utils/fonts";
 
 export const NavCategorias = ({ router } : { router: any} ) => {
   const products: Categorias[] = categorias;
-  console.log(products);
   
   return (
 

@@ -12,6 +12,7 @@ import {
   IncreaseIcon,
   TildeIcon,
 } from "@/Icons/CartIcon";
+import { addBagProduct } from "@/app/actions";
 
 const inter = Roboto({ weight: ["400"], subsets: ["latin"] });
 
@@ -42,6 +43,7 @@ export const ProductCard: React.FC<ProductCardProps> = ({
   }, [Cart, id]); // Asegúrate de que se ejecute cuando el carrito cambie
 
   const handleAddToCart = () => {
+    addBagProduct(compose)
     Add(compose);
     // Espera a que el carrito se actualice y luego actualiza el estado
 

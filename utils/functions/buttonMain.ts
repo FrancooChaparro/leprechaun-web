@@ -26,6 +26,7 @@ export const buttonMain = (pathName : string, router: any ) => {
 
 
 export const find_product_id = async (params: string) => {
+
   const data = await api.match.list();
 
   const FindProduct = data.find((e) => e.urlProduct === params);
@@ -53,3 +54,4 @@ export const getUserAgent =  (headerList: any) => {
       }
   }
 }
+

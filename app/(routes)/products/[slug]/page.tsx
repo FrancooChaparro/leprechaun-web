@@ -11,8 +11,7 @@ export default async function ProductData({ params }: { params: { slug: string }
   // console.log(ua, "useragent");
   // const isMobile = ua.device;
   // console.log(isMobile, "IS MOBILE");
-console.log("ESTOY MODIFICANDO ALGO ACA");
-console.log("stash");
+
 
  
 

@@ -55,7 +55,6 @@ export default function Page({product} : {product : Product}) {
       setAmount(value);
     }
   }, []);
-console.log(userLocation, "location");
 
   return (
     <div className={styles["container"]}>

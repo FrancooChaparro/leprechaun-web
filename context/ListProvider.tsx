@@ -12,8 +12,8 @@ interface MyProviderProps {
 
 const MyProvider: FC<MyProviderProps> = ({ children }) => {
   
-  const [Cart, setCart] = useState<Product[]>([]);
-  // const [Cart, setCart] = useLocalStorage('cart', []);
+  // const [Cart, setCart] = useState<Product[]>([]);
+  const [Cart, setCart] = useLocalStorage('cart', []);
   const [Productos, setProductos] = useState<Product[]>([]);
   const [message, setMessage] = useState<string | null>(null);
   const [ModalProduct, setModalProduct] = useState<Product | null>(null);
@@ -169,35 +169,35 @@ const MyProvider: FC<MyProviderProps> = ({ children }) => {
 
   /*WORKING*/
 
-// function useLocalStorage(key: string, initialValue: any) {
-//   // Estado inicial se toma de localStorage o usa el valor inicial
-//   const [storedValue, setStoredValue] = useState(() => {
-//     try {
-//       const item = window.localStorage.getItem(key);
-//       return item ? JSON.parse(item) : initialValue;
-//     } catch (error) {
-//       console.error("Error reading localStorage", error);
-//       return initialValue;
-//     }
-//   });
+function useLocalStorage(key: string, initialValue: any) {
+  // Estado inicial se toma de localStorage o usa el valor inicial
+  const [storedValue, setStoredValue] = useState(() => {
+    try {
+      const item = window.localStorage.getItem(key);
+      return item ? JSON.parse(item) : initialValue;
+    } catch (error) {
+      console.error("Error reading localStorage", error);
+      return initialValue;
+    }
+  });
 
-//   // Función para actualizar el valor en localStorage
-//   const setValue = (value: any) => {
-//     try {
-//       // Permite que `value` sea una función
-//       const valueToStore =
-//         value instanceof Function ? value(storedValue) : value;
+  // Función para actualizar el valor en localStorage
+  const setValue = (value: any) => {
+    try {
+      // Permite que `value` sea una función
+      const valueToStore =
+        value instanceof Function ? value(storedValue) : value;
 
-//       // Guarda en el estado y en localStorage
-//       setStoredValue(valueToStore);
-//       window.localStorage.setItem(key, JSON.stringify(valueToStore));
-//     } catch (error) {
-//       console.error("Error setting localStorage", error);
-//     }
-//   };
+      // Guarda en el estado y en localStorage
+      setStoredValue(valueToStore);
+      window.localStorage.setItem(key, JSON.stringify(valueToStore));
+    } catch (error) {
+      console.error("Error setting localStorage", error);
+    }
+  };
 
-//   return [storedValue, setValue];
-// }
+  return [storedValue, setValue];
+}
 
 
 
